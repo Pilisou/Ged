@@ -1413,84 +1413,104 @@ section,
 /*--------------------------------------------------------------
 # Team Section
 --------------------------------------------------------------*/
-.team .team-member {
-  background-color: var(--surface-color);
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  border-radius: 5px;
-}
-
-.team .team-member .member-img {
-  position: relative;
+/*--------------------------------------------------------------
+# Section Team - Stil GED Premium 2026
+--------------------------------------------------------------*/
+.ged-team-dark {
+  /* Yon degrade ki soti nan yon vèt forè fonse pou l al nan nwa */
+  background: linear-gradient(135deg, #0a210f 0%, #020a05 100%);
+  padding: 100px 0;
   overflow: hidden;
 }
 
-.team .team-member .social {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  height: 40px;
-  opacity: 0;
-  transition: ease-in-out 0.3s;
-  background: color-mix(in srgb, var(--background-color), transparent 20%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.team .team-member .social a {
-  transition: color 0.3s;
-  color: var(--heading-color);
-  margin: 0 10px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.team .team-member .social a i {
-  line-height: 0;
-}
-
-.team .team-member .social a:hover {
-  color: var(--accent-color);
-}
-
-.team .team-member .social i {
-  font-size: 18px;
-  margin: 0 2px;
-}
-
-.team .team-member .member-info {
-  padding: 25px 15px;
+.ged-member-card {
+  /* Yon ti transparans vèt trè lejè sou kat la */
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(47, 148, 91, 0.2);
+  border-radius: 25px;
+  padding: 40px 20px 30px;
   text-align: center;
+  position: relative;
+  margin-top: 60px;
+  transition: all 0.4s ease-in-out;
+  backdrop-filter: blur(10px); /* Efè vit la */
 }
 
-.team .team-member .member-info h4 {
+.ged-member-card:hover {
+  background: rgba(47, 148, 91, 0.08);
+  border-color: #adb62c; /* Liy lan vin jòn-vèt nan hover */
+  transform: translateY(-12px);
+}
+
+/* Fòm U a ki adapte ak koulè background lan */
+.avatar-holder {
+  width: 120px;
+  height: 110px;
+  /* Li transparan pou l ka kite background lan parèt anba l */
+  background: transparent; 
+  margin: -100px auto 20px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Nou kreye fòm U a ak yon "pseudo-element" pou l pa gen pwoblèm koulè */
+.avatar-holder::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit; /* Li pran koulè seksyon an */
+  border-radius: 0 0 100px 100px;
+  z-index: -1;
+  /* Nou fòse koulè background nan pou l koupe bwat la */
+  background: #06160a; 
+}
+
+.avatar-holder img {
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(47, 148, 91, 0.5); /* Ti sèk vèt dous bò foto a */
+}
+
+.ged-member-content h4 {
+  color: #ffffff;
+  font-size: 20px;
   font-weight: 700;
-  margin-bottom: 5px;
-  font-size: 18px;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  margin-bottom: 8px;
 }
 
-.team .team-member .member-info span {
-  display: block;
+.ged-member-content .role {
+  color: #adb62c; /* Jòn-vèt GED a (pi dous pase vèt rèd la) */
   font-size: 13px;
-  font-weight: 400;
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
 }
 
-.team .team-member .member-info p {
-  font-style: italic;
+.ged-member-content .desc {
+  color: rgba(255, 255, 255, 0.7);
   font-size: 14px;
-  line-height: 26px;
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  line-height: 1.6;
+  margin-bottom: 25px;
 }
 
-.team .team-member:hover .social {
+.ged-social a {
+  color: #ffffff;
+  font-size: 18px;
+  margin: 0 10px;
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
+.ged-social a:hover {
+  color: #2f945b; /* Vèt GED dous la */
   opacity: 1;
+  transform: scale(1.2);
 }
-
 /*--------------------------------------------------------------
 # Pricing Section
 --------------------------------------------------------------*/
