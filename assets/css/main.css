@@ -1302,117 +1302,100 @@ section,
 /*--------------------------------------------------------------
 # Portfolio Section
 --------------------------------------------------------------*/
-.portfolio .portfolio-filters {
-  padding: 0;
-  margin: 0 auto 20px auto;
+
+/* Stil Jeneral Galeri */
+.ged-premium-gallery {
+  padding: 60px 0;
+  background: #fff;
+}
+
+/* Bouton Filtre yo - Vèt Pal & Clean */
+.ged-filters {
   list-style: none;
   text-align: center;
+  padding: 0;
+  margin-bottom: 40px;
 }
 
-.portfolio .portfolio-filters li {
-  cursor: pointer;
+.ged-filters li {
   display: inline-block;
-  padding: 8px 20px 10px 20px;
-  margin: 0;
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 1;
-  margin-bottom: 5px;
-  border-radius: 50px;
-  transition: all 0.3s ease-in-out;
-  font-family: var(--heading-font);
-}
-
-.portfolio .portfolio-filters li:hover,
-.portfolio .portfolio-filters li.filter-active {
-  color: var(--contrast-color);
-  background-color: var(--accent-color);
-}
-
-.portfolio .portfolio-filters li:first-child {
-  margin-left: 0;
-}
-
-.portfolio .portfolio-filters li:last-child {
-  margin-right: 0;
-}
-
-@media (max-width: 575px) {
-  .portfolio .portfolio-filters li {
-    font-size: 14px;
-    margin: 0 0 10px 0;
-  }
-}
-
-.portfolio .portfolio-item {
-  position: relative;
-  overflow: hidden;
-}
-
-.portfolio .portfolio-item .portfolio-info {
-  opacity: 0;
-  position: absolute;
-  /* Nou di l kòmanse nan rebò nèt epi fini nan rebò nèt */
-  left: 0; 
-  right: 0;
-  bottom: 0; 
-  width: 100%; /* Sa ap fòse l pa janm depase foto a */
-  z-index: 3;
-  transition: all ease-in-out 0.4s;
-  background: rgba(255, 255, 255, 0.9); /* Vwal blan an */
-  padding: 15px;
-  box-sizing: border-box; /* Liy sa a enpòtan: li fè padding la pa pouse bwat la deyò */
-}
-
-/* Pou asire tèks la pa kole nan rebò gòch la twòp */
-.portfolio .portfolio-item .portfolio-info h4,
-.portfolio .portfolio-item .portfolio-info p {
-  margin-left: 10px;
-  padding-right: 60px; /* Pou l pa moute sou ikòn yo */
-}
-
-.portfolio .portfolio-item .portfolio-info h4 {
-  font-size: 18px;
+  padding: 10px 25px;
+  font-size: 13px;
   font-weight: 600;
-  padding-right: 50px;
-}
-
-.portfolio .portfolio-item .portfolio-info p {
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-  font-size: 14px;
-  margin-bottom: 0;
-  padding-right: 50px;
-}
-
-.portfolio .portfolio-item .portfolio-info .preview-link,
-.portfolio .portfolio-item .portfolio-info .details-link {
-  position: absolute;
-  right: 50px;
-  font-size: 24px;
-  top: calc(50% - 14px);
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
   transition: 0.3s;
-  line-height: 0;
+  color: #666;
+  border-bottom: 2px solid transparent;
 }
 
-.portfolio .portfolio-item .portfolio-info .preview-link:hover,
-.portfolio .portfolio-item .portfolio-info .details-link:hover {
-  color: var(--accent-color);
+.ged-filters li.filter-active, .ged-filters li:hover {
+  color: #2f945b;
+  border-bottom: 2px solid #2f945b; /* Liy vèt anba bouton an */
 }
 
-.portfolio .portfolio-item .portfolio-info .details-link {
-  right: 14px;
-  font-size: 28px;
+/* Griyaj la - Ti fil blanch fen anpil */
+.ged-grid {
+  display: flex;
+  flex-wrap: wrap;
+  border: 0.2px solid rgba(255, 255, 255, 0.5); /* Ti fil deyò a */
 }
 
-.portfolio .portfolio-item:hover .portfolio-info {
+.ged-item {
+  position: relative;
+  width: 33.333%; /* 3 foto pa liy */
+  height: 350px;
+  overflow: hidden;
+  border: 0.5px solid #ffffff; /* Ti fil blanch fen ant foto yo */
+}
+
+.ged-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+/* Hover Effect - Vèt Pal Dous */
+.ged-hover {
+  position: absolute;
+  inset: 0;
+  background: rgba(47, 148, 91, 0.15); /* Vèt pal anpil (transparent) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: 0.4s;
+  backdrop-filter: blur(3px); /* Ti efè flou pou l parèt "premium" */
+}
+
+.ged-item:hover .ged-hover {
   opacity: 1;
-  bottom: 0;
 }
 
-/*--------------------------------------------------------------
-# Team Section
---------------------------------------------------------------*/
+.ged-item:hover img {
+  transform: scale(1.05);
+}
+
+.ged-hover span {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: rgba(0,0,0,0.3);
+  padding: 5px 15px;
+}
+
+/* Responsivite pou mobil */
+@media (max-width: 992px) {
+  .ged-item { width: 50%; height: 300px; } /* 2 foto sou tablèt */
+}
+
+@media (max-width: 576px) {
+  .ged-item { width: 100%; height: 250px; } /* 1 foto sou telefòn */
+}
 /*--------------------------------------------------------------
 # Section Team - Stil GED Premium 2026
 --------------------------------------------------------------*/
