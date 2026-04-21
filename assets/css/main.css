@@ -535,77 +535,102 @@ h6 {
 /*--------------------------------------------------------------
 # Global Footer
 --------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Footer GED - Modern Tech Style
+--------------------------------------------------------------*/
 .footer {
   color: var(--default-color);
-  background-color: var(--background-color);
   background: url("../img/footer-bg.jpg") center center no-repeat;
   background-size: cover;
   font-size: 14px;
   text-align: center;
-  padding: 60px 0 30px 0;
+  padding: 80px 0 40px 0;
   position: relative;
+  overflow: hidden;
 }
 
+/* Kouch nwa transparan ak yon ti efè flou sou background nan */
 .footer:before {
   content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 20%);
+  background: linear-gradient(180deg, 
+              rgba(0, 0, 0, 0.85) 0%, 
+              rgba(0, 51, 33, 0.95) 100%); /* Yon ti nuans vèt fonse GED */
   position: absolute;
   inset: 0;
+  backdrop-filter: blur(5px); /* Efè vè flou a */
 }
 
 .footer .container {
   position: relative;
+  z-index: 2;
 }
 
 .footer h3 {
-  font-size: 36px;
-  font-weight: 700;
-  position: relative;
-  padding: 0;
-  margin: 0 0 15px 0;
+  font-size: 42px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  background: linear-gradient(to right, #ffffff, var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; /* Tit GED ap gen yon degrade blan-vèt */
+}
+
+.footer .footer-address {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--accent-color);
+  margin-bottom: 15px;
+  display: block;
 }
 
 .footer p {
-  font-size: 15;
-  font-style: italic;
-  padding: 0;
-  margin: 0 0 30px 0;
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto 30px auto;
+  opacity: 0.9;
 }
 
+/* Rezo Sosyal Stil Modèn */
 .footer .social-links {
-  margin: 0 0 30px 0;
+  margin-bottom: 40px;
 }
 
 .footer .social-links a {
-  font-size: 16px;
-  display: flex;
+  font-size: 20px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: var(--accent-color);
-  color: var(--contrast-color);
-  line-height: 1;
-  margin: 0 4px;
-  border-radius: 50%;
-  text-align: center;
-  width: 36px;
-  height: 36px;
-  transition: 0.3s;
+  background: rgba(255, 255, 255, 0.05); /* Ikon yo parèt nan yon ti vè transparan */
+  color: #fff;
+  margin: 0 8px;
+  border-radius: 12px; /* Kare awondi, sa pi modèn pase ronn nèt */
+  width: 45px;
+  height: 45px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .footer .social-links a:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
-  text-decoration: none;
+  background: var(--accent-color);
+  color: #fff;
+  transform: translateY(-8px) rotate(10deg); /* Ti animasyon kran an */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Koulè espesyal pou WhatsApp nan hover */
+.footer .social-links a:hover .bi-whatsapp {
+  color: #fff;
 }
 
 .footer .copyright {
-  padding-top: 25px;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-weight: 300;
+  letter-spacing: 1px;
 }
 
-.footer .credits {
-  font-size: 13px;
-  padding-top: 5px;
-}
 
 /*--------------------------------------------------------------
 # Preloader
@@ -801,7 +826,7 @@ section,
 --------------------------------------------------------------*/
 .hero {
   width: 100%;
-  min-height: 20vh; 
+  min-height: 20%; 
   
   position: relative;
   padding: 100px 0 10px 0;
@@ -911,6 +936,7 @@ section,
     margin: 0 auto;    /* Santre l si l bezwen sa */
   }
 }
+
 /*--------------------------------------------------------------
 # Clients Section
 -------------------------------------------------------------
@@ -1492,9 +1518,9 @@ section,
 
 /* Stil pou bouton yo ka parèt byen */
 .amount-btn {
-    background: #fff !important;
-    color: #0d6efd !important;
-    border: 1px solid #0d6efd !important;
+    background: #2f945b !important;
+    color: #fff !important;
+    border: 1px solid #adb62c !important;
 }
 
 /* Pou imaj peman yo parèt epi gen espas */
@@ -1521,17 +1547,30 @@ section,
     width: auto;
 }
 
-.method-item input {
-    margin-right: 5px;
+
+/* Lè w klike sou yon metòd peman (radio button) */
+.method-item input[type="radio"]:checked {
+    background-color: #79942f !important;
+    border-color: #adb62c !important;
 }
 
-/* Bouton ki chwazi a */
-.amount-btn.active {
-    background-color: #0d6efd !important;
-    color: white !important;
-    border: 2px solid #000 !important;
+/* Si se sou yon bouton montan w klike, li rete vèt */
+.amount-btn:active, .amount-btn:focus {
+    background-color: #17863c !important;
+    border-color: #adb62c !important;
+    color: #fff !important;
 }
 
+.method-item.active {
+    border: 2px solid #2f945b !important;
+    background-color: rgba(47, 148, 91, 0.1) !important;
+}
+
+/* Retire liy ble lè w klike sou bouton oswa jaden yo */
+.donation-card *:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
 /* Koulè wouj pou erè */
 .is-invalid {
     border: 2px solid #dc3545 !important;
@@ -1566,13 +1605,34 @@ section,
 
 /* Lè jaden an valide epi li bon */
 .is-valid-ged {
-    border: 2px solid #198754 !important; /* Vèt Bootstrap */
+    border: 2px solid #768719 !important; /* Vèt Bootstrap */
     background-color: #f1fdf7 !important;
 }
 
 /* Nou retire wouj la lè n ap ekri */
 .form-control:focus {
     box-shadow: none !important;
+}
+
+
+#btn-kontinye {
+    background-color: #2f945b !important; /* Vèt GED la */
+    border-color: #adb62c !important;     /* Koulè liy lan (jòn-vèt) */
+    color: #ffffff !important;           /* Tèks blan */
+}
+
+#btn-kontinye:hover {
+    background-color: #17863c !important; /* Vèt la vin pi fonse lè w pase sou li */
+    border-color: #ffffff !important;     /* Liy lan vin blan nan hover */
+}
+
+.form-check-input:checked {
+    background-color: #2f945b !important;
+    border-color: #adb62c !important;
+}
+
+.form-check-input {
+    border: 1px solid #2f945b !important; /* Liy kare a anvan yo klike l */
 }
 /*--------------------------------------------------------------
 # Contact Section
