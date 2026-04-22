@@ -824,118 +824,123 @@ section,
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
+/* --- Lojik Hero Konplè --- */
 .hero {
   width: 100%;
-  min-height: 20%; 
-  
   position: relative;
-  padding: 100px 0 10px 0;
-  display: flex;
-  align-items: center;
+  overflow: hidden;
+  padding: 80px 0; /* Bay espas pou menu an */
+  background-color: #0d2b1a;
 }
 
+/* Tit la (H1) ak fòs dinamik */
 .hero h1 {
   margin: 0;
-  font-size: 48px;
+  font-size: clamp(28px, 5vw, 56px); /* Li ajiste tèt li otomatikman sou nenpòt ekran */
   font-weight: 700;
-  line-height: 56px;
- color: var(--heading-color); /* Retire transparans la */
-  text-shadow: 0px 2px 4px rgba(0,0,0,0.1); /* Yon ti lonbraj lejè pou l dekole sou foto a */
+  line-height: 1.2;
+  color: #ffffff;
 }
 
-.hero p {
-  color: var(--default-color);
-  margin: 5px 0 30px 0;
-  font-size: 20px;
-  font-weight: 400;
-}
-
-.hero .btn-get-started {
-  color: var(--contrast-color);
-  background: var(--accent-color);
-  font-family: var(--heading-font);
-  font-weight: 400;
-  font-size: 15px;
+/* Stil espesyal ou te vle a */
+.ged-highlight {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 300;
   letter-spacing: 1px;
-  display: inline-block;
-  padding: 10px 28px 12px 28px;
-  border-radius: 50px;
-  transition: 0.5s;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
-  
+  display: block; /* Sa fè l kòmanse fraz la byen */
+  margin-bottom: 10px;
+  opacity: 0.9;
 }
 
-.hero .btn-get-started:hover {
-  color: var(--contrast-color);
-  background: color-mix(in srgb, var(--accent-color), transparent 15%);
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+/* Paragraf la */
+.hero p {
+  color: rgba(255, 255, 255, 0.8);
+  margin: 20px 0 30px 0;
+  font-size: clamp(16px, 2vw, 19px);
+  line-height: 1.6;
+  max-width: 550px;
 }
 
-.hero .btn-watch-video {
-  font-size: 16px;
-  transition: 0.5s;
-  margin-left: 25px;
-  color: var(--default-color);
-  font-weight: 600;
-}
-
-.hero .btn-watch-video i {
-  color: var(--accent-color);
-  font-size: 32px;
-  transition: 0.3s;
-  line-height: 0;
-  margin-right: 8px;
-}
-
-.hero .btn-watch-video:hover {
-  color: var(--accent-color);
-}
-
-.hero .btn-watch-video:hover i {
-  color: color-mix(in srgb, var(--accent-color), transparent 15%);
-}
-
+/* Animasyon foto a */
 .hero .animated {
-  animation: up-down 2s ease-in-out infinite alternate-reverse both;
+  animation: up-down 3s ease-in-out infinite alternate-reverse both;
+  max-height: 60vh; /* Pou l pa janm pi gwo pase ekran an */
 }
 
-@media (max-width: 640px) {
-  .hero h1 {
-    font-size: 28px;
-    line-height: 36px;
+/* --- REGLAJ POU GWO EKRAN (PC) --- */
+@media (min-width: 992px) {
+  .hero {
+    min-height: 100vh; /* Se sa k ap plen gwo ekran an */
+  }
+  .hero-img {
+    text-align: right !important; /* Pouse foto a bò dwat */
+  }
+  .hero-img img {
+    max-width: 90% !important;
+  }
+}
+
+/* --- REGLAJ POU TI EKRAN (MOBILE) --- */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100vh; /* Plen ekran menm sou mobil */
+    text-align: center;
+    padding-top: 100px;
+  }
+  
+  .hero .ged-highlight {
+    font-size: 0.8em; /* Yon ti kras pi piti sou mobil pou l pa kase liy yo mal */
   }
 
-  .hero p {
-    font-size: 18px;
-    line-height: 24px;
-    margin-bottom: 30px;
+  .hero .d-flex {
+    justify-content: center; /* Santre bouton an */
   }
 
-  .hero .btn-get-started,
-  .hero .btn-watch-video {
-    font-size: 13px;
+  .hero-img img {
+    max-height: 30vh; /* Foto a ap vin piti pou n wè tèks la byen */
+    margin-bottom: 20px;
   }
 }
 
 @keyframes up-down {
-  0% {
-    transform: translateY(10px);
-  }
+  0% { transform: translateY(10px); }
+  100% { transform: translateY(-10px); }
+}
 
-  100% {
-    transform: translateY(-10px);
+
+/* --- STYLE BOUTON HERO --- */
+.hero .btn-get-started {
+  background-color: var(--accent-color, #1acc8d); /* Sèvi ak koulè ou a oswa vèt pa defo */
+  color: #ffffff !important;
+  font-family: var(--heading-font, "Raleway", sans-serif);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 32px;
+  border-radius: 50px; /* Pou l gen fòm won an */
+  transition: all 0.4s; /* Pou animasyon an dous */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-decoration: none; /* Retire liy anba a */
+}
+
+/* Lè sourit la pase sou bouton an */
+.hero .btn-get-started:hover {
+  background-color: color-mix(in srgb, var(--accent-color, #1acc8d), transparent 20%);
+  color: #ffffff;
+  box-shadow: 0 8px 30px rgba(26, 204, 141, 0.4); /* Yon ti limyè koulè aksan an */
+  transform: translateY(-2px); /* Bouton an leve yon ti kras */
+}
+
+/* Pou ti ekran (Mobile) */
+@media (max-width: 768px) {
+  .hero .btn-get-started {
+    font-size: 14px;
+    padding: 10px 24px;
   }
 }
 
-/* Nou itilize kòd sa a sèlman pou gwo ekran (min-width: 992px) */
-@media (min-width: 992px) {
-  .hero .img-fluid.animated {
-    max-height: 450px; /* Sa desann wotè a sou òdinatè sèlman */
-    width: auto;       /* Sa asire foto a pa kraze */
-    display: block;
-    margin: 0 auto;    /* Santre l si l bezwen sa */
-  }
-}
 
 /*--------------------------------------------------------------
 # Clients Section
