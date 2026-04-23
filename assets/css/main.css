@@ -971,7 +971,7 @@ section,
             ),
             url('../img/hero.jpg') !important;
             
-        background-position: center center !important;
+        background-position: center 5% !important;
         background-size: cover !important;
     }
 
@@ -1040,6 +1040,7 @@ section,
         letter-spacing: -1.2px;      /* Nou sere lèt yo yon ti kras pou l ka antre */
         white-space: nowrap !important; /* SA A SE PREMYE SEKRE A: li fòse liy lan pa janm koupe */
         width: 100% !important;
+        color: #fff;
         
     }
 
