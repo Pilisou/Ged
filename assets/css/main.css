@@ -1893,5 +1893,41 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Starter Section Section
+# cta
 --------------------------------------------------------------*/
+.seksyon-foto-don {
+    padding: 60px 20px;
+    background-color: #0d2b1a; /* Koulè vèt fonse a pou l fè yon sèl ak background foto a */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-foto {
+    max-width: 500px; /* Sa anpeche l twò gwo sou laptop */
+    width: 100%;
+}
+
+.img-don-responsive {
+    width: 100%;
+    height: auto;
+    border-radius: 25px; /* Pou l gen menm bèl fòm awondi a */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+/* Lè moun nan pase sourit la sou li, li fè yon ti mouvman */
+.img-don-responsive:hover {
+    transform: translateY(-5px);
+}
+
+/* Pou ti telefòn (Mobil) */
+@media (max-width: 720px) {
+    .container-foto {
+        max-width: 100%; /* Sou mobil, l ap pran tout lajè a nèt */
+    }
+    
+    .seksyon-foto-don {
+        padding: 40px 15px; /* Mwens espas sou kote pou l parèt pi gwo */
+    }
+}
