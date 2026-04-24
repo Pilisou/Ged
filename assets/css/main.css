@@ -843,7 +843,7 @@ section,
         url('../img/ero.jpg') !important;
     
     background-size: cover !important;
-    background-position: center center !important; /* Kounye a nou ka kite l nan mitan */
+    background-position: center 5% !important; /* Kounye a nou ka kite l nan mitan */
     background-repeat: no-repeat !important;
 }
 
@@ -956,10 +956,11 @@ section,
 
 @media (max-width: 768px) {
     .hero {
-        height: 98vh;
+        height: auto !important;
+        min-height: 100vh;
         display: flex;
         align-items: flex-end; /* Kole tèks la anba */
-        padding-bottom: 50px;
+        padding-bottom: 60px important;
         position: relative;
         
         /* 3 KOUCH JI A (GRADIENT): Fonse anba, moute klè anlè */
@@ -982,7 +983,8 @@ section,
         display: flex;
         flex-direction: column;
         align-items: center !important;
-    }
+        margin-top: 20px !important;
+      }
 
     .hero-content h1 {
         margin-bottom: 20px !important;
