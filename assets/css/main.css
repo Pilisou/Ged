@@ -220,7 +220,7 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  --background-color: rgba(0, 0, 0, 0);
+  --background-color: rgba(13, 43, 26, 0.95);
   --default-color: #ffffff;
   --heading-color: #ffffff;
   color: var(--default-color);
@@ -956,12 +956,13 @@ section,
 
 @media (max-width: 768px) {
     .hero {
-        height: auto !important;
-        min-height: 100vh;
+        height: 100vh !important;
+       
         display: flex;
         align-items: flex-end; /* Kole tèks la anba */
-        padding-bottom: 60px important;
+        padding-bottom: 80px important;
         position: relative;
+        padding-top: 60px !important;
         
         /* 3 KOUCH JI A (GRADIENT): Fonse anba, moute klè anlè */
         background-image: 
@@ -972,22 +973,22 @@ section,
             ),
             url('../img/hero.jpg') !important;
             
-        background-position: center 5% !important;
+        background-position: center 40% !important;
         background-size: cover !important;
     }
 
     .hero-content {
         width: 100% !important;
-        padding: 0 20px !important;
+        padding: 0 10px !important;
         text-align: center !important;
         display: flex;
         flex-direction: column;
         align-items: center !important;
-        margin-top: 20px !important;
+        margin-top: 10px !important;
       }
 
     .hero-content h1 {
-        margin-bottom: 20px !important;
+        margin-bottom: 9px !important;
     }
 
    
@@ -1004,7 +1005,7 @@ section,
     letter-spacing: 1.5px !important; /* Sa louvri liy lan nèt */
     width: 100% !important;
     max-width: 100% !important;
-    margin-bottom: 5px !important;
+    margin-bottom: 2px !important;
     color: #ffffff !important;
     text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3); /* Ti lonbraj pou l soti plis */
 }
@@ -1051,7 +1052,7 @@ section,
         font-size: 15px !important;
         line-height: 1.6 !important;
         max-width: 300px !important; /* Sa a fòse koupe a */
-        margin-bottom: 35px !important;
+        margin-bottom: 2px !important;
         opacity: 0.9;
     }
 
