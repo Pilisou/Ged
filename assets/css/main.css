@@ -988,7 +988,7 @@ section,
       }
 
     .hero-content h1 {
-        margin-bottom: 9px !important;
+        margin-bottom: 30px !important;
     }
 
    
@@ -998,7 +998,7 @@ section,
 .ged-highlight {
     display: block !important;
     font-family: 'Playfair Display', serif !important;
-    font-size: 24px !important; /* Li moute pou l layite kò l */
+    font-size: 26px !important; /* Li moute pou l layite kò l */
     font-style: italic;
     font-weight: 400 !important;
     line-height: 1.3 !important;
@@ -1017,9 +1017,9 @@ section,
     justify-content: center;
     font-family: 'Playfair Display', serif !important;
     font-style: italic;
-    font-size: 18px !important;
+    font-size: 25px !important;
     color: rgba(255, 255, 255, 0.7) !important; /* Yon ti jan transparan pou l pa vòlè fòs lòt yo */
-    margin-bottom: 12px !important;
+    margin-bottom: 25px !important;
     width: 100%;
 }
 
@@ -1038,9 +1038,9 @@ section,
         display: block !important;
         font-family: 'Inter', sans-serif !important;
         font-weight: 800 !important; /* Nou desann li nan 800 pou l pa twò gra */
-        font-size: 26px !important;   /* Nou desann li nan 26px pou l ka "layite" sou yon liy */
+        font-size: 32px !important;   /* Nou desann li nan 26px pou l ka "layite" sou yon liy */
         line-height: 1.1 !important;
-        letter-spacing: -1.2px;      /* Nou sere lèt yo yon ti kras pou l ka antre */
+        letter-spacing: -1.5px;      /* Nou sere lèt yo yon ti kras pou l ka antre */
         white-space: nowrap !important; /* SA A SE PREMYE SEKRE A: li fòse liy lan pa janm koupe */
         width: 100% !important;
         color: #fff;
@@ -1049,9 +1049,9 @@ section,
 
     /* Paragraf 2 liy edmi */
     .hero-content p {
-        font-size: 15px !important;
+        font-size: 16px !important;
         line-height: 1.6 !important;
-        max-width: 300px !important; /* Sa a fòse koupe a */
+        max-width: 600px !important; /* Sa a fòse koupe a */
         margin-bottom: 2px !important;
         opacity: 0.9;
     }
