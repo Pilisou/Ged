@@ -954,9 +954,9 @@ section,
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 720px) {
     .hero {
-        height: 92vh !important;
+        height: 100vh !important;
        
         display: flex;
         align-items: flex-end; /* Kole tèks la anba */
