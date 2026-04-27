@@ -220,7 +220,7 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  --background-color: rgba(0, 0, 0, 0.0);
+  --background-color:rgba(13, 43, 26, 0.95);
   --default-color: #ffffff;
   --heading-color: #ffffff;
   color: var(--default-color);
@@ -838,7 +838,7 @@ section,
     
     /* Foto a sèlman ak yon ti kouch nwa senp pou tèks la parèt */
     background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.5)), 
-                url('../img/oro.jpg') no-repeat center center;
+                url('../img/.jpg') no-repeat center center;
     background-size: cover;
 }
 
