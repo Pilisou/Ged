@@ -224,45 +224,99 @@
 
 .tilt-l { transform: rotate(-6deg) translateY(10px); }
 .tilt-r { transform: rotate(6deg) translateY(10px); }
-        /* --- BLÒK 5: PARRAINAGE (FOTO 5) --- */
-        .section-big-don {
-            padding: 100px 20px; text-align: center; background: white;
-        }
+        /* --- Impact evolution --- */
+       
+.impact-evolution {
+    padding: 120px 20px;
+    background-color: #fdfbf7; /* Koulè krèm GED a */
+}
 
-        .big-img {
-            width: 100%; max-width: 800px; border-radius: 8px;
-            margin-bottom: 30px; /* */
-        }
+.evolution-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 300px 300px; /* De liy foto */
+    gap: 15px;
+}
 
-        /* --- LOJIK GWO EKRAN (DESKTOP) --- */
-        @media (min-width: 992px) {
-            .hero-ged {
-                height: 100vh; flex-direction: row; overflow: hidden;
-            }
+.evo-box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+}
 
-            .hero-image {
-                position: absolute; width: 100%; height: 100%; z-index: 1;
-            }
+.evo-box img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
 
-            .hero-content {
-                position: relative; z-index: 2; width: 100%;
-                display: grid; grid-template-columns: 1.2fr 0.8fr;
-                align-items: center; text-align: left; padding: 0 8%;
-                background: rgba(0,0,0,0.2); /* Vwal cho */
-            }
+/* Stil "Overlap" ak Repatisyon */
+.item-1 { grid-column: 1 / 3; grid-row: 1 / 2; } /* Gwo anlè a gòch */
+.item-2 { grid-column: 3 / 4; grid-row: 1 / 2; } /* Ti anlè a dwat */
+.item-3 { grid-column: 1 / 2; grid-row: 2 / 3; } /* Ti anba a gòch */
+.item-4 { grid-column: 2 / 4; grid-row: 2 / 3; } /* Gwo anba a dwat */
 
-            .hero-content h1 { font-size: 4rem; max-width: 700px; }
-            .hero-content p { margin-left: 0; font-size: 1.3rem; }
+/* Blòk Tèks ki kole sou bò dwat nèt la */
+.evolution-message {
+    grid-column: 4 / 5;
+    grid-row: 1 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 40px;
+    text-align: left;
+}
 
-            .donation-box { margin-right: 0; width: 420px; }
-        }
+.title-premium {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #1B4332;
+    margin-bottom: 25px;
+    line-height: 1.1;
+}
 
-        .footer-ged {
-        background-color: #1f3b17; /* Nwa fonsé tankou Charity Water */
-        color: #ffffff;
-        padding: 60px 20px 20px;
-        font-family: 'Inter', sans-serif;
-    }
+/* Efè Hover sou foto yo */
+.evo-box:hover img { transform: scale(1.1); }
+
+.evo-overlay {
+    position: absolute;
+    bottom: 0; left: 0; width: 100%;
+    padding: 20px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.6));
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+}
+
+.btn-gold-link {
+    color: #FFC425;
+    text-decoration: none;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    border-bottom: 2px solid #FFC425;
+    align-self: flex-start;
+    padding-bottom: 5px;
+    transition: 0.3s;
+}
+
+.btn-gold-link:hover { padding-left: 10px; color: #1B4332; border-color: #1B4332; }
+
+/* Mobile */
+@media (max-width: 991px) {
+    .evolution-grid { display: flex; flex-direction: column; }
+    .evolution-message { padding: 40px 0; order: -1; } /* Tèks la moute anlè sou mobil */
+    .evo-box { height: 250px; }
+}
+
+
+
+
+
 
     /* RESET SENP */
 .site-footer {
@@ -472,14 +526,35 @@
         <button class="btn-main" style="max-width: 350px;">INSCRIVEZ-VOUS AUJOURD'HUI</button>
     </section>
 
-    <section class="section-big-don">
-        <img src="assets/img/a3.jpg" class="big-img" alt="Projet">
-        <h2>Ensemble, éradiquons la faim.</h2>
-        <p style="max-width: 600px; margin: 20px auto; color: #555;">
-            Ce que vous voyez ici, c'est l'impact direct de votre générosité. En parrainant ce projet, vous garantissez un repas sain et un environnement digne à ces enfants. Transformez leur quotidien dès aujourd'hui.
-        </p>
-        <button class="btn-main" style="max-width: 300px; background: white; border: 2px solid var(--jon-gold); color: var(--teks);">EN SAVOIR PLUS</button>
-    </section>
+  <section class="impact-evolution">
+    <div class="evolution-grid">
+        <div class="evo-box item-1">
+            <img src="assets/img/m4.jpg" alt="Agriculture">
+            <div class="evo-overlay"><span>Enraciner</span></div>
+        </div>
+
+        <div class="evo-box item-2">
+            <img src="assets/img/m6.jpg" alt="Eau propre">
+            <div class="evo-overlay"><span>Nourrir</span></div>
+        </div>
+
+        <div class="evo-box item-3">
+            <img src="assets/img/m5.jpg" alt="Éducation">
+            <div class="evo-overlay"><span>Éveiller</span></div>
+        </div>
+
+        <div class="evo-box item-4">
+            <img src="assets/img/m7.jpg" alt="Impact">
+            <div class="evo-overlay"><span>Bâtir</span></div>
+        </div>
+
+        <div class="evolution-message">
+            <h2 class="title-premium">Investir dans le cycle de l'autonomie.</h2>
+            <p>À la Gonâve, chaque don est un maillon d'une chaîne solide. Nous ne finançons pas des projets éphémères, nous bâtissons un écosystème où chaque enfant grandit dignement.</p>
+            <a href="#" class="btn-gold-link">Rejoindre le mouvement</a>
+        </div>
+    </div>
+</section>
 
 
 <footer class="site-footer">
