@@ -1187,97 +1187,104 @@ section,
 --------------------------------------------------------------*/
 
 /* Stil Jeneral Galeri */
-.ged-premium-gallery {
-  padding: 60px 0;
-  background: #fff;
+/* --- SEKSYON IMPACT (INDEX) --- */
+.impact-evolution {
+    background-color: var(--krem); /* Asire w ou gen varyab sa a, sinon mete #fdfbf7 */
+    overflow: hidden;
 }
 
-/* Bouton Filtre yo - Vèt Pal & Clean */
-.ged-filters {
-  list-style: none;
-  text-align: center;
-  padding: 0;
-  margin-bottom: 40px;
+/* Griyaj Masonry a */
+.mosaic-gallery {
+    column-count: 4; /* 4 kolòn sou gwo ekran */
+    column-gap: 25px; /* Espas ant kolòn yo */
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
-.ged-filters li {
-  display: inline-block;
-  padding: 10px 25px;
-  font-size: 13px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: 0.3s;
-  color: #666;
-  border-bottom: 2px solid transparent;
+/* Chak kare foto */
+.gallery-item {
+    break-inside: avoid; /* Sa a enpòtan: li anpeche foto a koupe an de bò */
+    margin-bottom: 25px; /* Espas anba chak foto */
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.06); /* Ti lonbraj dous */
+    transition: var(--transition-dous); /* Sèvi ak tranzisyon ou te genyen an */
 }
 
-.ged-filters li.filter-active, .ged-filters li:hover {
-  color: #2f945b;
-  border-bottom: 2px solid #2f945b; /* Liy vèt anba bouton an */
+/* Efè lè sourit la pase sou li */
+.gallery-item:hover {
+    transform: translateY(-8px); /* Li moute yon ti jan */
+    box-shadow: 0 25px 50px rgba(0,0,0,0.12);
 }
 
-/* Griyaj la - Ti fil blanch fen anpil */
-.ged-grid {
-  display: flex;
-  flex-wrap: wrap;
-  border: 0.2px solid rgba(255, 255, 255, 0.5); /* Ti fil deyò a */
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.ged-item {
-  position: relative;
-  width: 33.333%; /* 3 foto pa liy */
-  height: 350px;
-  overflow: hidden;
-  border: 0.5px solid #ffffff; /* Ti fil blanch fen ant foto yo */
+.gallery-item:hover img {
+    transform: scale(1.08); /* Foto a grandi yon ti kras anndan kare a */
 }
 
-.ged-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.8s ease;
+/* --- WOTÈ FOTO YO (MAJI A) --- */
+.g-small img { height: 240px; }
+.g-medium img { height: 380px; }
+.g-tall img { height: 550px; }
+
+/* --- BWAT TÈKS NAN MITAN AN --- */
+.g-text {
+    background: #164028 !important; /* Vèt fonse GED a */
+    color: #98afa2;
+    padding: 45px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
-/* Hover Effect - Vèt Pal Dous */
-.ged-hover {
-  position: absolute;
-  inset: 0;
-  background: rgba(47, 148, 91, 0.15); /* Vèt pal anpil (transparent) */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: 0.4s;
-  backdrop-filter: blur(3px); /* Ti efè flou pou l parèt "premium" */
+.g-text h3 {
+    margin-top: 0;
+    color: var(--jon-gold); /* Ti tit lò a */
 }
 
-.ged-item:hover .ged-hover {
-  opacity: 1;
+/* --- RESPONSIVE (POU MOBIL) --- */
+
+/* Tablet (Mwayen) */
+@media (max-width: 1100px) {
+    .mosaic-gallery {
+        column-count: 3;
+    }
 }
 
-.ged-item:hover img {
-  transform: scale(1.05);
+/* Ti Tablet / Gwo Telefòn */
+@media (max-width: 850px) {
+    .mosaic-gallery {
+        column-count: 2;
+        column-gap: 15px;
+    }
+    
+    .community-header h2 {
+        font-size: 2.2rem !important; /* Retresi tit la sou mobil */
+    }
 }
 
-.ged-hover span {
-  color: #fff;
-  font-size: 14px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  background: rgba(0,0,0,0.3);
-  padding: 5px 15px;
-}
+/* Telefòn (Piti nèt) */
+@media (max-width: 480px) {
+    .mosaic-gallery {
+        column-count: 1; /* Tout foto yo vin yonn anba lòt */
+    }
+    
+    .impact-evolution {
+        padding: 60px 15px !important;
+    }
 
-/* Responsivite pou mobil */
-@media (max-width: 992px) {
-  .ged-item { width: 50%; height: 300px; } /* 2 foto sou tablèt */
-}
-
-@media (max-width: 576px) {
-  .ged-item { width: 100%; height: 250px; } /* 1 foto sou telefòn */
+    .g-small img, .g-medium img, .g-tall img {
+        height: 300px; /* Sou mobil, nou mwayene wotè yo pou yo pa twò long */
+    }
 }
 /*--------------------------------------------------------------
 # Section Team - Stil GED Premium 2026
