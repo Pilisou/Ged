@@ -1875,11 +1875,8 @@ section,
         opacity: 0.3;
     }
 
-    /* Pou pouse bouton an pi ba nèt nan ekran an */
-    .btn-spring {
-        transform: translateY(10px);
-        box-shadow: 0 4px 15px rgba(53, 145, 53, 0.3); /* Lonbraj anba bouton an */
-    }
+    
+    
 }
 
 /* Animasyon an k ap fè l parèt bèl la */
