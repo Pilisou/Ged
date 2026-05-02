@@ -2033,3 +2033,46 @@ section,
 }
 
 /* Sou gwo ekran, si w vle yo parèt pi piti oswa disparèt, wa regle sa nan media query */
+
+
+
+
+.stats-section {
+    padding: 60px 0;
+    background: #ffffff; /* Fon blan pou vèt la ka pop */
+    text-align: center;
+}
+
+.stats-section .container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.stat-item {
+    flex: 1;
+    min-width: 250px;
+}
+
+.counter {
+    font-size: 48px;
+    font-weight: 800;
+    color: #359135; /* Vèt GED la */
+    margin-bottom: 10px;
+    font-family: sans-serif;
+}
+
+.stat-line {
+    width: 50px;
+    height: 2px;
+    background-color: #359135;
+    margin: 0 auto 15px auto; /* Santre liy lan */
+}
+
+.stat-item p {
+    font-size: 16px;
+    color: #555;
+    font-style: italic;
+    font-family: 'Georgia', serif;
+}
