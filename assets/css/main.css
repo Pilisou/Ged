@@ -1946,3 +1946,56 @@ section,
         opacity: 1; /* Li vin pi klere */
     }
 }
+
+
+/* 1. Nou kache l pa defo (pou gwo ekran) */
+.impact-mini {
+    display: none; 
+}
+
+/* 2. Nou aktive l sèlman pou mobil (ekran ki pi piti pase 768px) */
+@media (max-width: 768px) {
+    .impact-mini {
+        display: flex; /* Li parèt sèlman sou mobil */
+        justify-content: center;
+        gap: 15px;
+        margin-top: 40px; /* Sa konble vid ki anba bouton an */
+        width: 100%;
+        animation: fadeInUp 1s ease-in-out;
+    }
+
+    .badge-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 85px;
+    }
+
+    .badge-icon {
+        width: 50px;
+        height: 50px;
+        background: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        margin-bottom: 8px;
+        border: 1px solid rgba(53, 145, 53, 0.2); /* Yon ti liy vèt pal */
+    }
+
+    .badge-item span {
+        font-size: 9px;
+        font-weight: bold;
+        color: #2D3E33;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+    }
+}
+
+/* Animasyon an */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
