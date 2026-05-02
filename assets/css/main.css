@@ -1842,32 +1842,30 @@ section,
 
 @media (max-width: 768px) {
     .spring-section {
-        /* Nou fòse l kòmanse anlè nèt */
+        /* Nou rale kontni an moute pi prè Meni an */
+        padding-top: 80px !important; 
+        
+        /* Nou pouse bouton an desann yon ti kras pou l konble vid la */
         justify-content: flex-start !important; 
-        
-        /* Padding-top sa a se sèl sa k ap kontwole distans ak Menu a */
-        padding-top: 60px !important; 
-        
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        padding-bottom: 50px;
-    }
-    
-    .photo-container {
-        /* Nou moute foto yo pi wo toujou */
-        margin-top: 10px !important; 
-        margin-bottom: 20px !important;
-        transform: scale(1.1); /* Nou ba yo yon ti fòs pou yo parèt pi gwo */
-        gap: 8px;
+        gap: 30px; 
     }
 
-    .spring-text {
-        /* Nou asire tèks la swiv foto yo san li pa kite twòp vid */
-        margin-top: 0 !important;
+    .photo-container {
+        margin-bottom: 10px !important;
+        transform: scale(1.05); /* Foto yo ap parèt yon ti jan pi gwo */
+    }
+
+    .spring-text h2 {
+        font-size: 24px !important; /* Tit la ap pran plis plas */
+        line-height: 1.3;
+        margin-bottom: 20px;
+    }
+
+    .spring-text p {
+        font-size: 15px !important;
+        margin-bottom: 40px !important; /* Sa ap pouse bouton an desann nan espas vid la */
     }
 }
-
 
 
 
@@ -1948,54 +1946,3 @@ section,
 }
 
 
-/* 1. Nou kache l pa defo (pou gwo ekran) */
-.impact-mini {
-    display: none; 
-}
-
-/* 2. Nou aktive l sèlman pou mobil (ekran ki pi piti pase 768px) */
-@media (max-width: 768px) {
-    .impact-mini {
-        display: flex; /* Li parèt sèlman sou mobil */
-        justify-content: center;
-        gap: 15px;
-        margin-top: 40px; /* Sa konble vid ki anba bouton an */
-        width: 100%;
-        animation: fadeInUp 1s ease-in-out;
-    }
-
-    .badge-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 85px;
-    }
-
-    .badge-icon {
-        width: 50px;
-        height: 50px;
-        background: white;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 22px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        margin-bottom: 8px;
-        border: 1px solid rgba(53, 145, 53, 0.2); /* Yon ti liy vèt pal */
-    }
-
-    .badge-item span {
-        font-size: 9px;
-        font-weight: bold;
-        color: #2D3E33;
-        letter-spacing: 0.5px;
-        text-transform: uppercase;
-    }
-}
-
-/* Animasyon an */
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(15px); }
-    to { opacity: 1; transform: translateY(0); }
-}
