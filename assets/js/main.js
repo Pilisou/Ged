@@ -256,20 +256,17 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     // Espyon k ap gade si w rive sou seksyon an
-    const observer = new IntersectionObserver((entries) => {
+    const statsObserver = new IntersectionObserver((entries) => {
+        // Si moun nan rive sou seksyon an epi animasyon an poko fèt
         if (entries[0].isIntersecting && !hasAnimated) {
             startCounting();
             hasAnimated = true; // Li fè l yon sèl fwa epi l kanpe
+            statsObserver.unobserve(statsSection); // Nou sispann espyone sa pou n sove memwa
         }
-    }, { threshold: 0.5 }); // Deklanche lè 50% seksyon an parèt
+    }, { threshold: 0.3 }); // Deklanche lè 30% seksyon an parèt nan ekran an (pi fleksib)
 
-    // Nou kreye yon varyab pou sa n ap chèche a (egzanp: yon seksyon animasyon)
-const elementToObserve = document.querySelector('.seksyon-sa-a'); // Ranplase '.seksyon-sa-a' ak sa ki te nan kòd ou a
-
-if (elementToObserve) {
-  const observer = new IntersectionObserver((entries) => {
-    // Kòd animasyon an ale isit la
-  });
-  observer.observe(elementToObserve);
-}
+    // MEN PYÈS KI TE MANKE A: Nou di espyon an pou l kòmanse gade klas .stats-section nan!
+    if (statsSection) {
+        statsObserver.observe(statsSection);
+    }
 });
