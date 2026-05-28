@@ -1,6 +1,6 @@
 /*--------------------------------------------------------------
 # Project: Groupe d'Espoir pour le Développement (GED)
-# Developer: Robert Borno
+# Developer: Pilisouthemaster
 # Version: 1.0
 # Description: Official Website for GED - La Gonâve, Haïti
 --------------------------------------------------------------*/
@@ -531,8 +531,29 @@ h6 {
   .mobile-nav-active .navmenu>ul {
     display: block;
   }
+  
 }
 
+/* TRIC POU MOBIL: Fè ti flèch la pran tout lajè a pou l ka deklanche JS tèm nan */
+@media (max-width: 1199px) {
+  .navmenu .mobil-pilye-klik > a {
+    position: relative !important;
+  }
+  
+  /* Nou fòse ti flèch la kouvri tout mo "Nos Piliers" la tankou yon kouvèti transparan */
+  .navmenu .mobil-pilye-klik > a i.toggle-dropdown {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: transparent !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important; /* Kenbe flèch la adwat toujou */
+    padding-right: 20px !important; /* Distans flèch la ak bò dwat la */
+    z-index: 10 !important;
+  }
+}
 
 
 
@@ -2083,8 +2104,14 @@ section,
 # touris e atizana
 --------------------------------------------------------------*/
 
+
+/* ========================================
+   GED NEWS GRID - VÈSYON KORIJE
+   (Kenbe menm stil ou, sèlman erè yo repare)
+   ======================================== */
+
 #news-grid-ged {
-    margin-top: 100px !important;
+    margin-top: 100px;
     position: relative;
     z-index: 1;
 }
@@ -2093,26 +2120,30 @@ section,
     font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
-    display: block;
-    margin-bottom: 5px;
+    display: inline-block;
+    margin-bottom: 8px;
 }
 
-/* Koulè separe pou kategori yo */
-#news-grid-ged .color-tourisme { color: #359135; }
-#news-grid-ged .color-artisanat { color: #d97706; } /* Yon ti koulè zoranj/or pou atizana */
+#news-grid-ged .color-tourisme { 
+    color: #2e7d32;
+}
+
+#news-grid-ged .color-artisanat { 
+    color: #e65100;
+}
 
 #news-grid-ged .news-headline {
-    font-size: 20px; /* Pi gwo sou gwo ekran jan w te mande l la */
+    font-size: 20px;
     font-weight: 800;
-    color: #111 !important;
-    line-height: 1.2;
+    color: #111;
+    line-height: 1.3;
     margin-bottom: 8px;
     padding-right: 15px;
-    font-family: 'Playfair Display', serif; /* Si w gen font sa, l ap parèt plis jounal */
+    font-family: 'Playfair Display', Georgia, serif;
 }
 
 #news-grid-ged .news-desc {
-    font-size: 14.5px;
+    font-size: 14px;
     color: #555;
     line-height: 1.5;
     padding-right: 10px;
@@ -2120,86 +2151,77 @@ section,
 }
 
 #news-grid-ged .img-side {
-    width: 125px; /* Yon ti kras pi gwo pou gwo ekran */
+    width: 125px;
     height: 90px;
     object-fit: cover;
-    border-radius: 3px;
+    border-radius: 6px;
     flex-shrink: 0;
 }
 
 #news-grid-ged .news-item {
     padding-bottom: 25px;
+    border-bottom: 1px solid #eaeaea;
 }
 
 #news-grid-ged .border-light-subtle {
-    border-color: #ebebeb !important;
+    border-color: #eaeaea !important;
 }
 
-/* Ajisteman pou ti ekran */
+/* RESPONSIVITE */
 @media (max-width: 991px) {
-    #news-grid-ged .news-headline { font-size: 18px; }
-    #news-grid-ged .border-start, #news-grid-ged .border-end { border: none !important; }
+    #news-grid-ged .news-headline { 
+        font-size: 18px; 
+    }
+    #news-grid-ged .border-start, 
+    #news-grid-ged .border-end { 
+        border: none !important; 
+    }
 }
 
 @media (max-width: 576px) {
-    #news-grid-ged .d-flex { flex-direction: column-reverse; }
-    #news-grid-ged .img-side { width: 100%; height: 180px; margin-bottom: 15px; }
-    #news-grid-ged .news-headline { font-size: 19px; }
+    #news-grid-ged .d-flex { 
+        flex-direction: column-reverse; 
+    }
+    #news-grid-ged .img-side { 
+        width: 100%; 
+        height: 180px; 
+        margin-bottom: 15px; 
+    }
+    #news-grid-ged .news-headline { 
+        font-size: 19px; 
+        padding-right: 0;
+    }
 }
 
-/* Reglaj espesyal pou gwo ekran sèlman */
+/* GWO EKRAN */
 @media (min-width: 992px) {
-    /* 1. Fòse kolòn yo gen menm wotè */
     #news-grid-ged .row {
-        display: flex !important;
+        display: flex;
         flex-wrap: wrap;
     }
 
     #news-grid-ged .col-lg-4 {
-        display: flex !important;
+        display: flex;
         flex-direction: column;
     }
 
-    /* 2. Fòse chak atik pran tout wotè kolòn nan */
     #news-grid-ged .news-item {
-        flex: 1 !important;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
+        flex: 1;
         height: 100%;
-        border-bottom: 1px solid #ebebeb; /* Sa ap kenbe liy yo dwat */
-        margin-bottom: 0 !important;
         padding-top: 20px;
     }
 
-    /* 3. Limite tèks la pou l pa janm depase 5 liy */
     #news-grid-ged .news-desc {
-        display: -webkit-box !important;
-        -webkit-line-clamp: 5 !important;
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
         -webkit-box-orient: vertical;
         overflow: hidden;
-        margin-bottom: 15px !important;
     }
-
-    /* 4. Bloque imaj la nèt pou l pa janm bouje */
-    #news-grid-ged .img-side {
-        width: 125px !important;
-        height: 90px !important;
-        min-width: 125px !important;
-        flex-shrink: 0 !important;
-    }
-    #news-grid-ged .news-desc:hover {
-    -webkit-line-clamp: unset !important; /* Sa ap montre tout tèks la lè moun pase sou li */
-    display: block !important;
-    background: #fff;
-    position: relative;
-    z-index: 10;
-}
-    
 }
 
+/* POSTLUDE */
 .ged-news-postlude {
-    padding: 40px 0 80px 0;
+    padding: 40px 0 80px;
 }
 
 .ged-footer-box {
@@ -2207,12 +2229,12 @@ section,
     padding: 30px;
     border-radius: 15px;
     position: relative;
-    overflow: hidden; /* Pou kache sèk la k ap debòde */
-    border-left: 5px solid #2ecc71;
+    overflow: hidden;
+    border-left: 5px solid #2e7d32;
 }
 
 .ged-footer-box h4 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-weight: 700;
     font-size: 20px;
     margin-bottom: 5px;
@@ -2228,29 +2250,26 @@ section,
     z-index: 2;
 }
 
-/* Sèk la ki nan fon an (Chema CSS) */
 .ged-circle-shape {
     position: absolute;
     right: -50px;
     top: -50px;
     width: 150px;
     height: 150px;
-    background: rgba(46, 204, 113, 0.05);
+    background: rgba(46, 125, 50, 0.05);
     border-radius: 50%;
     z-index: 1;
 }
 
 .ged-showcase-header {
-    padding: 8px 0 40px 0;
+    padding: 8px 0 40px;
     position: relative;
-    background: #fff;
 }
 
-/* Ti etikèt GED ki anlè a */
 .ged-badge-org {
     font-size: 11px;
     font-weight: 900;
-    color: #3498db;
+    color: #2e7d32;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 15px;
@@ -2263,13 +2282,12 @@ section,
     content: "";
     height: 1px;
     width: 50px;
-    background: #3498db;
+    background: #2e7d32;
     display: inline-block;
 }
 
-/* Gwo Tit la */
 .ged-main-title {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: 42px;
     font-weight: 900;
     color: #111;
@@ -2277,27 +2295,30 @@ section,
     line-height: 1.1;
 }
 
-.ged-accent {
-    color: #27ae60; /* Vèt devlopman an */
-    position: relative;
+@media (max-width: 768px) {
+    .ged-main-title {
+        font-size: 32px;
+    }
 }
 
-/* Ti paragraf eksplikasyon an */
+.ged-accent {
+    color: #2e7d32;
+}
+
 .ged-subtitle {
     font-size: 16px;
     color: #555;
     max-width: 650px;
     line-height: 1.6;
     margin-bottom: 25px;
-    border-left: 3px solid #eee;
+    border-left: 3px solid #eaeaea;
     padding-left: 20px;
 }
 
-/* Chema CSS: Separatè a */
 .ged-separator-modern {
     height: 1px;
     width: 100%;
-    background: linear-gradient(to right, #3498db, #27ae60, transparent);
+    background: linear-gradient(to right, #2e7d32, #e65100, transparent);
     position: relative;
     margin-top: 30px;
 }
@@ -2306,12 +2327,11 @@ section,
     position: absolute;
     width: 8px;
     height: 8px;
-    background: #111;
+    background: #e65100;
     border-radius: 50%;
     top: -4px;
     left: 0;
 }
-
 
 /*--------------------------------------------------------------
 # QUI sommes-nous!
@@ -2565,4 +2585,199 @@ section,
     color: #27ae60;
     font-size: 24px;
     box-shadow: 0 4px 15px rgba(39, 174, 96, 0.1);
+}
+
+
+
+
+
+/* --- CODE DE REPRODUCTION STRICTE AVEC INTEGRATION CHARTE GRAPHIQUE GED --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+.ged-custom-faq-header {
+    background-color: #ffffff;
+    padding-top: 80px;
+    position: relative;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden; /* Pou anyen pa depase nan seksyon an */
+}
+
+.ged-custom-main-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #2e7d32; /* Vèt Mwayen ou an, li pa twò nwa, li pa twò klè */
+    letter-spacing: -1px;
+}
+
+.ged-custom-subtitle {
+    font-size: 1.05rem;
+    color: #555555;
+    line-height: 1.6;
+    margin-top: 15px;
+}
+
+.ged-custom-hero-svg {
+    max-height: 350px;
+    object-fit: contain;
+    /* TRIK SIFIZANS: Sa a ap fonn background blan imaj la nèt ak background sit la pou l pa janm fè bwat blanch ankò */
+    mix-blend-mode: multiply; 
+    filter: drop-shadow(0px 4px 12px rgba(46, 125, 50, 0.05)); /* Yon ti lonbraj vèt trè dou pou ba l bèl pwofondè */
+}
+
+/* WAVES (OND YO) */
+.ged-custom-wave-top svg, .ged-custom-wave-bottom svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* BÒ GÒCH: SIDEBAR KATEGORI AVÈK GO ESPAS */
+.ged-custom-sidebar-sticky {
+    position: sticky;
+    top: 120px;
+    padding-top: 10px;
+}
+
+.ged-sidebar-category-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333333; /* Tèks net tankou Pinterest la */
+}
+
+/* BÒ DWAT: LINE ACCORDION LAYOUT */
+.ged-custom-content-wrapper {
+    background-color: #fafafa;
+}
+
+.ged-accordion-card {
+    background: transparent;
+    border-bottom: 1px solid #e2e8f0 !important; /* Ti liy fen anba yo */
+}
+
+.ged-accordion-card .accordion-button {
+    background: transparent !important;
+    color: #1a202c !important;
+    font-weight: 500;
+    font-size: 1.15rem;
+    padding: 25px 0px;
+    box-shadow: none !important;
+    border: none;
+}
+
+.ged-accordion-card .accordion-button:not(.collapsed) {
+    color: #14da63 !important; /* Lè l louvri li vin zoranj */
+}
+
+.ged-accordion-card .accordion-body {
+    padding: 0px 0px 25px 0px;
+    color: #4a5568;
+    font-size: 1rem;
+    line-height: 1.6;
+    background: transparent;
+}
+
+/* TI SISTÈM FEEDBACK (UTILE OU NON) */
+.ged-feedback-box {
+    font-size: 0.88rem;
+    color: #718096;
+}
+
+.btn-feedback {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    font-size: 0.85rem;
+    padding: 4px 12px;
+    border-radius: 4px;
+    color: #4a5568;
+    transition: 0.2s;
+}
+
+.btn-feedback:hover {
+    border-color: #2e7d32;
+    color: #2e7d32;
+}
+
+/* ==========================================================================
+   NOUVO STIL FOOTER/CTA - ENTEGRASYON MODÈN AK KONPÒTMAN PLAT
+   ========================================================================== */
+
+.ged-custom-footer-cta-section {
+    background-color: #d8ede4; /* Vèt/ble dlo klè trè dou ki nan imaj la */
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 70px;
+    margin-top: 80px;
+    font-family: 'Inter', sans-serif;
+}
+
+.ged-cta-inner-content {
+    position: relative;
+    z-index: 5;
+}
+
+/* Tit elegant, font pwòp */
+.ged-cta-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1b5e20; /* Vèt mitan chate grafik ou an */
+    letter-spacing: -0.5px;
+    margin-bottom: 10px;
+}
+
+/* Deskripsyon disprèt */
+.ged-cta-desc {
+    font-size: 1.05rem;
+    color: #4a6b5d;
+    max-width: 600px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Layout pou bò dwat la */
+.ged-action-layout {
+    display: inline-flex;
+    flex-direction: column; /* Ranze eleman yo vètikal pou yon bèl aliyman */
+    align-items: flex-start;
+    gap: 8px;
+}
+
+@media (min-width: 992px) {
+    .ged-action-layout {
+        align-items: flex-end; /* Aliyen yo a dwat sou gwo ekran */
+    }
+}
+
+/* Ti mo disprèt ki anlè bouton an */
+.ged-small-hint {
+    font-size: 0.85rem;
+    color: #4a6b5d;
+    font-weight: 500;
+}
+
+/* SÈL BOUTON PRENSIPAL LA: KARE, PLAT, AK VÈT MWAYEN */
+.btn-ged-submit-green {
+    background-color: #2e7d32; /* Vèt mwayen pafè a */
+    color: #ffffff !important;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 14px 30px;
+    border-radius: 4px; /* Ti kase nan pwent yo sèlman, pa won */
+    border: none;
+    box-shadow: none !important; /* Plat nèt, san okenn pwofondè */
+    display: inline-block;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.btn-ged-submit-green:hover {
+    background-color: #1b5e20; /* Vin pi fèm lè w pase sou li */
+}
+
+/* Ti liy ond lan */
+.ged-custom-wave-bottom svg {
+    width: 100%;
+    height: auto;
+    display: block;
 }
