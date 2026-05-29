@@ -876,9 +876,6 @@ section,
   margin-bottom: 0;
 }
 
-/*--------------------------------------------------------------
-# Hero Section
--------------------------------------------------------------
 
 
 /*--------------------------------------------------------------
@@ -1006,7 +1003,31 @@ section,
   }
 }
 
+/* Lyen an ap senp, li pran menm ton ak rès paragraf la */
+.ged-about-link {
+    display: inline-block;
+    color: #2b6cb0; /* Yon ti koulè ble/gri dous oswa jis chanje l an #132a13 si w vle vèt, men san li pa flash */
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: 6px;
+    transition: all 0.2s ease-in-out;
+}
 
+/* Ti flèch la ap mache ansanm avèk li */
+.ged-about-link .arrow {
+    display: inline-block;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Lè sourit la pase sou li: ti glisad la ap fèt trè dous */
+.ged-about-link:hover {
+    color: #1a49c1; /* Li sèlman chanje yon ti kras koulè */
+    text-decoration: underline; /* Yon senp ti souliyman klasik si w vle, oswa ou ka retire l */
+}
+
+.ged-about-link:hover .arrow {
+    transform: translateX(4px); /* Ti flèch la glise san li pa sote nan je moun */
+}
 /*--------------------------------------------------------------
 # Featured Services - Style GED Final
 --------------------------------------------------------------*/
@@ -1095,89 +1116,146 @@ section,
 /*--------------------------------------------------------------
 # Features Section - Vèsyon Final (Kole bò gòch + Santre sou mobil)
 --------------------------------------------------------------*/
-.features .features-item {
-  margin-bottom: 80px;
-  align-items: center;
+
+
+
+/* BACKGROUND NÈT SE BLAN, PA GEN ESPAS VID RAZ */
+.ged-premium-white-section {
+    background-color: #ffffff !important; 
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
 }
 
-/* 1. POU PC (Lajè ekran) */
-@media (min-width: 992px) {
-  .features .container {
-    max-width: 100% !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-
-  /* Kole imaj gòch yo nèt nan kwen */
-  .features .features-item .col-md-5:not(.order-md-2) {
-    padding-left: 0 !important;
-  }
-
-  /* Kole imaj dwat yo nèt nan kwen dwat */
-  .features .features-item .order-md-2 {
-    padding-right: 0 !important;
-  }
-
-  /* Bay tèks la espas pou l pa kole ak imaj la */
-  .features .features-item .col-md-7 {
-    padding-left: 60px;
-    padding-right: 60px;
-  }
+/* GRAN TIT LA AK YON BÈL TI KOULÈ VIVAN (Vèt Emerald pwofesyonèl) */
+.ged-colored-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 3rem;
+    color: #1b4332 !important; /* Bèl koulè vèt rich ki gen lavi */
+    font-weight: 800;
+    line-height: 1.2;
 }
 
-/* 2. POU TELEFÒN (Ti ekran) - Tout bagay santre */
-@media (max-width: 991px) {
-  .features .features-item {
-    text-align: center;
-  }
-  
-  .features .features-item .col-md-5 {
-    padding: 0 20px !important;
-    margin-bottom: 20px;
-  }
-
-  .features .features-item img {
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto;
-  }
-
-  .features .features-item ul {
-    display: inline-block;
-    text-align: left;
-  }
+.ged-main-text {
+    font-size: 1.15rem;
+    line-height: 1.7;
 }
 
-/* 3. REGLAJ JENERAL IMAJ YO */
-.features .features-item img {
-  width: 100%;
-  max-height: 450px; /* Limite wotè a pou imaj 4 la */
-  object-fit: cover;
-  box-shadow: none !important; /* Retire onb yo nèt */
-  border-radius: 0;
+/* Ti badge dekoratif anba tit la */
+.ged-colored-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #e8f5e9; /* Ti vèt pal trè dous */
+    padding: 8px 16px;
+    border-radius: 30px;
+    width: fit-content;
+}
+.badge-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #2e7d32;
+    border-radius: 50%;
+}
+.badge-txt {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #2e7d32;
 }
 
-.features .features-item h3 {
-  font-weight: 700;
-  font-size: 28px;
-  margin-bottom: 15px;
+/* TI BWAT YO (KINKYO AK BÈL TI KOULÈ PAL) */
+.ged-feature-box {
+    padding: 24px;
+    border-radius: 20px;
+    height: 100%;
+    transition: transform 0.2s ease;
+    border: 1px solid rgba(0,0,0,0.03);
+}
+.ged-feature-box:hover {
+    transform: translateY(-5px);
+}
+.box-icon {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+.ged-feature-box h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #132a13;
+    margin-bottom: 8px;
+}
+.ged-feature-box p {
+    font-size: 0.92rem;
+    color: #4a5568;
+    margin-bottom: 0;
+    line-height: 1.5;
 }
 
-.features .features-item ul {
-  list-style: none;
-  padding: 0;
+/* Koulè pal pou chak bwat pou paj la ka gen vi */
+.box-green  { background-color: #f1f8e9 !important; } /* Vèt pal */
+.box-yellow { background-color: #fffde7 !important; } /* Jòn pal */
+.box-blue   { background-color: #e3f2fd !important; } /* Ble pal */
+.box-purple { background-color: #f3e5f5 !important; } /* Vyolèt pal */
+
+/* Pati anba ak bouton yo */
+.ged-footer-note {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #132a13;
 }
 
-.features .features-item ul li {
-  padding-bottom: 10px;
-  display: flex;
-  align-items: center;
+/* Bouton Blan/Gri dous la */
+.ged-link-btn {
+    background-color: #f8f9fa !important;
+    color: #4a5568 !important;
+    border: 1px solid #e2e8f0 !important;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+.ged-link-btn:hover {
+    background-color: #edf2f7 !important;
 }
 
-.features .features-item ul i {
-  font-size: 20px;
-  padding-right: 10px;
-  color: var(--accent-color);
+/* Bouton Aksyon Prensipal la */
+.ged-action-btn {
+    background-color: #132a13 !important;
+    color: #ffffff !important;
+    padding: 12px 28px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: none !important;
+}
+.ged-action-btn:hover {
+    background-color: #1b4332 !important;
+}
+
+/* Responsive pou mobil */
+@media (max-width: 992px) {
+    .ged-colored-title { font-size: 2.2rem; }
+    .ged-premium-white-section { padding-top: 40px; padding-bottom: 40px; }
+}
+
+.ged-main-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #4a5568 !important; /* Un beau gris ardoise moderne */
+}
+
+/* Donne de la force à la première partie */
+.ged-main-text strong {
+    color: #132a13 !important; /* Le vert foncé signature de GED */
+    font-weight: 700;
+}
+
+/* Un italique moderne, stylé et aéré pour la devise */
+.ged-motto {
+    font-family: 'Playfair Display', Georgia, serif; /* Style éditorial premium */
+    color: #1b4332 !important; /* Un vert émeraude plus vif qui donne vie */
+    font-style: italic;
+    letter-spacing: 0.3px;
+    padding-left: 5px;
 }
 /*--------------------------------------------------------------
 # Services Section - NGO Final Version (GED)
@@ -1780,45 +1858,6 @@ section,
   color: var(--accent-color);
 }
 
-/*--------------------------------------------------------------
-# cta
---------------------------------------------------------------*/
-.seksyon-foto-don {
-    padding: 60px 20px;
-    background-color: #0d2b1a; /* Koulè vèt fonse a pou l fè yon sèl ak background foto a */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.container-foto {
-    max-width: 500px; /* Sa anpeche l twò gwo sou laptop */
-    width: 100%;
-}
-
-.img-don-responsive {
-    width: 100%;
-    height: auto;
-    border-radius: 25px; /* Pou l gen menm bèl fòm awondi a */
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s ease;
-}
-
-/* Lè moun nan pase sourit la sou li, li fè yon ti mouvman */
-.img-don-responsive:hover {
-    transform: translateY(-5px);
-}
-
-/* Pou ti telefòn (Mobil) */
-@media (max-width: 720px) {
-    .container-foto {
-        max-width: 100%; /* Sou mobil, l ap pran tout lajè a nèt */
-    }
-    
-    .seksyon-foto-don {
-        padding: 40px 15px; /* Mwens espas sou kote pou l parèt pi gwo */
-    }
-}
 
 /*--------------------------------------------------------------
 # Saki anba Hero a.
