@@ -2781,3 +2781,190 @@ section,
     height: auto;
     display: block;
 }
+
+
+
+
+/*--------------------------------------------------------------
+# Estil sa pou PAj Eraciner l'espoir
+--------------------------------------------------------------*/
+
+/* 1. Koulè ak Fond Jeneral Seksyon yo (Dous, Krèm, Minimalist) */
+.ged-services-section, .ged-why-section {
+    background-color: #e5ecd8 !important; /* Vet krèm dous ki nan background nan */
+    color: #132a13 !important;
+    font-family: 'Inter', 'Segoe UI', Helvetica, Arial, sans-serif; /* Font elegant fen */
+    
+}
+/* SÈLMAN POU GWO EKRAN (ÒDINATÈ) */
+@media (min-width: 992px) {
+    .ged-services-section {
+        margin-top: 80px !important; /* Sa ap pouse seksyon an desann sèlman sou òdinatè */
+    }
+}
+
+
+/* 2. Tipografi Pwofesyonèl */
+.ged-section-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #132a13;
+    letter-spacing: -0.5px;
+}
+.ged-section-subtitle {
+    font-size: 0.95rem;
+    color: #2f4f2f;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+/* 3. Bouton Modèn yo */
+.ged-btn-dark {
+    display: inline-block;
+    background-color: #132a13 !important;
+    color: #e5ecd8 !important;
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+}
+.ged-btn-dark:hover {
+    background-color: #244d24 !important;
+    transform: translateY(-2px);
+}
+
+/* 4. Estil Kat "Our Services" (San kad, senp epi pwòp) */
+.ged-service-card {
+    background: transparent !important;
+    border: none !important;
+    padding: 10px;
+}
+.ged-icon-wrapper {
+    color: #132a13;
+}
+.ged-card-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #132a13;
+}
+.ged-card-text {
+    font-size: 0.88rem;
+    color: #3b5e3b;
+    line-height: 1.6;
+}
+.ged-card-link {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #132a13 !important;
+    text-decoration: none !important;
+    display: inline-flex;
+    align-items: center;
+    transition: transform 0.2s ease;
+}
+.ged-card-link:hover {
+    transform: translateX(4px);
+}
+
+/* 5. Estil 4 Kat Kwen Won yo (Why Choose Us) */
+.ged-feature-card {
+    background-color: #cbd7ba !important; /* Vèt pal pou 3 kat yo */
+    border-radius: 16px !important;
+    border: none !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.ged-feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(19, 42, 19, 0.05);
+}
+/* Premye kat la ki fonse a */
+.ged-card-dark {
+    background-color: #132a13 !important;
+    color: #e5ecd8 !important;
+}
+.ged-card-dark .ged-feature-title {
+    color: #e5ecd8 !important;
+}
+.ged-card-dark .ged-feature-text {
+    color: #a3b899 !important;
+}
+.ged-card-dark .ged-feature-icon {
+    color: #e5ecd8 !important;
+}
+.ged-card-dark .ged-btn-feature {
+    background-color: #e5ecd8 !important;
+    color: #132a13 !important;
+}
+
+.ged-feature-icon {
+    color: #132a13;
+}
+.ged-feature-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #132a13;
+    line-height: 1.3;
+}
+.ged-feature-text {
+    font-size: 0.85rem;
+    color: #3b5e3b;
+    line-height: 1.5;
+}
+.ged-btn-feature {
+    display: block;
+    background-color: #132a13;
+    color: #e5ecd8 !important;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none !important;
+    transition: background 0.2s ease;
+}
+.ged-btn-feature:hover {
+    opacity: 0.9;
+}
+
+/* 6. Gwo Banyè Fonse a (CTA Section) */
+.ged-cta-section {
+    background-color: #e5ecd8 !important;
+}
+.ged-cta-wrapper {
+    background-color: #132a13 !important; /* Gwo blòk vèt fonse a */
+    border-radius: 24px !important;
+    overflow: hidden;
+}
+.ged-cta-title {
+    color: #e5ecd8 !important;
+    font-size: 2.3rem;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+}
+.ged-cta-text {
+    color: #a3b899 !important;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+.ged-btn-cream {
+    display: inline-block;
+    background-color: #e5ecd8 !important;
+    color: #132a13 !important;
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+}
+.ged-btn-cream:hover {
+    background-color: #cbd7ba !important;
+    transform: translateY(-2px);
+}
+.ged-rounded-img {
+    border-radius: 16px !important;
+    max-height: 320px;
+    width: 100%;
+    object-fit: cover; /* Pou foto a ka koupe parfe nan bwat la */
+}
