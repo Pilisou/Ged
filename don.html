@@ -776,66 +776,78 @@
     const chkPrivacy = document.getElementById('check-privacy');
 
     fòmNan.addEventListener('submit', function(e) {
-        if(!chkPrivacy.checked) {
-            e.preventDefault();
-            alert("Veuillez accepter la politique de confidentialité pour continuer.");
+    if(!chkPrivacy.checked) {
+        e.preventDefault();
+        alert("Veuillez accepter la politique de confidentialité pour continuer.");
+        return;
+    }
+
+    document.getElementById('hidden-full-phone').value = iti.getNumber();
+
+    // Si itilizatè a poko chwazi fason l ap peye a, nou montre etap peman an anvan
+    if (!nanEtapPeman) {
+        e.preventDefault();
+        montrePeman();
+    } 
+    else {
+        // Nou toujou bloke soumisyon natif fòm nan pou nou jere l ak Fetch
+        e.preventDefault();
+
+        if (!metodPeman) {
+            alert("Veuillez choisir un mode de paiement.");
             return;
         }
 
-        document.getElementById('hidden-full-phone').value = iti.getNumber();
-
+        const montan = document.getElementById('input-lajan').value || 100;
         
-        if (!nanEtapPeman) {
-            e.preventDefault();
-            montrePeman();
+        btnSpinner.style.display = "block";
+        btnText.innerText = "TRAITEMENT...";
+        btnSubmitFinal.disabled = true;
+
+        const formData = new FormData(fòmNan);
+
+        if (metodPeman === "PAYPAL") {
+            // 1. Nou voye enfòmasyon donatè a bay Formspree dabò
+            fetch(fòmNan.action, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            }).then(() => {
+                // 2. Yon fwa Formspree fin resevwa l, nou louvri paj PayPal la
+                btnSpinner.style.display = "none";
+                btnText.innerText = `DONNER ${montan} $ VIA PAYPAL`;
+                btnSubmitFinal.disabled = false;
+
+                window.open("https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=themastergandhialfred@gmail.com&item_name=Donation%20GED&currency_code=USD&no_shipping=1&ext_non_paypal=1&solution_type=Sole&amount=" + montan, "_blank");
+            }).catch(error => {
+                // Si gen yon erè nan rezo a, n ap toujou eseye voye l sou PayPal pou sekirite
+                btnSpinner.style.display = "none";
+                btnText.innerText = `DONNER ${montan} $ VIA PAYPAL`;
+                btnSubmitFinal.disabled = false;
+                window.open("https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=themastergandhialfred@gmail.com&item_name=Donation%20GED&currency_code=USD&no_shipping=1&ext_non_paypal=1&solution_type=Sole&amount=" + montan, "_blank");
+            });
+
         } 
-       
-        else {
-            if (!metodPeman) {
-                e.preventDefault();
-                alert("Veuillez choisir un mode de paiement.");
-                return;
-            }
-
-            const montan = document.getElementById('input-lajan').value || 100;
-            
-            btnSpinner.style.display = "block";
-            btnText.innerText = "TRAITEMENT...";
-            btnSubmitFinal.disabled = true;
-
-            if (metodPeman === "PAYPAL") {
-                setTimeout(() => {
-                    window.open("https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=themastergandhialfred@gmail.com&item_name=Donation%20GED&currency_code=USD&no_shipping=1&ext_non_paypal=1&solution_type=Sole&amount=" + montan, "_blank");
-                    
-                    btnSpinner.style.display = "none";
-                    btnText.innerText = `DONNER ${montan} $ VIA PAYPAL`;
-                    btnSubmitFinal.disabled = false;
-                }, 1000);
-            } 
-            else if (metodPeman === "MONCASH") {
-                e.preventDefault(); 
-                
-                const formData = new FormData(fòmNan);
-                
-                fetch(fòmNan.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: { 'Accept': 'application/json' }
-                }).then(response => {
-                    btnSpinner.style.display = "none";
-                    btnText.innerText = `DONNER ${montan} $ VIA MONCASH`;
-                    btnSubmitFinal.disabled = false;
-                    
-                    document.getElementById('overlay-moncash').style.display = 'flex';
-                }).catch(error => {
-                    btnSpinner.style.display = "none";
-                    btnText.innerText = `DONNER ${montan} $ VIA MONCASH`;
-                    btnSubmitFinal.disabled = false;
-                    document.getElementById('overlay-moncash').style.display = 'flex';
-                });
-            }
+        else if (metodPeman === "MONCASH") {
+            fetch(fòmNan.action, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                btnSpinner.style.display = "none";
+                btnText.innerText = `DONNER ${montan} $ VIA MONCASH`;
+                btnSubmitFinal.disabled = false;
+                document.getElementById('overlay-moncash').style.display = 'flex';
+            }).catch(error => {
+                btnSpinner.style.display = "none";
+                btnText.innerText = `DONNER ${montan} $ VIA MONCASH`;
+                btnSubmitFinal.disabled = false;
+                document.getElementById('overlay-moncash').style.display = 'flex';
+            });
         }
-    });
+    }
+});
+
 
     function montrePeman() {
         const s1 = document.getElementById('step-1');
