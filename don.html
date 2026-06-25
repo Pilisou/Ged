@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Faire un Don | Gonaives Espoir Demain (GED)</title>
+   <title>Faire un Don | Gonaves Espoir Demain</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
     
@@ -132,6 +132,21 @@
             border-radius: 4px;
             transition: all 0.2s;
         }
+
+       
+@media (max-width: 480px) {
+    .amount-options {
+        width: 100%; 
+    }
+    
+    .amount-btn {
+        flex: 1;         
+        min-width: 0;     
+        padding: 10px 2px !important; 
+        font-size: 14px;  
+        text-align: center;
+    }
+}
 
         .amount-btn.active {
             background-color: #27ae60;
