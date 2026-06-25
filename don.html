@@ -3,723 +3,928 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GED - Faire un Don</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+   <title>Faire un Don | Gonaives Espoir Demain (GED)</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
     
     <style>
-       :root {
-    /* Fondasyon GED - Liks ak Nati */
-    --krem: #FDFBF7;           /* Nou kenbe l, li bay stil "Premium Paper" */
-    --gri-cho: #1B4332;        /* Nou ranplase gri a pa Vèt Forè GED la, sa bay plis klas */
-    --jon-gold: #FFC425;       /* Jòn aksyon an, li pafè */
-    --teks: #12151A;           /* Yon nwa ki pi fonse pou tèks yo ka "pope" */
-    
-    /* Touche "WAAAW" siplemantè */
-    --shadow-liks: 0 20px 40px rgba(0,0,0,0.08);
-    --transition-dous: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-        body {
-            margin: 0; font-family: 'Inter', sans-serif;
-            background-color: var(--krem); color: var(--teks);
-            scroll-behavior: smooth;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
         }
 
-        /* --- BLÒK 1 & 2: HERO AK DON (FOTO 1 & 2) --- */
-        .hero-ged {
-            display: flex; flex-direction: column;
-            background-color: var(--gri-cho); color: white;
+        body {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .hero-section {
+            background: 
+                        url('assets/img/desco.jfif') no-repeat center center/cover;
+            height: auto;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 100px;  
+        }
+
+        header {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            margin-bottom: 40px; 
+        }
+
+        .pwen {
+    color:#1e7e34
+}
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        
+
+        .donate-container {
+            background-color: #ffffff;
+            color: #333;
+            width: 90%;
+            max-width: 800px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            overflow: hidden;
+            margin-top: 100px; 
             position: relative;
         }
 
-        .hero-image {
-            width: 100%; height: 400px;
-            object-fit: cover; /* */
+        .amount-section {
+            padding: 30px;
+            border-bottom: 1px solid #f0f0f0;
+            position: relative;
         }
 
-        .hero-content {
-            padding: 50px 20px; text-align: center;
+        .donation-tabs {
+            display: flex;
+            background: #f5f5f5;
+            padding: 4px;
+            border-radius: 6px;
+            margin-bottom: 25px;
+            max-width: 350px;
         }
 
-        .hero-content h1 {
-            font-family: 'Playfair Display', serif; font-size: 2.2rem;
-            margin-bottom: 20px; line-height: 1.2; /* */
+        .tab {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            cursor: pointer;
+            border-radius: 4px;
+            color: #666;
+            transition: 0.3s;
         }
 
-        .hero-content p {
-            font-size: 1.1rem; color: #ccc; margin-bottom: 40px;
-            line-height: 1.6; max-width: 600px; margin-left: auto; margin-right: auto;
+        .tab.active {
+            background: #fff;
+            color: #27ae60;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
-        .hero-text {
-    background: rgba(27, 67, 50, 0.65) !important; 
-    backdrop-filter: blur(5px);
-}
-
-        @media (min-width: 992px) {
-    /* 1. Layout: Nou redui padding la pou n pa fòse eleman yo moute twò wo */
-    .hero-content {
-        display: flex !important;
-        flex-direction: row !important;
-        justify-content: space-between !important;
-        align-items: center;
-        padding: 0 5% 0 0 !important; /* Kole bò gòch nèt */
-        height: 100vh;
-    }
-
-    /* 2. Bwat Tèks Vèt Transparan (The Glass Look) */
-    .hero-text {
-        flex: 0 0 52%; 
-        /* Nou mete "rgba" a pi ba (0.6) pou n wè bak la pi byen */
-        background: rgba(27, 67, 50, 0.65) !important; 
-        backdrop-filter: blur(5px); /* Yon ti flou dous pou lekti */
-        padding: 50px 60px 50px 40px !important;
-        border-radius: 0 40px 40px 0;
-        box-shadow: 15px 0 35px rgba(0,0,0,0.15);
-    }
-
-    /* 3. Kare Don an (Nou redui wotè a) */
-    .donation-box {
-        flex: 0 0 420px; /* Lajè a bon */
-        margin-right: 6% !important;
-        /* Olye nou fòse yon gwo wotè, n ap kite kontni an deside */
-        min-height: auto !important; 
-        max-height: 520px; /* Pou l pa janm twò wo ankò */
-        padding: 35px !important;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        border-radius: 12px !important;
-        background: #ffffff;
-    }
-
-    /* Ajisteman tèks pou l pa "kase" trop */
-    .hero-text h1 {
-        font-size: 3.2rem !important;
-        margin-bottom: 20px !important;
-    }
-
-    .hero-text p {
-        font-size: 1.15rem !important;
-        line-height: 1.6;
-        margin-bottom: 30px !important;
-    }
-}
-
-        /* Kat Don an (Kare a) */
-        .donation-box {
-            background: white; color: var(--gri-cho);
-            padding: 30px; border-radius: 4px;
-            max-width: 400px; margin: 0 auto;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        .amount-row-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
-       /* --- TABS YO (Stil Charity, nanm GED) --- */
-.donation-tabs {
-    display: flex; 
-    justify-content: space-between;
-    margin-bottom: 25px; 
-    border-bottom: 2px solid #f0f0f0; /* Yon ti liy pi dous */
-}
-
-.tab { 
-    padding: 0 10px 12px 10px; 
-    cursor: pointer; 
-    font-weight: 700; 
-    font-size: 0.9rem;
-    color: #888;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-}
-
-.tab.active { 
-    border-bottom: 3px solid var(--jon-gold); 
-    color: var(--teks); /* Tèks la vin pi solid */
-}
-
-/* --- INPUT LA (Kote "Explwa" a fèt la) --- */
-.amount-input {
-    border: 2px solid #eee; /* Yon ti jan pi solid pou liks la */
-    padding: 25px 20px; 
-    font-size: 2.2rem; /* Gwo gwosè pou l parèt enpòtan */
-    font-weight: 800;
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center;
-    background: #fff;
-    border-radius: 4px;
-    color: var(--gri-cho); /* Sèvi ak vèt fonse GED a pou chif yo */
-    transition: border-color 0.4s ease;
-}
-
-.amount-input:focus-within {
-    border-color: var(--jon-gold);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.04);
-}
-
-/* --- BOUTON AN (Pwen Final WAAAW la) --- */
-.btn-main {
-    background: var(--gri-cho); /* Vèt pwofon GED la pou liks */
-    color: white; 
-    border: none; 
-    width: 100%;
-    padding: 22px; 
-    font-weight: 800; 
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    cursor: pointer; 
-    margin-top: 25px; 
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border-radius: 50px; /* Stil bouton "Faire un Don" */
-}
-
-.btn-main:hover {
-    background: var(--jon-gold);
-    color: var(--teks);
-    transform: translateY(-3px); /* Ti mouvman liks la */
-    box-shadow: 0 15px 30px rgba(255, 196, 37, 0.3);
-}
-
-        /* --- BLÒK 3: TRUST (FOTO 3) --- */
-        .section-trust {
-            background: white; padding: 100px 20px; text-align: center;
+        .amount-options {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
         }
 
-        .section-trust h2 {
-            font-family: 'Playfair Display', serif; font-size: 2rem;
-            margin-bottom: 25px; /* */
+        .amount-btn {
+            border: 1px solid #ccc;
+            background: none;
+            padding: 12px 18px;
+            font-size: 15px;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.2s;
         }
 
-        .trust-logos {
-            display: flex; justify-content: center; gap: 30px;
-            margin-top: 40px; opacity: 0.7; flex-wrap: wrap;
+        .amount-btn.active {
+            background-color: #27ae60;
+            color: white;
+            border-color: #27ae60;
         }
 
-        /* --- BLÒK 4: COMMUNITY (FOTO 4) --- */
-.section-community {
-    background: var(--krem); 
-    padding: 60px 10px; /* Redui padding la pou mobil */
-    text-align: center;
-}
+        .or-text {
+            font-weight: bold;
+            color: #888;
+            font-size: 14px;
+        }
 
-.polaroid-grid {
-    display: flex; 
-    justify-content: center; 
-    gap: 10px; /* Ti espas ant yo */
-    margin-bottom: 50px; 
-    flex-wrap: nowrap; /* FÒSE YO RETE SOU MENM LIY LAN */
-}
+        .custom-amount {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ccc;
+            padding: 10px 15px;
+            border-radius: 4px;
+            background-color: #fcfcfc;
+            flex-grow: 1;
+            max-width: 200px;
+        }
 
-.polaroid-grid img {
-    width: 30%; /* Chak foto pran 30% lajè ekran an */
-    max-width: 180px; 
-    height: auto; 
-    aspect-ratio: 4/5; /* Kenbe fòm Polaroid la */
-    object-fit: cover;
-    border: 5px solid white; /* Border pi piti pou mobil */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
+        .custom-amount input {
+            width: 100%;
+            border: none;
+            background: transparent;
+            font-size: 16px;
+            font-weight: bold;
+            outline: none;
+            color: #333;
+            padding-left: 5px;
+        }
 
-.tilt-l { transform: rotate(-6deg) translateY(10px); }
-.tilt-r { transform: rotate(6deg) translateY(10px); }
-        /* --- Impact evolution --- */
-       
-.impact-evolution {
-    padding: 120px 20px;
-    background-color: #fdfbf7; /* Koulè krèm GED a */
-}
+        
+        .instruction-banque {
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: #bd1e2d;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            animation: clignoter 1.5s infinite;
+        }
 
-.evolution-grid {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 300px 300px; /* De liy foto */
-    gap: 15px;
-}
+        @keyframes clignoter {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
 
-.evo-box {
-    position: relative;
-    overflow: hidden;
-    border-radius: 12px;
-}
+        .pay-grid {
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 12px;
+            max-width: 350px;
+        }
 
-.evo-box img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s ease;
-}
+        .pay-opt {
+            position: relative; 
+            border: 1.5px solid #eee; 
+            padding: 12px 5px; 
+            border-radius: 8px; 
+            text-align: center; 
+            cursor: pointer; 
+            background: #fff; 
+            transition: 0.3s;
+        }
 
-/* Stil "Overlap" ak Repatisyon */
-.item-1 { grid-column: 1 / 3; grid-row: 1 / 2; } /* Gwo anlè a gòch */
-.item-2 { grid-column: 3 / 4; grid-row: 1 / 2; } /* Ti anlè a dwat */
-.item-3 { grid-column: 1 / 2; grid-row: 2 / 3; } /* Ti anba a gòch */
-.item-4 { grid-column: 2 / 4; grid-row: 2 / 3; } /* Gwo anba a dwat */
+        .pay-opt:hover {
+            border-color: #27ae60;
+            background: #f4fbf7;
+        }
 
-/* Blòk Tèks ki kole sou bò dwat nèt la */
-.evolution-message {
-    grid-column: 4 / 5;
-    grid-row: 1 / 3;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 40px;
-    text-align: left;
-}
+        .check-mark {
+            display: none; 
+            position: absolute; 
+            top: -6px; 
+            right: -6px; 
+            background: #27ae60; 
+            color: white; 
+            width: 18px; 
+            height: 18px; 
+            border-radius: 50%; 
+            font-size: 10px; 
+            justify-content: center; 
+            align-items: center; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
 
-.title-premium {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    color: #1B4332;
-    margin-bottom: 25px;
-    line-height: 1.1;
-}
+        .details-section {
+            background-color: #f5f5f5;
+            padding: 30px;
+        }
 
-/* Efè Hover sou foto yo */
-.evo-box:hover img { transform: scale(1.1); }
+        
+        .champs-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            transition: all 0.4s ease;
+        }
 
-.evo-overlay {
-    position: absolute;
-    bottom: 0; left: 0; width: 100%;
-    padding: 20px;
-    background: linear-gradient(transparent, rgba(0,0,0,0.6));
-    color: white;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    letter-spacing: 2px;
-}
+        .champs-flous {
+            filter: blur(5px);
+            pointer-events: none;
+            user-select: none;
+            opacity: 0.5;
+        }
 
-.btn-gold-link {
-    color: #FFC425;
-    text-decoration: none;
-    font-weight: 800;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    border-bottom: 2px solid #FFC425;
-    align-self: flex-start;
-    padding-bottom: 5px;
-    transition: 0.3s;
-}
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
 
-.btn-gold-link:hover { padding-left: 10px; color: #1B4332; border-color: #1B4332; }
+        .form-group label {
+            font-size: 14px;
+            font-weight: bold;
+            color: #444;
+        }
 
-/* Mobile */
-@media (max-width: 991px) {
-    .evolution-grid { display: flex; flex-direction: column; }
-    .evolution-message { padding: 40px 0; order: -1; } /* Tèks la moute anlè sou mobil */
-    .evo-box { height: 250px; }
-}
+        .form-group input {
+            width: 100%;
+            padding: 11px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #fff;
+            font-size: 14px;
+            outline: none;
+        }
 
+        .iti {
+            width: 100% !important; 
+        }
+        
+        .iti__country-list {
+            color: #333 !important; 
+        }
 
+        .privacy-box {
+            grid-column: span 2;
+            background-color: #ffffff;
+            border-left: 4px solid #27ae60;
+            padding: 15px 20px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-top: 5px;
+        }
 
+        .privacy-box input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: #27ae60;
+        }
 
+        .privacy-box label {
+            font-size: 12.5px;
+            color: #555;
+            line-height: 1.4;
+            cursor: pointer;
+            font-weight: 500;
+        }
 
+        .privacy-box label a {
+            color: #27ae60;
+            text-decoration: underline;
+            font-weight: bold;
+        }
 
-    /* RESET SENP */
-.site-footer {
-    background-color: #ffffff;
-    padding: 60px 20px 40px;
-    border-top: 4px solid #2ecc71; /* Ti liy vè GED liks la */
-    font-family: 'Arial', sans-serif;
-}
+        .actions-section {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 25px;
+        }
 
-.footer-wrapper {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-}
+        .btn-submit {
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            padding: 15px 50px;
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 4px;
+            width: 100%;
+            max-width: 400px;
+            transition: background 0.2s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
 
-.footer-side {
-    display: flex;
-    flex: 1;
-    justify-content: space-around; /* Sa separe 2 kolòn yo nan chak bò */
-}
+        .btn-submit:hover {
+            background-color: #1e7e34;
+        }
 
-.footer-column h3 {
-    color: #2ecc71; /* Tit yo an vè GED klè */
-    font-size: 1.1rem;
-    font-weight: 800;
-    margin-bottom: 25px;
-    text-transform: lowercase; /* Style Charity Water a */
-}
+        .spinner {
+            display: none;
+            width: 18px;
+            height: 18px;
+            border: 3px solid rgba(214, 214, 214, 0.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
 
-.footer-column ul {
-    list-style: none;
-    padding: 0;
-}
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
 
-.footer-column ul li {
-    margin-bottom: 12px;
-}
+      
+        .moncash-modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
 
-.footer-column ul li a {
-    text-decoration: none;
-    color: #777; /* Yon gri ki pa twò nwa */
-    font-size: 0.95rem;
-    transition: 0.3s;
-}
+        .moncash-modal-box {
+            background-color: #fff;
+            color: #333;
+            width: 100%;
+            max-width: 450px;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            position: relative;
+            animation: fennen 0.3s ease-out;
+        }
 
-.footer-column ul li a:hover {
-    color: #2ecc71;
-    padding-left: 5px;
-}
+        @keyframes fennen {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
 
-/* PATI ANBA */
-.footer-bottom {
-    margin-top: 50px;
-    border-top: 1px solid #eee;
-    padding-top: 30px;
-    text-align: center;
-}
+        .moncash-modal-box img {
+            width: 70px;
+            height: auto;
+            margin-bottom: 15px;
+        }
 
-.social-links {
-    margin-bottom: 20px;
-}
+        .moncash-modal-box h3 {
+            font-size: 1.3rem;
+            color: #bd1e2d;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
 
-.social-links a {
-    color: #444;
-    font-size: 1.3rem;
-    margin: 0 12px;
-    transition: 0.3s;
-}
+        .moncash-modal-box p {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
 
-.social-links a:hover {
-    color: #2ecc71;
-}
+        .moncash-info-card {
+            background-color: #f9f9f9;
+            border: 1px dashed #ccc;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            text-align: left;
+        }
 
-.legal-links {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
+        .moncash-info-line {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
 
-.legal-links a {
-    font-size: 0.85rem;
-    color: #999;
-    text-decoration: underline;
-    font-weight: 600;
-}
+        .moncash-info-line:last-child {
+            margin-bottom: 0;
+        }
 
-/* MOBILE: Pou l parèt egzakteman jan w mande l la */
-@media (max-width: 768px) {
-    .footer-wrapper {
-        flex-direction: column;
-        gap: 0;
-    }
-    
-    .footer-side {
-        justify-content: space-between; /* Kenbe 2 kolòn yo sou menm liy nan telefòn */
-        margin-bottom: 20px;
-    }
+        .moncash-badge {
+            display: inline-block;
+            background-color: #eee;
+            color: #333;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.8rem;
+            margin-right: 5px;
+        }
 
-    .footer-column {
-        width: 48%; /* Asire yo rete 2 bò kòt a kòt */
-    }
-}
+        .moncash-badge.name {
+            background-color: #e3f2fd;
+            color: #0d47a1;
+        }
+
+        .moncash-badge.phone {
+            background-color: #fff3e0;
+            color: #e65100;
+        }
+
+        .copy-row {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+            gap: 8px;
+        }
+
+        .num-display {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 8px 12px;
+            border-radius: 4px;
+            flex-grow: 1;
+            font-family: monospace;
+            font-weight: bold;
+            font-size: 1.05rem;
+            color: #222;
+        }
+
+        .btn-copy {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 9px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.8rem;
+            transition: 0.2s;
+        }
+
+        .btn-copy:hover {
+            background-color: #000;
+        }
+
+        .btn-go-app {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ff9800;
+            color: #000;
+            text-decoration: none;
+            width: 100%;
+            padding: 13px;
+            font-weight: bold;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            box-shadow: 0 4px 10px rgba(255, 152, 0, 0.3);
+            transition: 0.2s;
+        }
+
+        .btn-go-app:hover {
+            background-color: #e68a00;
+        }
+
+        .btn-close-modal {
+            background-color: #bd1e2d;
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 12px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-close-modal:hover {
+            background-color: #96131f;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+                margin-bottom: 20px;
+            }
+
+            nav a {
+                margin-left: 15px;
+                font-size: 11px; 
+            }
+
+            .amount-row-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .amount-options {
+                justify-content: center;
+            }
+
+            .custom-amount {
+                max-width: 100%;
+            }
+
+            .or-text {
+                text-align: center;
+            }
+
+            .champs-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .privacy-box {
+                grid-column: span 1;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <section class="hero-ged">
-        <img src="assets/img/m1.jpg" class="hero-image" alt="Impact GED">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>Écrivons ensemble une nouvelle histoire pour la Gonâve.</h1>
-                <p>Chaque graine plantée, chaque enfant scolarisé est une promesse d'autonomie. À la Gonâve, nous ne demandons pas de la charité, mais des partenaires pour transformer le potentiel en réalité. Votre soutien n'est pas qu'un don, c'est l'étincelle qui bâtit une communauté forte, digne et fière de son héritage.</p>
-                <div style="
-    border: 1.5px solid #27ae60; 
-    background: rgba(39, 174, 96, 0.15); 
-    display: inline-flex; 
-    align-items: center; 
-    gap: 10px; 
-    padding: 10px 28px; 
-    border-radius: 50px; 
-    font-size: 0.9rem; 
-    font-weight: 800; 
-    color: #27ae60; 
-    text-transform: uppercase;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-    <span style="font-size: 1.2rem;">🌳</span> 
-    VOTRE GÉNÉROSITÉ ENRACINE LE CHANGEMENT
-</div>
-            </div>
+    <div class="hero-section">
+        <header>
+           <div class="pwen">.</div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
+        </header>
 
-            <div class="donation-box" style="position: relative; overflow: hidden;">
-    
-    <div id="step-1" style="transition: 0.4s;">
-        <div class="donation-tabs">
-            <span class="tab active" onclick="switchTab(this)">MENSUEL</span>
-            <span class="tab" onclick="switchTab(this)">UNE SEULE FOIS</span>
-        </div>
-        <div class="amount-input">
-            <span>$ <input type="number" id="input-lajan" value="100" onfocus="if(this.value=='100')this.value=''" style="border:none; background:transparent; font-size:inherit; font-weight:inherit; color:inherit; width:85px; outline:none; font-family:inherit;"></span>
-            <small style="font-size: 0.9rem; color: #888;">DOLLAR AMÉRICAIN</small>
-        </div>
-        <p id="p-enpak" style="margin-top: 20px; font-size: 0.9rem; color: var(--gri-cho);">
-            💛 Un don de <span id="span-montan">100</span> $ permet de soutenir l'éducation et l'autonomie de 2 familles.
-        </p>
-        <button class="btn-main" onclick="montrePeman()">DONNER MAINTENANT</button>
-    </div>
+      
 
-    <div id="step-2" style="position: absolute; top: 25px; left: 20px; right: 20px; bottom: 25px; opacity: 0; pointer-events: none; transition: 0.4s; display: flex; flex-direction: column; justify-content: space-between; height: calc(100% - 50px);">
-    
-    <div>
-        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 30px; border-bottom: 1px solid #f0f0f0; padding-bottom: 10px;">
-            <p id="resime-tèks" style="font-weight: 700; font-size: 1rem; margin: 0; color: #222; letter-spacing: 0.5px;"></p>
-            <span onclick="tounenDeye()" style="text-decoration: underline; cursor: pointer; font-size: 0.85rem; font-weight: 600; color: #e67e22; text-transform: uppercase;">MODIFIER</span>
-        </div>
-        
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;">
+        <div class="donate-container">
             
-            <div class="pay-opt" onclick="chwaziBank(this, 'CARD')" style="position: relative; border: 1.5px solid #eee; padding: 18px 5px; border-radius: 12px; text-align: center; cursor: pointer; background: #fff; transition: 0.3s;">
-                <div class="check-mark" style="display: none; position: absolute; top: -8px; right: -8px; background: #e67e22; color: white; width: 20px; height: 20px; border-radius: 50%; font-size: 12px; justify-content: center; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">✔</div>
+            <div class="amount-section">
                 
-                <img src="assets/img/visa.jpg" alt="Card" style="width: 45px; height: auto; margin-bottom: 8px; display: block; margin-left: auto; margin-right: auto; object-fit: contain;">
-                <span style="font-size: 0.7rem; font-weight: 800; display: block; color: #555;">CARD</span>
+                <div id="step-1" style="transition: 0.4s;">
+                    <div class="donation-tabs">
+                        <span class="tab active" onclick="switchTab(this)">MENSUEL</span>
+                        <span class="tab" onclick="switchTab(this)">UNE SEULE FOIS</span>
+                    </div>
+                    
+                    <div class="amount-row-container">
+                        <div class="amount-options">
+                            <button type="button" class="amount-btn" onclick="setMontan(5)">$5</button>
+                            <button type="button" class="amount-btn" onclick="setMontan(10)">$10</button>
+                            <button type="button" class="amount-btn" onclick="setMontan(25)">$25</button>
+                            <button type="button" class="amount-btn" onclick="setMontan(50)">$50</button>
+                            <button type="button" class="amount-btn active" onclick="setMontan(100)">$100</button>
+                        </div>
+                        
+                        <div class="or-text">OU</div>
+                        
+                        <div class="custom-amount">
+                            <span>$</span>
+                            <input type="number" id="input-lajan" value="100" placeholder="">
+                        </div>
+                    </div>
+                    
+                    <p id="p-enpak" style="margin-top: 20px; font-size: 0.95rem; color: #555;">
+                        💛 Un don de <b>100 $</b> permet de soutenir l'éducation et l'autonomie de <b>2</b> familles.
+                    </p>
+                </div>
+
+                <div id="step-2" style="position: absolute; top: 30px; left: 30px; right: 30px; opacity: 0; pointer-events: none; transition: 0.4s;">
+                    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 15px; border-bottom: 1px solid #f0f0f0; padding-bottom: 10px;">
+                        <p id="resime-tèks" style="font-weight: 700; font-size: 1rem; margin: 0; color: #222; letter-spacing: 0.5px;"></p>
+                        <span onclick="tounenDeye()" style="text-decoration: underline; cursor: pointer; font-size: 0.8rem; font-weight: 600; color: #27ae60; text-transform: uppercase;">MODIFIER</span>
+                    </div>
+                    
+                   
+                    <div class="instruction-banque">
+                        👉 <span>Veuillez choisir un mode de paiement ci-dessous :</span>
+                    </div>
+
+                    <div class="pay-grid">
+                        <div class="pay-opt" onclick="chwaziBank(this, 'PAYPAL')">
+                            <div class="check-mark">✔</div>
+                            <img src="assets/img/peypal.jpg" alt="PayPal" style="width: 40px; height: 25px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto; object-fit: contain;">
+                            <span style="font-size: 0.65rem; font-weight: 800; display: block; color: #555;">PAYPAL</span>
+                        </div>
+
+                        <div class="pay-opt" onclick="chwaziBank(this, 'MONCASH')">
+                            <div class="check-mark">✔</div>
+                            <img src="assets/img/moncash.jpg" alt="MonCash" style="width: 40px; height: 25px; margin-bottom: 5px; display: block; margin-left: auto; margin-right: auto; object-fit: contain;">
+                            <span style="font-size: 0.65rem; font-weight: 800; display: block; color: #555;">MONCASH</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="pay-opt" onclick="chwaziBank(this, 'PAYPAL')" style="position: relative; border: 1.5px solid #eee; padding: 18px 5px; border-radius: 12px; text-align: center; cursor: pointer; background: #fff; transition: 0.3s;">
-                <div class="check-mark" style="display: none; position: absolute; top: -8px; right: -8px; background: #e67e22; color: white; width: 20px; height: 20px; border-radius: 50%; font-size: 12px; justify-content: center; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">✔</div>
+          
+            <form class="details-section" action="https://formspree.io/f/mnjlarnl" method="POST" id="form-donasyon">
                 
-                <img src="assets/img/peypal.jpg" alt="PayPal" style="width: 45px; height: auto; margin-bottom: 8px; display: block; margin-left: auto; margin-right: auto; object-fit: contain;">
-                <span style="font-size: 0.7rem; font-weight: 800; display: block; color: #555;">PAYPAL</span>
-            </div>
+                <input type="hidden" name="Montant Don" id="hidden-montan" value="100">
+                <input type="hidden" name="Type Don" id="hidden-tip" value="MENSUEL">
+                <input type="hidden" name="Methode Paiement" id="hidden-peman" value="">
+                <input type="hidden" name="Telephone_Complet" id="hidden-full-phone">
 
-            <div class="pay-opt" onclick="chwaziBank(this, 'MONCASH')" style="position: relative; border: 1.5px solid #eee; padding: 18px 5px; border-radius: 12px; text-align: center; cursor: pointer; background: #fff; transition: 0.3s;">
-                <div class="check-mark" style="display: none; position: absolute; top: -8px; right: -8px; background: #e67e22; color: white; width: 20px; height: 20px; border-radius: 50%; font-size: 12px; justify-content: center; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">✔</div>
+              
+                <div class="champs-container" id="blok-champs">
+                    <div class="form-group">
+                        <label>Nom Complet <span style="font-size:10px; color:#aaa;">(REQUIS)</span></label>
+                        <input type="text" name="Nom Complet" placeholder="" id="input-nom" required>
+                        
+                        <label style="margin-top: 10px;">Adresse <span style="font-size:10px; color:#aaa;">(Ville / Quartier)</span></label>
+                        <input type="text" name="Adresse" placeholder="" id="input-adresse" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Adresse Email <span style="font-size:10px; color:#aaa;">(REQUIS)</span></label>
+                        <input type="email" name="Email" placeholder="" id="input-email" required>
+                        
+                        <label style="margin-top: 10px;">Téléphone / WhatsApp <span style="font-size:10px; color:#aaa;">(REQUIS)</span></label>
+                        <input type="tel" id="phone" required>
+                    </div>
+
+                    <div class="privacy-box">
+                        <input type="checkbox" id="check-privacy" required>
+                        <label for="check-privacy">🔒 J'accepte la <a href="#">Politique de confidentialité</a> du projet. Mes informations seront uniquement utilisées pour le suivi sécurisé de mon don.</label>
+                    </div>
+                </div>
+
                 
-                <img src="assets/img/moncash.jpg" alt="MonCash" style="width: 45px; height: auto; margin-bottom: 8px; display: block; margin-left: auto; margin-right: auto; object-fit: contain;">
-                <span style="font-size: 0.7rem; font-weight: 800; display: block; color: #555;">MONCASH</span>
-            </div>
+                <div class="actions-section">
+                    <button class="btn-submit" id="btn-final" type="submit">
+                        <span class="spinner" id="btn-spinner"></span>
+                        <span id="btn-text">DONNER MAINTENANT</span>
+                    </button>
+                </div>
+
+            </form>
         </div>
     </div>
 
-    <button class="btn-main" id="btn-final" style="width: 100%; margin-top: 20px; padding: 15px; font-weight: 700;">DONNER</button>
-</div>
-    </section>
-
-    <section class="section-trust">
-        <h2>Vous méritez de donner en toute confiance</h2>
-        <p style="max-width: 750px; margin: 0 auto; color: #555; line-height: 1.8;">
-            L'intégralité de nos frais de fonctionnement est financée par des donateurs privés. 
-            Cela garantit que 100% de votre contribution va directement aux projets sur le terrain.
-        </p>
-        <div class="trust-logos">
-            <img src="assets/img/x.jpg" alt="Candid" height="40">
-            <img src="assets/img/logo2.jpg" alt="Charity Nav" height="40">
-            <img src="assets/img/logo3.jpg" alt="BBB" height="40">
-        </div>
-    </section>
-
-    <section class="section-community">
-        <div class="polaroid-grid">
-            <img src="assets/img/a2.jpg" class="tilt-l">
-            <img src="assets/img/services-2.jpg">
-            <img src="assets/img/a4.jpg" class="tilt-r">
-        </div>
-        <h2>Rejoignez la communauté GED</h2>
-        <p style="margin-bottom: 30px; color: #555;">Investissez dans le développement durable et l'éducation.</p>
-        <button class="btn-main" style="max-width: 350px;">INSCRIVEZ-VOUS AUJOURD'HUI</button>
-    </section>
-
-  <section class="impact-evolution">
-    <div class="evolution-grid">
-        <div class="evo-box item-1">
-            <img src="assets/img/m4.jpg" alt="Agriculture">
-            <div class="evo-overlay"><span>Enraciner</span></div>
-        </div>
-
-        <div class="evo-box item-2">
-            <img src="assets/img/m6.jpg" alt="Eau propre">
-            <div class="evo-overlay"><span>Nourrir</span></div>
-        </div>
-
-        <div class="evo-box item-3">
-            <img src="assets/img/m5.jpg" alt="Éducation">
-            <div class="evo-overlay"><span>Éveiller</span></div>
-        </div>
-
-        <div class="evo-box item-4">
-            <img src="assets/img/m7.jpg" alt="Impact">
-            <div class="evo-overlay"><span>Bâtir</span></div>
-        </div>
-
-        <div class="evolution-message">
-            <h2 class="title-premium">Investir dans le cycle de l'autonomie.</h2>
-            <p>À la Gonâve, chaque don est un maillon d'une chaîne solide. Nous ne finançons pas des projets éphémères, nous bâtissons un écosystème où chaque enfant grandit dignement.</p>
-            <a href="#" class="btn-gold-link">Rejoindre le mouvement</a>
+  
+    <div class="moncash-modal-overlay" id="overlay-moncash">
+        <div class="moncash-modal-box">
+            <img src="assets/img/moncash.jpg" alt="MonCash Logo">
+            <h3>Finaliser votre don MonCash</h3>
+            <p>Pour valider la donation, veuillez effectuer le transfert dès maintenant sur notre compte officiel :</p>
+            
+            <div class="moncash-info-card">
+                <div class="moncash-info-line">
+                    <span class="moncash-badge name">Nom</span> <strong>Dieuseul Alfred</strong>
+                </div>
+                <div class="moncash-info-line">
+                    <span class="moncash-badge phone">Numéro</span> <strong>+509 37751492</strong>
+                </div>
+                
+                <div class="copy-row">
+                    <div class="num-display" id="num-to-copy">37751492</div>
+                    <button type="button" class="btn-copy" onclick="kopyeNimewo()">Copier</button>
+                </div>
+            </div>
+            
+           
+      <a href="https://play.google.com/store/apps/details?id=com.digicel.moncash" id="lyen-moncash-auto" target="_blank" class="btn-go-app">📲 Continuer vers l'application</a>
+            
+            <button type="button" class="btn-close-modal" onclick="fèmenModal()">J'ai effectué le transfert</button>
         </div>
     </div>
-</section>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <script>
+        const phoneInput = document.querySelector("#phone");
+        const iti = window.intlTelInput(phoneInput, {
+            initialCountry: "ht", 
+            preferredCountries: ["ht", "us", "ca", "cl", "fr"], 
+            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+        });
+    </script>
 
-<footer class="site-footer">
-    <div class="footer-wrapper">
-        
-        <div class="footer-side">
-            <div class="footer-column">
-                <h3>agissez</h3>
-                <ul>
-                    <li><a href="#">donner</a></li>
-                    <li><a href="#">rejoignez le printemps</a></li>
-                    <li><a href="#">parrainer une communauté</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>impliquez-vous</h3>
-                <ul>
-                    <li><a href="#">créer un compte</a></li>
-                    <li><a href="#">collecte de fonds</a></li>
-                    <li><a href="#">diffusez pour nous</a></li>
-                </ul>
-            </div>
-        </div>
+    <script>
+    let metodPeman = ""; 
+    let nanEtapPeman = false;
 
-        <div class="footer-side">
-            <div class="footer-column">
-                <h3>apprenez</h3>
-                <ul>
-                    <li><a href="#">notre travail</a></li>
-                    <li><a href="#">modèle à 100 %</a></li>
-                    <li><a href="#">états financiers</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>connecter</h3>
-                <ul>
-                    <li><a href="#">contactez-nous</a></li>
-                    <li><a href="#">centre d'aide</a></li>
-                    <li><a href="#">partenariats</a></li>
-                </ul>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="footer-bottom">
-        <div class="social-links">
-            <a href="#"><i class="bi bi-twitter-x"></i></a>
-            <a href="#"><i class="bi bi-facebook"></i></a>
-            <a href="#"><i class="bi bi-instagram"></i></a>
-            <a href="#"><i class="bi bi-youtube"></i></a>
-            <a href="#"><i class="bi bi-linkedin"></i></a>
-        </div>
-        <div class="legal-links">
-            <a href="#">politique de confidentialité</a>
-            <a href="#">processus de divulgation responsable</a>
-        </div>
-    </div>
-</footer>
-<script>
-// 1. Chanje Tab (Mensuel / Une seule fois)
-function switchTab(el) {
-    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-    el.classList.add('active');
-    updateEnpak(); // Nou mete l ajou lè moun nan klike tab la tou
-}
-
-// 2. FONKSYON KI MIJOU TOUT CHIF YO (Sa a se kè a)
-function updateEnpak() {
-    let val = document.getElementById('input-lajan').value || 0;
-    
-    // Update span nan tit la
-    const span = document.getElementById('span-montan');
-    if(span) span.innerText = val;
-    
-    // Kalkil fanmi yo (40$ = 1 fanmi)
-    let fanmi = Math.floor(val / 40) || 0;
-    const p = document.getElementById('p-enpak');
-    
-    // Tèks sa a ap chanje menm kote a chak fwa ou tape yon chif
-    if(p) {
-        p.innerHTML = `💛 Un don de <b>${val} $</b> permet de soutenir l'éducation et l'autonomie de <b>${fanmi}</b> familles.`;
+    function switchTab(el) {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        el.classList.add('active');
+        updateEnpak(); 
     }
-    
-    // Si nou nan Step 2, n ap update tèks rezime a tou
-    const tip = document.querySelector('.tab.active').innerText;
-    const resime = document.getElementById('resime-tèks');
-    if(resime) resime.innerText = `${val}$ US / ${tip}`;
-}
 
-// Koute sa k ap pase nan input la pou chanje chif yo "Live"
-document.getElementById('input-lajan').addEventListener('input', updateEnpak);
+    function setMontan(montan) {
+        document.querySelectorAll('.amount-btn').forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+        document.getElementById('input-lajan').value = montan;
+        updateEnpak();
+    }
 
-// 3. Tranzisyon Step 1 pou ale Step 2
-let metodPeman = ""; 
+    function updateEnpak() {
+        let val = document.getElementById('input-lajan').value || 0;
+        let fanmi = Math.floor(val / 40) || 0;
+        const p = document.getElementById('p-enpak');
+        
+        if(p) {
+            p.innerHTML = `💛 Un don de <b>${val} $</b> permet de soutenir l'éducation et l'autonomie de <b>${fanmi}</b> familles.`;
+        }
+        
+        const activeTab = document.querySelector('.tab.active');
+        const tip = activeTab ? activeTab.innerText : "DON";
+        const resime = document.getElementById('resime-tèks');
+        if(resime) resime.innerText = `${val}$ US / ${tip}`;
 
-function montrePeman() {
-    const s1 = document.getElementById('step-1');
-    const s2 = document.getElementById('step-2');
-    
-    updateEnpak(); // Asire tout chif yo kòrèk anvan nou ale nan etap peman
+        document.getElementById('hidden-montan').value = val + " USD";
+        document.getElementById('hidden-tip').value = tip;
+    }
 
-    s1.style.opacity = "0";
-    s1.style.transform = "translateX(-20px)";
-    s1.style.pointerEvents = "none";
-    
-    setTimeout(() => {
-        s2.style.opacity = "1";
-        s2.style.pointerEvents = "auto";
-        s2.style.transform = "translateY(0)";
-    }, 400);
-}
-
-function tounenDeye() {
-    const s1 = document.getElementById('step-1');
-    const s2 = document.getElementById('step-2');
-
-    s2.style.opacity = "0";
-    s2.style.pointerEvents = "none";
-    
-    setTimeout(() => {
-        s1.style.opacity = "1";
-        s1.style.transform = "translateX(0)";
-        s1.style.pointerEvents = "auto";
-    }, 400);
-}
-
-// 4. Seleksyon Bank (CARD = WISE, PAYPAL, MONCASH)
-function chwaziBank(eleman, nonBank) {
-    metodPeman = nonBank;
-    
-    document.querySelectorAll('.pay-opt').forEach(opt => {
-        opt.style.borderColor = "#eee";
-        opt.style.background = "#fff";
-        const check = opt.querySelector('.check-mark');
-        if(check) check.style.display = "none";
+    document.getElementById('input-lajan').addEventListener('input', function() {
+        document.querySelectorAll('.amount-btn').forEach(btn => btn.classList.remove('active'));
+        updateEnpak();
     });
 
-    eleman.style.borderColor = "#e67e22";
-    eleman.style.background = "#fffcf5";
-    const currentCheck = eleman.querySelector('.check-mark');
-    if(currentCheck) currentCheck.style.display = "flex";
+    const btnSubmitFinal = document.getElementById('btn-final');
+    const btnText = document.getElementById('btn-text');
+    const btnSpinner = document.getElementById('btn-spinner');
+    const fòmNan = document.getElementById('form-donasyon');
+    const blokChamps = document.getElementById('blok-champs');
+    const chkPrivacy = document.getElementById('check-privacy');
 
-    const m = document.getElementById('input-lajan').value || 100;
-    // Tèks bouton an an franse
-    document.getElementById('btn-final').innerText = `FAIRE UN DON DE ${m} $ VIA ${nonBank}`;
-}
+    fòmNan.addEventListener('submit', function(e) {
+        if(!chkPrivacy.checked) {
+            e.preventDefault();
+            alert("Veuillez accepter la politique de confidentialité pour continuer.");
+            return;
+        }
 
-// 5. BOUTON FINAL LA (Ekzekisyon Peman)
-document.getElementById('btn-final').addEventListener('click', function() {
-    const montan = document.getElementById('input-lajan').value || 100;
-    
-    if (metodPeman === "CARD") {
-        // LYEN WISE PA W LA (Lajan ap tonbe kounye a)
-        window.location.href = "https://wis"; 
+        document.getElementById('hidden-full-phone').value = iti.getNumber();
+
         
-    } else if (metodPeman === "PAYPAL") {
-        // LYEN PAYPAL ALFRED LA
-       window.location.href = "https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=themastergandhialfred@gmail.com&item_name=Donation%20GED&currency_code=USD&no_shipping=1&ext_non_paypal=1&solution_type=Sole&amount=" + document.getElementById('input-lajan').value;
-    } else if (metodPeman === "MONCASH") {
-        alert("Pour MonCash : Veuillez effectuer le transfert au numéro de GED : +509 XXXX-XXXX. Merci !");
-    } else {
-        alert("Veuillez choisir un mode de paiement.");
+        if (!nanEtapPeman) {
+            e.preventDefault();
+            montrePeman();
+        } 
+       
+        else {
+            if (!metodPeman) {
+                e.preventDefault();
+                alert("Veuillez choisir un mode de paiement.");
+                return;
+            }
+
+            const montan = document.getElementById('input-lajan').value || 100;
+            
+            btnSpinner.style.display = "block";
+            btnText.innerText = "TRAITEMENT...";
+            btnSubmitFinal.disabled = true;
+
+            if (metodPeman === "PAYPAL") {
+                setTimeout(() => {
+                    window.open("https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=themastergandhialfred@gmail.com&item_name=Donation%20GED&currency_code=USD&no_shipping=1&ext_non_paypal=1&solution_type=Sole&amount=" + montan, "_blank");
+                    
+                    btnSpinner.style.display = "none";
+                    btnText.innerText = `DONNER ${montan} $ VIA PAYPAL`;
+                    btnSubmitFinal.disabled = false;
+                }, 1000);
+            } 
+            else if (metodPeman === "MONCASH") {
+                e.preventDefault(); 
+                
+                const formData = new FormData(fòmNan);
+                
+                fetch(fòmNan.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                }).then(response => {
+                    btnSpinner.style.display = "none";
+                    btnText.innerText = `DONNER ${montan} $ VIA MONCASH`;
+                    btnSubmitFinal.disabled = false;
+                    
+                    document.getElementById('overlay-moncash').style.display = 'flex';
+                }).catch(error => {
+                    btnSpinner.style.display = "none";
+                    btnText.innerText = `DONNER ${montan} $ VIA MONCASH`;
+                    btnSubmitFinal.disabled = false;
+                    document.getElementById('overlay-moncash').style.display = 'flex';
+                });
+            }
+        }
+    });
+
+    function montrePeman() {
+        const s1 = document.getElementById('step-1');
+        const s2 = document.getElementById('step-2');
+        
+        updateEnpak(); 
+        nanEtapPeman = true;
+
+        
+        blokChamps.classList.add('champs-flous');
+
+        s1.style.opacity = "0";
+        s1.style.transform = "translateX(-20px)";
+        s1.style.pointerEvents = "none";
+        
+        setTimeout(() => {
+            s2.style.opacity = "1";
+            s2.style.pointerEvents = "auto";
+            s2.style.transform = "translateY(0)";
+            btnText.innerText = "CONFIRMER LE DON";
+        }, 400);
+    }
+
+    function tounenDeye() {
+        const s1 = document.getElementById('step-1');
+        const s2 = document.getElementById('step-2');
+        nanEtapPeman = false;
+        metodPeman = "";
+        document.getElementById('hidden-peman').value = "";
+
+       
+        blokChamps.classList.remove('champs-flous');
+
+        document.querySelectorAll('.pay-opt').forEach(opt => {
+            opt.style.borderColor = "#eee";
+            opt.style.background = "#fff";
+            const check = opt.querySelector('.check-mark');
+            if(check) check.style.display = "none";
+        });
+
+        s2.style.opacity = "0";
+        s2.style.pointerEvents = "none";
+        
+        setTimeout(() => {
+            s1.style.opacity = "1";
+            s1.style.transform = "translateX(0)";
+            s1.style.pointerEvents = "auto";
+            btnText.innerText = "DONNER MAINTENANT";
+        }, 400);
+    }
+
+    function chwaziBank(eleman, nonBank) {
+        metodPeman = nonBank;
+        document.getElementById('hidden-peman').value = nonBank; 
+        
+        document.querySelectorAll('.pay-opt').forEach(opt => {
+            opt.style.borderColor = "#eee";
+            opt.style.background = "#fff";
+            const check = opt.querySelector('.check-mark');
+            if(check) check.style.display = "none";
+        });
+
+        eleman.style.borderColor = "#27ae60";
+        eleman.style.background = "#f4fbf7";
+        const currentCheck = eleman.querySelector('.check-mark');
+        if(currentCheck) currentCheck.style.display = "flex";
+
+        const m = document.getElementById('input-lajan').value || 100;
+        btnText.innerText = `DONNER ${m} $ VIA ${nonBank}`;
+    }
+
+    function kopyeNimewo() {
+        const nimewo = document.getElementById('num-to-copy').innerText;
+        navigator.clipboard.writeText(nimewo).then(() => {
+            const btn = document.querySelector('.btn-copy');
+            btn.innerText = "Copié !";
+            btn.style.backgroundColor = "#27ae60";
+            setTimeout(() => {
+                btn.innerText = "Copier";
+                btn.style.backgroundColor = "#333";
+            }, 2000);
+        });
+    }
+
+    function fèmenModal() {
+        document.getElementById('overlay-moncash').style.display = 'none';
+        window.location.reload();
+    }
+    
+    updateEnpak();
+
+
+   
+document.addEventListener("DOMContentLoaded", function() {
+    const lyenApp = document.getElementById('lyen-moncash-auto');
+    if (lyenApp) {
+        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        
+       
+        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            lyenApp.href = "https://apps.apple.com/ht/app/moncash/id1451551842";
+        }
     }
 });
-</script>
+    </script>
 </body>
 </html>
