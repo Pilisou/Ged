@@ -1,28 +1,46 @@
 <div class="container-fluid container-xl position-relative d-flex align-items-center">
-  <a href="index.html" class="logo d-flex align-items-center me-auto">
-    <h1 class="sitename" id="typewriter-logo"></h1><span class="cursor"></span>
+  <a href="index.html" class="logo d-flex align-items-center me-auto text-decoration-none">
+    <div class="ged-box">
+      <span class="ged-text ged-top">GED</span>
+      <span class="ged-sub">GONÂVE ESPOIR DE DEMAIN</span>
+      <span class="ged-text ged-bottom">GED</span>
+    </div>
   </a>
+
 
   <nav id="navmenu" class="navmenu">
     <ul>
-      <li><a href="index.html#Akey" class="active">Accueil</a></li>
-      <li><a href="about.html">Qui sommes-nous ?</a></li>
+      <li><a href="index.html#Akey" class="active" data-i18n="nav_home">Accueil</a></li>
+      <li><a href="about.html" data-i18n="nav_about">Qui sommes-nous ?</a></li>
       <li class="dropdown mobil-pilye-klik">
-  <a href="javascript:void(0)">
-    <span>Nos Piliers</span> <i class="bi bi-chevron-down toggle-dropdown"></i>
-  </a>
-  <ul>
-    <li><a href="tourisme&artisanat.html">Tourisme & Artisanat</a></li>
-    <li><a href="education&agriculture.html">Éducation & Agriculture</a></li>
-  </ul>
-</li>
+        <a href="javascript:void(0)">
+          <span data-i18n="nav_pillars">Nos Piliers</span> <i class="bi bi-chevron-down toggle-dropdown"></i>
+        </a>
+        <ul>
+          <li><a href="tourisme&artisanat.html" data-i18n="nav_tourism">Tourisme & Artisanat</a></li>
+          <li><a href="education&agriculture.html" data-i18n="nav_education">Éducation & Agriculture</a></li>
+        </ul>
       </li>
-      <li><a href="index.html#team">Notre Équipe</a></li>
-      <li><a href="index.html#contact">Nous joindre</a></li>
-      <li><a href="help.html">Centre d'aide</a></li>
+      <li><a href="team.html" data-i18n="nav_team">Notre Équipe</a></li>
+      <li><a href="Contact.html" data-i18n="nav_contact">Contact</a></li>
+      
+      <li class="dropdown lang-switcher-item">
+    <a href="javascript:void(0)">
+      <span class="lang-current">
+        <img id="currentLangFlag" src="https://flagcdn.com/20x15/fr.png" width="20" height="15" alt="FR">
+        <span id="currentLang">FR</span>
+      </span>
+      <i class="bi bi-chevron-down toggle-dropdown"></i>
+    </a>
+    <ul>
+      <li><a href="javascript:void(0)" onclick="loadLanguage('fr')"><img src="https://flagcdn.com/20x15/fr.png" width="20" height="15" alt="FR"> Français</a></li>
+      <li><a href="javascript:void(0)" onclick="loadLanguage('en')"><img src="https://flagcdn.com/20x15/gb.png" width="20" height="15" alt="EN"> English</a></li>
+      <li><a href="javascript:void(0)" onclick="loadLanguage('es')"><img src="https://flagcdn.com/20x15/es.png" width="20" height="15" alt="ES"> Español</a></li>
+    </ul>
+  </li>
     </ul>
     <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
   </nav>
 
-  <a class="btn-getstarted" href="don.html">Faire un Don</a>
+  <a class="btn-getstarted" href="don.html" data-i18n="nav_donate">Faire un Don</a>
 </div>

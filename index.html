@@ -16,20 +16,20 @@
   <meta name="twitter:title" content="GED - Gonave Espoir de Demain">
   <meta name="twitter:description" content="Bâtir un héritage d'autosuffisance et de savoir à La Gonâve.">
   <meta name="twitter:image" content="https://gonavespoirdemain.org/assets/img/x.jpg">
-  
+
   <meta name="description" content="">
   <meta name="keywords" content="">
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.jpg" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Fonts -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+<link rel="manifest" href="assets/img/site.webmanifest">
+
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-
 
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -37,504 +37,322 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-
   <link href="assets/css/main.css" rel="stylesheet">
 
+  <link href="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.css" rel="stylesheet" />
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.js"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+  <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
 </head>
 
 <body class="index-page">
 
-  <header id="header" class="header d-flex align-items-center fixed-top">
-  
-</header>
+  <header id="header" class="header d-flex align-items-center fixed-top"></header>
 
-   
-    
-<section id="Akey"  class="spring-section">
-  <div class="photo-container">
-    <img src="assets/img/service4.jpg" alt="Impact 1" class="img-tilt left">
-    <img src="assets/img/r1.jpg" alt="Impact 2" class="img-tilt center">
-    <img src="assets/img/services-2.jpg" alt="Impact 3" class="img-tilt right">
-  </div>
+  <section id="about" class="hero-split-section">
+    <div class="hero-glow-overlay"></div>
 
- <div class="spring-text">
-    <h2>Bâtir un héritage d'autosuffisance et de savoir.</h2>
-    <p>Ne soyez pas qu'un spectateur. Engagez-vous à nos côtés pour bâtir une communauté forte, instruite et fière de ses racines.</p>
-
-    <p class="mobile-only-text">
-    Chaque enfant mérite une chance de réussir. En rejoignant GED, vous participez à bâtir des écoles, soutenir l'agriculture locale et préserver notre culture pour les générations futures.
-</p>
-    
-   <div class="action-wrapper">
-    <div class="scroll-side left" id="scroll-left">
-        <span></span>
-        <span></span>
-        <span></span>
+    <div class="hero-bg-wrapper">
+      <img src="assets/img/ese.jpg" alt="GED Gonâve" class="hero-bg-img">
     </div>
 
-    <a href="Enraciner_l'espoir.html" class="btn-spring">ENRACINER L'ESPOIR</a>
+    <div class="container hero-container-align">
+      <div class="hero-split-content">
 
-    <div class="scroll-side right" id="scroll-right">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-</div>
-</div>
-
-</section>
-
-
-
-    <!-- About Section -->
-    <section id="about" class="about section">
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-6 position-relative order-lg-last" data-aos="fade-up" data-aos-delay="200">
-            <img src="assets/img/about.jpg" class="img-fluid" alt="Ged en action">
-            
+        <div class="hero-top-bar">
+          <div class="hero-pillars">
+            <span class="pillar-tag" data-i18n="hero2_pillar1">Éducation</span>
+            <span class="pillar-tag" data-i18n="hero2_pillar2">Environnement</span>
+            <span class="pillar-tag" data-i18n="hero2_pillar3">Communauté</span>
           </div>
 
-         <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
- <h3>À propos de nous</h3>
-<p>
-  Gonave Espoir de Demain (GED) est une organisation à but non lucratif dédiée au développement durable de l'île de la Gonâve. Notre mission est de transformer la communauté à travers des piliers essentiels pour un avenir meilleur.
-  <a href="about.html" class="ged-about-link">En savoir plus <span class="arrow">&rarr;</span></a>
-</p>
-  <ul>
-    <li>
-      <i class="bi bi-flower1"></i>
-      <div>
-        <h5>Agriculture & Autosuffisance</h5>
-        <p>Nous encourageons la production locale pour garantir la sécurité alimentaire des familles gonaviennes.</p>
-      </div>
-    </li>
-    <li>
-      <i class="bi bi-book"></i>
-      <div>
-        <h5>Éducation & Partenariat</h5>
-        <p>Nous collaborons avec des institutions scolaires pour soutenir les enfants et les parents qui manquent de moyens.</p>
-      </div>
-    </li>
-    <li>
-      <i class="bi bi-people"></i>
-      <div>
-        <h5>Action Sociale & Culture</h5>
-        <p>Nous préservons notre patrimoine culturel tout en apportant une aide humanitaire aux plus vulnérables.</p>
-      </div>
-    </li>
-  </ul>
-</div>
+          <a href="Activités & Événements - Gonave Espoir de Demain.html" class="activity-live-badge">
+            <span class="live-pulse-container">
+              <span class="pulse-ring"></span>
+              <span class="pulse-core"></span>
+            </span>
+            <svg class="news-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"></path>
+              <path d="M18 14h-8"></path>
+              <path d="M15 18h-5"></path>
+              <path d="M10 6h8v4h-8z"></path>
+            </svg>
+            <span class="activity-text" data-i18n="hero2_activities_btn">Activities</span>
+          </a>
         </div>
+
+        <h1 data-i18n="about_title" class="hero-title">
+          Un avenir meilleur pour la Gonâve.
+        </h1>
+
+        <p class="hero-description" data-i18n="about_text">
+          Parce que chaque communauté mérite un avenir meilleur, GED s'engage chaque jour à l'île de la Gonâve. Découvrez comment nos initiatives transforment le quotidien de centaines de familles.
+        </p>
+
       </div>
+    </div>
+  </section>
 
-
-
-      <section class="stats-section">
+  <section class="stats-section">
     <div class="container">
-        <div class="stat-item">
-            <h2 class="counter" data-target="500">0</h2>
-            <div class="stat-line"></div>
-            <p>Enfants encadrés pour un avenir brillant.</p>
-        </div>
-
-        <div class="stat-item">
-            <h2 class="counter" data-target="1000">0</h2>
-            <div class="stat-line"></div>
-            <p>Arbres plantés pour protéger notre terre.</p>
-        </div>
-
-        <div class="stat-item">
-            <h2 class="counter" data-target="500">0</h2>
-            <div class="stat-line"></div>
-            <p>Membres engagés au sein de la communauté.</p>
-        </div>
+      <div class="stat-item">
+        <h2 class="counter" data-target="500">0</h2>
+        <div class="stat-line"></div>
+        <p data-i18n="stats_children">Enfants encadrés pour un avenir brillant.</p>
+      </div>
+      <div class="stat-item">
+        <h2 class="counter" data-target="1000">0</h2>
+        <div class="stat-line"></div>
+        <p data-i18n="stats_trees">Arbres plantés pour protéger notre terre.</p>
+      </div>
+      <div class="stat-item">
+        <h2 class="counter" data-target="500">0</h2>
+        <div class="stat-line"></div>
+        <p data-i18n="stats_members">Membres engagés au sein de la communauté.</p>
+      </div>
     </div>
-</section>
+  </section>
 
+  <section id="services" class="services section">
+    <div class="container section-title" data-aos="fade-up">
+      <h2 data-i18n="services_title">Solidarité & Impact</h2>
+      <p data-i18n="services_desc">Chaque projet de GED est une graine d'espoir semée grâce à la générosité de nos donateurs.</p>
+    </div>
 
-<section class="ged-cta-section py-5">
     <div class="container">
-        <div class="ged-cta-wrapper p-4 p-md-5">
-            <div class="row align-items-center g-4">
-                <!-- Tèks ak bouton -->
-                <div class="col-md-6">
-                    <h2 class="ged-cta-title mb-3">
-                        Donnez des racines<br>
-                        à l'avenir de toute<br>
-                        la communauté.
-                    </h2>
-                    <p class="ged-cta-text mb-4">
-                        Qu'il s'agisse de fournir des semences aux agriculteurs, de financer une bourse scolaire ou d'aider une famille, votre soutien régulier change des vies dès aujourd'hui.
-                    </p>
-                    <a href="don.html" class="ged-btn-cream">Agissez-Maintenant</a>
-                </div>
-                <!-- Foto a dwat -->
-                <div class="col-md-6 text-center">
-                    <div class="ged-cta-image-box">
-                        <!-- Ranplase "1000594951.png" ak chemen vrè foto ou a si l chanje -->
-                        <img src="assets/img/Don de ged.jpg" alt="Enraciner l'Espoir" class="img-fluid ged-rounded-img">
-                    </div>
-                </div>
-            </div>
+      <div class="row gy-4">
+        <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-item position-relative">
+            <div class="icon"><i class="bi bi-heart-pulse"></i></div>
+            <h3 data-i18n="services_item1_title">Cantines Scolaires</h3>
+            <p data-i18n="services_item1_text">Grâce aux dons, nous garantissons un repas chaud quotidien aux écoliers, transformant la faim en énergie pour réussir.</p>
+          </div>
         </div>
+
+        <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-item position-relative">
+            <div class="icon"><i class="bi bi-person-check-fill"></i></div>
+            <h3 data-i18n="services_item2_title">Santé Mentale & Bien-être</h3>
+            <p data-i18n="services_item2_text">À travers ce programme, GED offre un soutien psychologique essentiel, aidant les membres de la communauté à surmonter les traumatismes et à retrouver un équilibre émotionnel durable.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="400">
+          <div class="service-item position-relative">
+            <div class="icon"><i class="bi bi-flower1"></i></div>
+            <h3 data-i18n="services_item3_title">Relance Agricole</h3>
+            <p data-i18n="services_item3_text">Investir dans nos agriculteurs, c'est assurer l'autonomie de la Gonâve. GED fournit les outils et semences nécessaires pour nourrir les générations futures.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="400">
+          <div class="service-item position-relative">
+            <div class="icon"><i class="bi bi-people"></i></div>
+            <h3 data-i18n="services_item4_title">Orientation des Jeunes</h3>
+            <p data-i18n="services_item4_text">Offrir un espace de réflexion et d'écoute pour guider notre jeunesse. GED accompagne les jeunes dans leur orientation pour les aider à faire des choix d'avenir éclairés.</p>
+          </div>
+        </div>
+      </div>
     </div>
-</section>
+  </section>
 
+  <div class="ged-donation-card">
+    <div class="circle-loader-container">
+      <svg class="svg-spinner" viewBox="0 0 50 50">
+        <circle class="circle-bg" cx="25" cy="25" r="20" fill="none" stroke-width="3.5"></circle>
+        <circle class="circle-line" cx="25" cy="25" r="20" fill="none" stroke-width="3.5"></circle>
+      </svg>
+      <span class="percentage-text">100%</span>
+    </div>
 
+    <div class="card-content">
+      <p data-i18n-html="donation_card_text">
+        Grâce aux dons généreux qui couvrent nos frais de fonctionnement,
+        <strong>100% de votre don</strong> finance directement nos projets à la Gonâve.
+      </p>
+    </div>
+  </div>
 
+  <div class="hero-section">
+    <h2 data-i18n="impact_hero_title">Sachez que votre contribution fait une réelle différence</h2>
+    <p data-i18n="impact_hero_text">Nous utilisons 100% de votre soutien pour financer des projets sur l'Île de la Gonâve avec toutes les preuves et coordonnées GPS.</p>
+  </div>
 
-   <section class="ged-premium-white-section py-5">
-  <div class="container-fluid px-md-5"> <div class="row align-items-stretch g-5">
-      
-      <div class="col-lg-5 d-flex flex-column justify-content-center">
-        <h2 class="ged-colored-title mb-4">Au-delà des idées reçues.</h2>
-        <p class="ged-main-text text-muted">
-  <strong>Bâtir l'avenir plutôt que l'assistance :</strong> 
-  <em class="ged-motto">Éduquer, protéger, progresser ensemble.</em>
-</p>
-        
-        <div class="ged-colored-badge mt-3">
-          <span class="badge-dot"></span> 
-          <span class="badge-txt">Une vision neuve pour l'économie locale</span>
+  <div class="map-card-container">
+    <div class="stats-header">
+      <div class="brand-title">
+        <img src="assets/img/logo.jpg" alt="Logo Espoir" class="brand-logo">
+        <div class="brand-text">
+          <h3>Gonave Espoir de Demain</h3>
+          <small data-i18n="map_last_update">Dernière mise à jour : Août 2026</small>
         </div>
       </div>
 
-      <div class="col-lg-7">
-        <div class="row g-4">
-          
-          <div class="col-sm-6">
-            <div class="ged-feature-box box-green">
-              <div class="box-icon">🌱</div>
-              <h4>100 000+ Talents</h4>
-              <p>Une communauté jeune, dynamique et prête à innover pour son avenir.</p>
-            </div>
-          </div>
-
-          <div class="col-sm-6">
-            <div class="ged-feature-box box-yellow">
-              <div class="box-icon">🌾</div>
-              <h4>Terres Fertiles</h4>
-              <p>Des ressources agricoles abandonnées qui ne demandent qu'à être relancées.</p>
-            </div>
-          </div>
-
-          <div class="col-sm-6">
-            <div class="ged-feature-box box-blue">
-              <div class="box-icon">💎</div>
-              <h4>Transparence</h4>
-              <p>Chaque action, chaque centime et chaque projet sont documentés ouvertement.</p>
-            </div>
-          </div>
-
-          <div class="col-sm-6">
-            <div class="ged-feature-box box-purple">
-              <div class="box-icon">🤝</div>
-              <h4>Action Locale</h4>
-              <p>Nous co-bâtissons avec les leaders de l'île, sans dépendance externe.</p>
-            </div>
-          </div>
-
+      <div class="stats-group">
+        <div class="divider"></div>
+        <div class="stat-item">
+          <span class="number">12,450</span>
+          <span class="label" data-i18n="map_stat1_label">personnes servies</span>
         </div>
-      </div>
-
-    </div>
-
-    <div class="row mt-5 pt-4 border-top">
-      <div class="col-12 d-flex justify-content-between align-items-center flex-wrap gap-3">
-        <span class="ged-footer-note">✨ Prêt à découvrir l'impact réel ?</span>
-        <div class="d-flex gap-3">
-          <a href="Enraciner_l'espoir.html" class="btn ged-link-btn">En savoir plus</a>
-          <a href="tourisme&artisanat.html" class="btn ged-action-btn">Explorer nos piliers &rarr;</a>
+        <div class="divider"></div>
+        <div class="stat-item">
+          <span class="number">13,000</span>
+          <span class="label" data-i18n="map_stat2_label">projets réalisés</span>
+        </div>
+        <div class="divider"></div>
+        <div class="stat-item">
+          <span class="number">1</span>
+          <span class="label" data-i18n="map_stat3_label">zone principale</span>
         </div>
       </div>
     </div>
 
-  </div>
-</section>
-    
-
-
-
-
-
-
-
-
-    
-    
-
-
-
-
-
-<section id="services" class="services section">
-
-  <div class="container section-title" data-aos="fade-up">
-    <h2>Solidarité & Impact</h2>
-    <p>Chaque projet de GED est une graine d'espoir semée grâce à la générosité de nos donateurs.</p>
+    <div id="map"></div>
   </div>
 
-  <div class="container">
-    <div class="row gy-4">
-
-      <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="100">
-        <div class="service-item position-relative">
-          <div class="icon"><i class="bi bi-heart-pulse"></i></div>
-          <h3>Cantines Scolaires</h3>
-          <p>Grâce aux dons, nous garantissons un repas chaud quotidien aux écoliers, transformant la faim en énergie pour réussir.</p>
-        </div>
-      </div>
-
-      <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="200">
-        <div class="service-item position-relative">
-          <div class="icon"><i class="bi bi-person-check-fill"></i></div>
-          <h3>Santé Mentale & Bien-être</h3>
-          <p>À travers ce programme, GED offre un soutien psychologique essentiel, aidant les membres de la communauté à surmonter les traumatismes et à retrouver un équilibre émotionnel durable.</p>
-        </div>
-      </div>
-
-      <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="400">
-        <div class="service-item position-relative">
-          <div class="icon"><i class="bi bi-flower1"></i></div>
-          <h3>Relance Agricole</h3>
-          <p>Investir dans nos agriculteurs, c'est assurer l'autonomie de la Gonâve. GED fournit les outils et semences nécessaires pour nourrir les générations futures.</p>
-        </div>
-      </div>
-
+  <section class="action-section">
+    <div class="action-header">
+      <h2 data-i18n="action2_title">Changer des vies, c'est possible.</h2>
+      <p>
+        <span data-i18n="action2_subtitle_text">Il existe de nombreuses façons de nous aider à mettre fin à la crise mondiale de l'eau.</span>
+        <strong data-i18n="action2_subtitle_strong">Engagez-vous aujourd'hui et changez des vies.</strong>
+      </p>
     </div>
+
+    <div class="action-carousel">
+
+      <div class="action-card">
+        <div class="action-badge">
+          <span data-i18n="action2_badge_new">NOUVEAU</span>
+        </div>
+        <div class="action-card-img">
+          <img src="assets/img/donar.jfif" alt="Action 1">
+        </div>
+        <div class="action-footer">
+          <div class="icon-circle">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </div>
+         <span data-i18n="action2_card1_label">DON MENSUEL</span>
   </div>
-
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-    <section id="team" class="ged-team-dark">
-  <div class="container section-title" data-aos="fade-up">
-    <h2 class="text-white">Notre <span style="color: #2f945b;">Équipe</span></h2>
-    <p class="text-light">Les leaders dévoués qui guident les initiatives de GED pour le développement de la Gonâve.</p>
+  <div class="action-hover">
+    <h3 data-i18n="action2_card1_title">Soutenir l'Éducation</h3>
+    <p data-i18n="action2_card1_text">Votre don mensuel finance les fournitures scolaires et les cantines pour les enfants de la Gonâve.</p>
+    <button data-i18n="action2_card1_btn">FAIRE UN DON</button>
   </div>
-
-  <div class="container">
-    <div class="row justify-content-center gy-5">
-
-      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-        <div class="ged-member-card">
-          <div class="avatar-holder">
-            <img src="assets/img/team/team-4.jpg" alt="Dieuseul Alfred">
-          </div>
-          <div class="ged-member-content">
-            <h4>Dieuseul Alfred</h4>
-            <p class="role">Fondateur / Président</p>
-            <p class="desc">Visionnaire et pilier juridique de l'organisation.</p>
-            <div class="ged-social">
-              <a href="https://www.facebook.com/share/1CQq6rdu38/?mibextid=wwXIfr"><i class="bi bi-facebook"></i></a>
-              
-              <a href="https://wa.me/50932258917"><i class="bi bi-whatsapp"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-        <div class="ged-member-card">
-          <div class="avatar-holder">
-            <img src="assets/img/team/team-1.jpg" alt="Alfred Jhimmy edvar">
-          </div>
-          <div class="ged-member-content">
-            <h4>Alfred Jhimmy Edvar</h4>
-            <p class="role">Coordonateur</p>
-            <p class="desc">Coordonnateur exécutif</p>
-            <div class="ged-social">
-              <a href="https://www.facebook.com/share/1HrXQfZL5d/?mibextid=wwXIfr"><i class="bi bi-facebook"></i></a>
-              
-              <a href="https://wa.me/50937860226"><i class="bi bi-whatsapp"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
-        <div class="ged-member-card">
-          <div class="avatar-holder">
-            <img src="assets/img/team/team-2.jpg" alt="Lonise Therard Mathieu">
-          </div>
-          <div class="ged-member-content">
-            <h4>Lonise Therard </h4>
-            <p class="role">Comptable</p>
-            <p class="desc">Opératrice financière .</p>
-            <div class="ged-social">
-              <a href=""><i class="bi bi-facebook"></i></a>
-              
-              <a href="https://wa.me/50941295022"><i class="bi bi-whatsapp"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-     
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-   <section id="contact" class="contact section light-background">
-
-  <div class="container section-title" data-aos="fade-up">
-    <h2>Contactez-nous</h2>
-    <p>Vous avez une question ou vous souhaitez soutenir nos projets ? Écrivez-nous dès aujourd'hui.</p>
-  </div><div class="container" data-aos="fade-up" data-aos-delay="100">
-
-    <div class="row gy-4">
-      <div class="col-lg-6 ">
-        <div class="row gy-4">
-
-          <div class="col-lg-12">
-            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
-              <i class="bi bi-geo-alt"></i>
-              <h3>Notre Adresse</h3>
-             <p>
-  <a href="https://www.google.com/maps/search/?api=1&query=230+Bas-Asil+Anse-a-Galets+La+Gonave+Haiti" 
-     target="_blank" 
-     class="text-success text-decoration-none">
-     #230 Bas-Asil, Anse-À-Galets, La Gânave, Haïti.
-  </a>
-</p>
-            </div>
-          </div><div class="col-md-6">
-            
-
-            
-<div class="info-item d-flex flex-column justify-content-center align-items-center h-100 py-4" data-aos="fade-up" data-aos-delay="300" style="min-height: 200px;">
-    <i class="bi bi-telephone"></i>
-    <h3>Appelez-nous</h3>
-    <p class="text-center mb-0">
-        <a href="tel:+12633848722" class="text-success text-decoration-none d-block">+1 263 384 8722</a>
-        <a href="tel:+50937860226" class="text-success text-decoration-none d-block">+509 3786 0226</a>
-    </p>
 </div>
 
-          </div><div class="col-md-6">
-            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="400">
-              <i class="bi bi-envelope"></i>
-              <h3>Email</h3>
-              <a href="mailto:info@gonavespoirdemain.org" class="text-blue-600 hover:underline">
-   info@gonavespoirdemain.org
-</a>
-            </div>
-          </div></div>
+<div class="action-card">
+  <div class="action-card-img">
+    <img src="assets/img/Parainer.jfif" alt="Action 2">
+  </div>
+  <div class="action-footer">
+    <div class="icon-circle">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+      </svg>
+    </div>
+    <span data-i18n="action2_card2_label">PARRAINER UN PROJET</span>
+  </div>
+  <div class="action-hover">
+    <h3 data-i18n="action2_card2_title">Parrainer un Projet Agricole</h3>
+    <p data-i18n="action2_card2_text">Financez des semences et des outils pour aider nos agriculteurs à nourrir leurs familles.</p>
+    <button data-i18n="action2_card2_btn">EN SAVOIR PLUS</button>
+  </div>
+</div>
+
+<div class="action-card">
+  <div class="action-card-img">
+    <img src="assets/img/Hero section.jpg" alt="Action 3">
+  </div>
+  <div class="action-footer">
+    <div class="icon-circle">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+      </svg>
+    </div>
+    <span data-i18n="action2_card3_label">LANCER UNE CAMPAGNE</span>
+  </div>
+  <div class="action-hover">
+    <h3 data-i18n="action2_card3_title">Soutenir l'Art & la Jeunesse</h3>
+    <p data-i18n="action2_card3_text">Aidez-nous à financer des ateliers artistiques et culturels qui donnent une voix à la jeunesse gonavienne.</p>
+    <button data-i18n="action2_card3_btn">COMMENCER</button>
+        </div>
       </div>
 
-      <div class="col-lg-6">
-        <form action="https://formspree.io/f/mnjlarnl" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="500">
-          <div class="row gy-4">
 
-            <div class="col-md-6">
-              <input type="text" name="name" class="form-control" placeholder="Votre Nom" required="">
-            </div>
-
-            <div class="col-md-6 ">
-              <input type="email" class="form-control" name="email" placeholder="Votre Email" required="">
-            </div>
-
-            <div class="col-md-12">
-              <input type="text" class="form-control" name="subject" placeholder="Sujet" required="">
-            </div>
-
-            <div class="col-md-12">
-              <textarea class="form-control" name="message" rows="4" placeholder="Votre Message" required=""></textarea>
-            </div>
-
-            <div class="col-md-12 text-center">
-              <div class="loading">Chargement...</div>
-              <div class="error-message">Une erreur est survenue lors de l'envoi.</div>
-              <div class="sent-message">Votre message a été envoyé avec succès. Merci !</div>
-
-              <button type="submit" style="background:#237c2a; color: white; border: 0; padding: 10px 30px; transition: 0.4s; border-radius: 5px;">Envoyer le Message</button>
-            </div>
-
-          </div>
-        </form>
-      </div></div>
-
+      <div class="action-card">
+  <div class="action-card-img">
+    <img src="assets/img/r1.jpg" alt="Action 4">
   </div>
+  <div class="action-footer">
+    <div class="icon-circle">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 12c2.7 0 8 1.34 8 4v2H4v-2c0-2.66 5.3-4 8-4zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/>
+      </svg>
+    </div>
+    <span data-i18n="action2_card4_label">ACCOMPAGNER LA JEUNESSE</span>
+  </div>
+  <div class="action-hover">
+    <h3 data-i18n="action2_card4_title">Guider l'Avenir des Jeunes</h3>
+    <p data-i18n="action2_card4_text">Votre soutien finance des sessions d'orientation qui aident les jeunes de la Gonâve à faire des choix éclairés pour leur avenir.</p>
+    <button data-i18n="action2_card4_btn">CONTRIBUER</button>
+  </div>
+</div>
+    </div>
+  </section>
 
-</section><!-- /Contact Section -->
-
-  </main>
-
-
-
-
-  
-
- <footer id="footer" class="footer dark-background">
-  <div class="container">
-    <h3 class="sitename">GED</h3>
-    
-    <p>Gônave Espoir de Demain : Une vision solidaire pour l'avenir de la Gonâve à travers l'agriculture durable, la promotion culturelle et l'excellence éducative.</p>
-    
-    <p class="footer-address">
-      <i class="bi bi-geo-alt"></i> Anse-à-Galets, La Gonâve, Haïti
-    </p>
-
-    <div class="social-links d-flex justify-content-center">
-      <a href="https://wa.me/50932258917" target="_blank" title="WhatsApp">
-        <i class="bi bi-whatsapp"></i>
-      </a>
-      
-      <a href="" title="Facebook"><i class="bi bi-facebook"></i></a>
-      
-      <a href="ttps://www.facebook.com/gonavespoirdedemain?mibextid=rS40aB7S9Ucbxw6v" title="Instagram"><i class="bi bi-instagram"></i></a>
-      
+<section>
+  <div class="ged-will-card">
+  <div class="ged-will-section">
+    <div class="ged-will-left">
+      <h2>Faites un don aujourd'hui</h2>
+      <div class="ged-will-features">
+        <div class="ged-will-feature">
+          <i class="bi bi-currency-dollar"></i>
+          <span>100% pour nos projets</span>
+        </div>
+        <div class="ged-will-feature">
+          <i class="bi bi-shield-check"></i>
+          <span>Sécurisé et transparent</span>
+        </div>
+        <div class="ged-will-feature">
+          <i class="bi bi-clock"></i>
+          <span>Fait en moins de 2 minutes</span>
+        </div>
+      </div>
     </div>
 
-    <div class="copyright">
-      <span>Copyright</span> <strong class="px-1 sitename">GED</strong> <span>All Rights Reserved</span>
+    <a href="don.html" class="ged-will-btn">FAIRE UN DON</a>
+  </div>
+
+  <div class="ged-will-divider"></div>
+
+  <div class="ged-will-footer">
+    <span>Propulsé par <strong>GED - Gonâve Espoir de Demain</strong> <i class="bi bi-patch-check-fill" style="color:#28a745; font-size:0.9rem;"></i></span>
+    <div class="ged-will-badges">
+      <span class="ged-will-badge"><i class="bi bi-geo-alt-fill"></i> Preuves GPS sur chaque projet</span>
+      <span class="ged-will-badge"><i class="bi bi-camera-fill"></i> Photos vérifiées</span>
     </div>
   </div>
-</footer>
-    
+</div>
+</section>
 
-  <!-- Scroll Top -->
+
+  <div id="footer-placeholder"></div>
+
+  <div id="cookie-banner" class="cookie-banner">
+    <p>🍪 <span data-i18n="cookie_text">Ce site utilise des cookies essentiels pour fonctionner correctement.</span> <a href="politique-de-confidentialite.html" data-i18n="cookie_link">En savoir plus</a></p>
+    <div class="cookie-actions">
+      <button id="cookie-accept-btn" data-i18n="cookie_accept">Compris</button>
+      <span id="cookie-close-btn" class="cookie-close">&times;</span>
+    </div>
+  </div>
+
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
   <div id="preloader"></div>
 
-  <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
@@ -543,76 +361,81 @@
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 
-  <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/i18n.js"></script>
 
+  <script>
+    async function loadMenu() {
+      try {
+        const response = await fetch('menu.html');
+        const data = await response.text();
+        document.getElementById('header').innerHTML = data;
 
+        if (typeof typeLogo === "function") typeLogo();
 
- <script>
-  async function loadMenu() {
-    try {
-      const response = await fetch('menu.html');
-      const data = await response.text();
-      document.getElementById('header').innerHTML = data;
+        const savedLang = localStorage.getItem('siteLang') || 'fr';
+        if (typeof loadLanguage === 'function') loadLanguage(savedLang);
 
-      if (typeof typeLogo === "function") typeLogo();
+        const currentPath = window.location.pathname.split("/").pop() || "index.html";
 
-      const currentPath = window.location.pathname.split("/").pop() || "index.html";
-      
-      document.querySelectorAll('.navmenu a').forEach(link => {
-        const linkHref = link.getAttribute('href');
-        link.classList.remove('active');
-
-        if (currentPath === "index.html" || currentPath === "") {
-          if (linkHref === "index.html#hero" || linkHref === "#hero") {
+        document.querySelectorAll('.navmenu a').forEach(link => {
+          const linkHref = link.getAttribute('href');
+          link.classList.remove('active');
+          if (currentPath === "index.html" || currentPath === "") {
+            if (linkHref === "index.html#hero" || linkHref === "#hero") {
+              link.classList.add('active');
+            }
+          } else if (linkHref.includes(currentPath)) {
             link.classList.add('active');
           }
-        } 
-        else if (linkHref.includes(currentPath)) {
-          link.classList.add('active');
+        });
+
+        const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
+        if (mobileNavToggleBtn) {
+          mobileNavToggleBtn.addEventListener('click', function (e) {
+            document.body.classList.toggle('mobile-nav-active');
+            this.classList.toggle('bi-list');
+            this.classList.toggle('bi-x');
+          });
         }
-      });
 
-      // 3. BOUTON MOBIL LA
-      const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
-      if (mobileNavToggleBtn) {
-        mobileNavToggleBtn.addEventListener('click', function(e) {
-          document.body.classList.toggle('mobile-nav-active');
-          this.classList.toggle('bi-list');
-          this.classList.toggle('bi-x');
+        document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
+          navmenu.addEventListener('click', function (e) {
+            e.preventDefault();
+            this.parentNode.classList.toggle('active');
+            this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
+            e.stopImmediatePropagation();
+          });
         });
+
+        document.querySelectorAll('.navmenu .lang-switcher-item > a').forEach(link => {
+          link.addEventListener('click', function (e) {
+            e.preventDefault();
+            this.classList.toggle('active');
+            this.nextElementSibling.classList.toggle('dropdown-active');
+            e.stopImmediatePropagation();
+          });
+        });
+
+        document.querySelectorAll('.navmenu .lang-switcher-item ul a').forEach(langLink => {
+          langLink.addEventListener('click', function () {
+            const mobileToggle = document.querySelector('.mobile-nav-toggle');
+            if (mobileToggle) mobileToggle.click();
+          });
+        });
+
+      } catch (error) {
+        console.error('Erè nan chajman meni an:', error);
       }
-
-      // 4. Dropdown mobil
-      document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
-        navmenu.addEventListener('click', function(e) {
-          e.preventDefault();
-          this.parentNode.classList.toggle('active');
-          this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
-          e.stopImmediatePropagation();
-        });
-      });
-
-      // --- PATI 5: FÈMEN MENI A LÈ YO KLIKE SOU YON LYEN (Solution an) ---
-      document.querySelectorAll('.navmenu a').forEach(link => {
-        link.addEventListener('click', () => {
-          if (document.body.classList.contains('mobile-nav-active')) {
-            document.body.classList.remove('mobile-nav-active');
-            
-            // Remete ikon list la (twa ti bar yo)
-            if (mobileNavToggleBtn) {
-              mobileNavToggleBtn.classList.add('bi-list');
-              mobileNavToggleBtn.classList.remove('bi-x');
-            }
-          }
-        });
-      });
-
-    } catch (error) {
-      console.error('Erè nan chajman meni an:', error);
     }
-  }
 
-  document.addEventListener('DOMContentLoaded', loadMenu);
-</script>
+    document.addEventListener('DOMContentLoaded', loadMenu);
+
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      });
+  </script>
 </body>
+</html>
