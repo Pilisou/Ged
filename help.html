@@ -1,302 +1,789 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guide d'Utilisation & FAQ - GED: Gonâve Espoir de Demain</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gonâve Espoir de Demain</title>
 
-    <!-- Vendor CSS Files -->
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <style>
+    /* =========================
+        VARIABLES Y RESET
+    ========================= */
+    :root {
+      --gnav-accent: #f7bb35; 
+      --gnav-text: #2c3e50;    
+      --gnav-link: #526173;
+      --gnav-green: #20ac53;
+    }
 
-    <!-- Main CSS File -->
-    <link href="assets/css/main.css" rel="stylesheet">
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fff;
+      color: #222;
+    }
+
+    /* CHEVRON */
+    .gnav-chev {
+      width: 9px;
+      height: 9px;
+      border-right: 3.5px solid #000000;
+      border-bottom: 3.5px solid #000000;
+      transform: rotate(45deg) translateY(-3px);
+      transition: transform 0.2s ease;
+      display: inline-block;
+      margin-left: 8px;
+    }
+
+    /* =========================
+        NAVBAR
+    ========================= */
+    .navbar {
+      height: 82px;
+      width: 100%;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      padding: 0 5%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      border-bottom: 1.9px solid #030303;
+      gap: 16px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--gnav-text);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    /* TI KARE JÒN */
+    .gnav-mark {
+      display: flex;
+      width: 30px;
+      height: 30px;
+      border-radius: 4px;
+      background: var(--gnav-accent);
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .gnav-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    /* IMAJ LOGO POU GWO EKRAN */
+   .desktop-logo-img {
+      display: block;
+      height: 47px;
+      object-fit: contain;
+      transform: translateY(-9px); 
+    }
+
+    .gnav-burger {
+      display: none;
+      width: 18px;
+      height: 19px;
+      position: relative;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      margin-right: 4px;
+      z-index: 110;
+      margin-left: 4px;
+
+    }
+
+    .gnav-burger span {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: #555151;
+      transition: all 0.3s ease;
+    }
+
+    .gnav-burger span:nth-child(1) { top: 0; }
+    .gnav-burger span:nth-child(2) { top: 8px; }
+    .gnav-burger span:nth-child(3) { bottom: 0; }
+
+    .gnav-burger.open span:nth-child(1) { transform: rotate(45deg); top: 8px; }
+    .gnav-burger.open span:nth-child(2) { opacity: 0; }
+    .gnav-burger.open span:nth-child(3) { transform: rotate(-45deg); top: 8px; }
+
+    /* DESKTOP NAV */
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      margin-left: 30px;
+    }
+
+    .dropdown-item {
+      position: relative;
+      padding: 30px 0;
+    }
+
+    .dropdown-btn {
+      color: #666464;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      text-transform: uppercase;
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    .dropdown-btn::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 2.5px;
+      background-color: var(--gnav-accent);
+      transition: width 0.2s ease;
+    }
+
+    .dropdown-item:hover .dropdown-btn::after { width: 100%; }
+    .dropdown-item:hover .gnav-chev { transform: rotate(225deg) translateY(-1px); }
+
+    .nav-simple-link-item {
+      position: relative;
+      padding: 30px 0;
+    }
+
+    .nav-simple-link {
+      color: #666464;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1.7px;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      text-transform: uppercase;
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    .nav-simple-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 2.5px;
+      background-color: var(--gnav-accent);
+      transition: width 0.2s ease;
+    }
+
+    .nav-simple-link-item:hover .nav-simple-link::after { width: 100%; }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 380px;
+      background: #ffffff;
+      box-shadow: 0px 10px 30px rgba(0,0,0,0.12);
+      border-radius: 4px;
+      padding: 12px 0;
+      z-index: 50;
+      border: 1px solid #e5e7eb;
+    }
+
+    .dropdown-item:hover .dropdown-menu { display: block; }
+
+    .menu-link {
+      display: block;
+      padding: 14px 24px;
+      text-decoration: none;
+      border-bottom: 1px solid #f3f4f6;
+      transition: background 0.2s ease;
+    }
+
+    .menu-link:last-child { border-bottom: none; }
+    .menu-title-row { display: flex; align-items: center; justify-content: space-between; }
+    .menu-title { font-size: 14px; font-weight: 700; color: #2c3e50; text-transform: uppercase; }
+    .menu-desc { display: none; font-size: 12px; color: #6b7280; margin-top: 6px; line-height: 1.4; }
+
+    .arrow-icon {
+      display: none; width: 24px; height: 24px; background: var(--gnav-accent);
+      color: #000; border-radius: 50%; align-items: center; justify-content: center; font-size: 13px; font-weight: bold;
+    }
+
+    .menu-link:hover { background-color: #fafafa; }
+    .menu-link:hover .menu-desc { display: block; }
+    .menu-link:hover .arrow-icon { display: flex; }
+
+    /* LANG DROPDOWN */
+    .gnav-oc-sec { position: relative; }
+    .gnav-oc-top { display: inline-flex; align-items: center; gap: 5px; font-weight: 700; background: none; border: none; cursor: pointer; font-size: 13px; }
+    .globe-icon { width: 17px; height: 17px; }
+    .gnav-oc-sub { display: none; position: absolute; top: 100%; left: 0; background-color: #ffffff; min-width: 110px; box-shadow: 0px 8px 16px rgba(0,0,0,0.12); border-radius: 4px; padding: 6px 0; z-index: 30; border: 1px solid #e5e7eb; }
+    .gnav-oc-sec:hover .gnav-oc-sub { display: block; }
+    .gnav-oc-sub a { color: #374151; padding: 8px 14px; text-decoration: none; display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; text-transform: uppercase; }
+
+    .nav-right {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .sign-in {
+      color: var(--gnav-link);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 600;
+      
+    }
+
+    .line {
+      width: 1px;
+      height: 24px;
+      background: #0a0a0a;
+    }
+
+    .give-btn {
+      background: var(--gnav-green);
+      color: #e9e9e9;
+      text-decoration: none;
+      padding: 9px 14px;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      white-space: nowrap; 
+      margin-right: -11px;
+    }
+
+    /* =========================
+        HERO SECTION (DESKTOP)
+    ========================= */
+    .hero {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      overflow: hidden;
+      padding-top: 82px;
+      background: #000;
+    }
+
+    .hero-picture, .hero-image {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      object-fit: cover; object-position: center; z-index: 1;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%; z-index: 2; pointer-events: none;
+      background: linear-gradient(105deg, rgba(15, 110, 190, 0.95) 0%, rgba(15, 120, 205, 0.85) 28%, rgba(15, 125, 210, 0.40) 45%, rgba(15, 125, 210, 0.05) 55%, transparent 65%);
+    }
+
+    .hero-container {
+      position: relative; z-index: 5; margin-left: 11%; padding-top: 90px; padding-bottom: 50px;
+      max-width: 480px; display: flex; flex-direction: column; align-items: center; gap: 25px;
+    }
+
+    .hero-content { color: white; text-align: center; width: 100%; }
     
-    <!-- Fichye CSS Vèt ak Blan -->
-    <link href="assets/css/guide-style.css" rel="stylesheet">
+    .hero-content h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(32px, 3.8vw, 48px);
+      line-height: 1.25;
+      font-weight: normal;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.25);
+      margin: 0 auto;
+    }
+
+    .hero-content h1 span {
+      display: block !important;
+      white-space: nowrap;
+    }
+
+    /* BWAT DON DESKTOP */
+    .donation-card {
+      width: 100%; max-width: 400px; background: rgba(255, 252, 252, 0.96); padding: 40px 30px;
+      border-radius: 4px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); color: #6b7280; display: flex; flex-direction: column;
+    }
+    .donation-top { display: flex; gap: 10px; margin-bottom: 24px; }
+    .donation-tab { flex: 1; text-align: center; padding: 12px 14px; background: var(--gnav-accent); color: #52472b; font-size: 11px; font-weight: bold; letter-spacing: 1px; border-radius: 2px; cursor: pointer; }
+    .donation-tab.light { background: #f3f4f6; color: #6b7280; }
+    .choose { font-size: 11px; font-weight: bold; letter-spacing: 0.8px; margin-bottom: 14px; color: #4b5563; text-transform: uppercase; }
+    .amounts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 20px; }
+    .amount { border: 1px solid #d1d5db; padding: 14px 6px; text-align: center; font-size: 13px; font-weight: 600; background: #ffffff; border-radius: 3px; color: #374151; cursor: pointer; }
+    .amount.selected { background: var(--gnav-accent); color: #4b422a; font-weight: bold; border-color: var(--gnav-accent); }
+    .amount-wide { grid-column: span 2; }
+    .benefit { font-size: 12px; line-height: 1.4; margin: 10px 0 24px; color: #4b5563; display: flex; align-items: center; gap: 8px; }
+    .heart { color: var(--gnav-green); font-size: 16px; flex-shrink: 0; }
+    .join { width: 100%; padding: 16px; border: none; background: var(--gnav-green); color: #ffffff; font-size: 13px; font-weight: bold; letter-spacing: 1.5px; border-radius: 3px; cursor: pointer; }
+    .mobile-give-btn { display: none; }
+
+    /* =========================================
+        MOBILE DRAWER MENU
+    ========================================= */
+    .mobile-menu-drawer {
+      display: none;
+      position: fixed;
+      top: 68px; left: 0; width: 100%; height: calc(100vh - 68px);
+      background: #e9e9e9; z-index: 90; overflow-y: auto; padding: 20px;
+    }
+
+    .mobile-menu-drawer.active { display: block; }
+
+    .mobile-acc-item { border-bottom: 1px solid #e5e7eb; }
+    .mobile-acc-btn {
+      width: 100%; padding: 18px 0; display: flex; justify-content: space-between; align-items: center;
+      background: none; border: none; font-size: 15px; font-weight: bold; letter-spacing: 1.5px; color: #000; cursor: pointer; text-transform: uppercase;
+    }
+
+    .circle-icon {
+      width: 28px; height: 28px; border: 1.5px solid #d1d5db; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: normal; color: #374151;
+    }
+
+    .mobile-acc-content { display: none; padding-bottom: 15px; }
+    .mobile-acc-item.open .mobile-acc-content { display: block; }
+
+    .mobile-sub-link { display: block; padding: 14px 0; border-bottom: 1px solid #f3f4f6; text-decoration: none; color: #111; }
+    .mobile-sub-link .sub-title { font-size: 15px; font-weight: bold; margin-bottom: 4px; }
+    .mobile-sub-link .sub-desc { font-size: 12px; color: #6b7280; line-height: 1.4; }
+    .mobile-sub-link .sub-row { display: flex; justify-content: space-between; align-items: flex-start; }
+
+    .yellow-circle-arrow {
+      width: 26px; height: 26px; background: var(--gnav-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; color: #000; flex-shrink: 0;
+    }
+
+    .mobile-bottom-links {
+      margin-top: 30px;
+      padding-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .mobile-extra-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #1f2937;
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    .mobile-extra-link svg {
+      width: 20px;
+      height: 20px;
+      stroke: #1c5f1c;
+    }
+
+    /* =========================================
+        REGLAS MÓVIL (MAX 900PX) - KORÈKSYON YO
+    ========================================= */
+    @media (max-width: 900px) {
+      /* 1. Navbar pi laj epi gen plis espas anndan */
+      .navbar { 
+        height: 80px; 
+        padding: 0 20px; 
+        gap: 22px; 
+      }
+      
+      .gnav-burger { 
+        display: block; 
+        padding: 8px 6px; 
+        margin-right: 2px;
+      }
+
+      .desktop-logo-img { display: none; }
+      .gnav-mark { display: flex; }
+
+      .nav-links { display: none; }
+      
+      .nav-right { 
+        display: flex; 
+        gap: 14px; 
+        margin-left: auto; 
+        align-items: center;
+        margin-right: 13px;
+      }
+      .sign-in { font-size: 9px;  }
+      .line { height: 20px; }
+      
+      .give-btn { 
+        padding: 8px 16px; 
+        font-size: 12px; 
+        letter-spacing: 0.8px; 
+        margin-right: 0;
+      }
+
+      /* Adjuste drawer an pou l kòmanse anba nouvo wotè navbar la (80px) */
+      .mobile-menu-drawer {
+        top: 80px;
+        height: calc(100vh - 80px);
+      }
+
+      /* 2. Hero ak Tèks la desann pi ba */
+      .hero { 
+        padding-top: 80px; 
+        min-height: 100vh; 
+      }
+      
+      .hero-overlay { 
+        background: linear-gradient(180deg, rgba(15, 110, 190, 0.92) 0%, rgba(15, 120, 205, 0.75) 45%, rgba(15, 130, 215, 0.20) 75%, transparent 100%); 
+      }
+
+      .hero-container { 
+        margin: 0 auto; 
+        padding-top: 120px; 
+        padding-bottom: 40px; 
+        max-width: 100%; 
+        padding-left: 20px;
+        padding-right: 20px;
+        gap: 35px;
+      }
+
+      .hero-content h1 { 
+        font-size: 30px; 
+        line-height: 1.3; 
+      }
+
+      .donation-card { display: none !important; }
+      
+      .mobile-give-btn { 
+        display: inline-block; 
+        background: var(--gnav-accent); 
+        color: #4b422a; 
+        text-decoration: none; 
+        padding: 16px 40px; 
+        font-size: 13px; 
+        font-weight: bold; 
+        letter-spacing: 2px; 
+        border-radius: 2px; 
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        margin-top: 10px;
+      }
+    }
+
+    @media (min-width: 901px) {
+      .gnav-mark { display: none; }
+      .desktop-logo-img { display: block; }
+    }
+  </style>
 </head>
+
 <body>
 
-   
-    <header class="ged-custom-faq-header">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-5 text-start" data-aos="fade-right">
-                <h1 class="ged-custom-main-title">Besoin d'aide ? Nous vous guidons.</h1>
-                <p class="ged-custom-subtitle">
-                    Bienvenue sur notre espace d'assistance. Ce guide méthodique a été conçu pour vous accompagner pas à pas et optimiser votre expérience de navigation sur notre plateforme.
-                </p>
+  <!-- NAVBAR -->
+  <header class="navbar">
+
+    <button class="gnav-burger" id="burgerBtn" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <a href="index.html" class="logo">
+      <span class="gnav-mark">
+        <img src="assets/img/apple-touch-icon.png" alt="GED">
+      </span>
+      <img src="assets/img/Logo GED.png" alt="GED" class="desktop-logo-img">
+    </a>
+
+    <!-- DESKTOP NAV -->
+    <nav class="nav-links">
+      
+      <!-- 1. NOS ACTIONS -->
+      <div class="dropdown-item">
+        <button class="dropdown-btn">
+          NOS ACTIONS <span class="gnav-chev"></span>
+        </button>
+        <div class="dropdown-menu">
+          <a href="#" class="menu-link">
+            <div class="menu-title-row">
+              <span class="menu-title">Agriculture Durable</span>
+              <span class="arrow-icon">→</span>
             </div>
-            <div class="col-lg-7 text-center" data-aos="fade-left">
-                <img src="assets/img/FAQ.png" class="img-fluid ged-custom-hero-svg" alt="Illustration Support GED">
+            <div class="menu-desc">Soutenir la souveraineté alimentaire et les producteurs locaux à La Gonâve.</div>
+          </a>
+          <a href="#" class="menu-link">
+            <div class="menu-title-row">
+              <span class="menu-title">Éducation & Formation</span>
+              <span class="arrow-icon">→</span>
             </div>
+            <div class="menu-desc">Élever l'accès au savoir et accompagner la jeunesse vers l'excellence.</div>
+          </a>
+          <a href="#" class="menu-link">
+            <div class="menu-title-row">
+              <span class="menu-title">Artisanat & Tourisme</span>
+              <span class="arrow-icon">→</span>
+            </div>
+            <div class="menu-desc">Valoriser le savoir-faire des artisans et l'éco-tourisme insulaire.</div>
+          </a>
         </div>
+      </div>
+
+      <!-- 2. POURQUOI NOUS -->
+      <div class="dropdown-item">
+        <button class="dropdown-btn">
+          NOTRE IMPACT <span class="gnav-chev"></span>
+        </button>
+        <div class="dropdown-menu">
+          <a href="#" class="menu-link">
+            <div class="menu-title-row">
+              <span class="menu-title">Notre Mission Globale</span>
+              <span class="arrow-icon">→</span>
+            </div>
+            <div class="menu-desc">Un engagement international ancré sur le terrain et en plein essor au Canada.</div>
+          </a>
+          <a href="#" class="menu-link">
+            <div class="menu-title-row">
+              <span class="menu-title">Impact Communautaire</span>
+              <span class="arrow-icon">→</span>
+            </div>
+            <div class="menu-desc">Des actions directes et mesurables pour transformer durablement les conditions de vie.</div>
+          </a>
+          <a href="#" class="menu-link">
+            <div class="menu-title-row">
+              <span class="menu-title">Réseau International</span>
+              <span class="arrow-icon">→</span>
+            </div>
+            <div class="menu-desc">Relier les forces vives de la diaspora et des partenaires pour un développement pérenne.</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- 3. VISION (Kout, pwòp, san dropdown) -->
+      <div class="nav-simple-link-item">
+        <a href="#" class="nav-simple-link">VISION</a>
+      </div>
+
+      <!-- SELEKTÈ LANG DESKTOP -->
+      <div class="gnav-oc-sec">
+        <button class="gnav-oc-top">
+          <svg class="globe-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+          <span>FR</span>
+          <span class="gnav-chev"></span>
+        </button>
+        <div class="gnav-oc-sub">
+          <a href="#"><img src="https://flagcdn.com/20x15/fr.png" width="20" height="15" alt="FR"> FR</a>
+          <a href="#"><img src="https://flagcdn.com/20x15/gb.png" width="20" height="15" alt="EN"> EN</a>
+          <a href="#"><img src="https://flagcdn.com/20x15/es.png" width="20" height="15" alt="ES"> ES</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 4. COMPTE + DON -->
+    <div class="nav-right">
+      <a href="#" class="sign-in">SE CONNECTER</a>
+      <div class="line"></div>
+      <a href="don.html" class="give-btn">DON 💧</a>
     </div>
-    <div class="ged-custom-wave-top">
-        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 60C240 15 480 15 720 60C960 105 1200 105 1440 60V120H0V60Z" fill="#fafafa"/>
+
+  </header>
+
+  <!-- MENI DRAWER MOBIL -->
+  <div class="mobile-menu-drawer" id="mobileDrawer">
+    <div class="mobile-acc-item">
+      <button class="mobile-acc-btn" onclick="toggleAcc(this)">
+        NOS ACTIONS <span class="circle-icon">+</span>
+      </button>
+      <div class="mobile-acc-content">
+        <a href="#" class="mobile-sub-link">
+          <div class="sub-row">
+            <div>
+              <div class="sub-title">Agriculture Durable</div>
+              <div class="sub-desc">Soutenir la souveraineté alimentaire et les producteurs locaux à La Gonâve.</div>
+            </div>
+            <div class="yellow-circle-arrow">→</div>
+          </div>
+        </a>
+        <a href="#" class="mobile-sub-link">
+          <div class="sub-row">
+            <div>
+              <div class="sub-title">Éducation & Formation</div>
+              <div class="sub-desc">Élever l'accès au savoir et accompagner la jeunesse vers l'excellence.</div>
+            </div>
+            <div class="yellow-circle-arrow">→</div>
+          </div>
+        </a>
+        <a href="#" class="mobile-sub-link">
+          <div class="sub-row">
+            <div>
+              <div class="sub-title">Artisanat & Tourisme</div>
+              <div class="sub-desc">Valoriser le savoir-faire des artisans et l'éco-tourisme insulaire.</div>
+            </div>
+            <div class="yellow-circle-arrow">→</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="mobile-acc-item">
+      <button class="mobile-acc-btn" onclick="toggleAcc(this)">
+        NOTRE IMPACT <span class="circle-icon">+</span>
+      </button>
+      <div class="mobile-acc-content">
+        <a href="#" class="mobile-sub-link">
+          <div class="sub-row">
+            <div>
+              <div class="sub-title">Notre Mission Globale</div>
+              <div class="sub-desc">Un engagement international ancré sur le terrain et en plein essor au Canada.</div>
+            </div>
+            <div class="yellow-circle-arrow">→</div>
+          </div>
+        </a>
+        <a href="#" class="mobile-sub-link">
+          <div class="sub-row">
+            <div>
+              <div class="sub-title">Impact Communautaire</div>
+              <div class="sub-desc">Des actions directes et mesurables pour transformer durablement les conditions de vie.</div>
+            </div>
+            <div class="yellow-circle-arrow">→</div>
+          </div>
+        </a>
+        <a href="#" class="mobile-sub-link">
+          <div class="sub-row">
+            <div>
+              <div class="sub-title">Réseau International</div>
+              <div class="sub-desc">Relier les forces vives de la diaspora et des partenaires pour un développement pérenne.</div>
+            </div>
+            <div class="yellow-circle-arrow">→</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="mobile-acc-item">
+      <a href="#" class="mobile-acc-btn" style="text-decoration:none;">
+        VISION <span class="circle-icon">→</span>
+      </a>
+    </div>
+
+    <div class="mobile-bottom-links">
+      <a href="#" class="mobile-extra-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
         </svg>
+        Compte
+      </a>
+      <a href="#" class="mobile-extra-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+        Recevez nos nouvelles pour rester informé
+      </a>
     </div>
-</header>
 
-<main class="ged-custom-content-wrapper py-5">
-    <div class="container">
-        <div class="row">
-            
-            <div class="col-lg-4">
-                <div class="ged-custom-sidebar-sticky">
-                    <div class="ged-sidebar-category-title" style="margin-bottom: 260px;">
-                        Navigation & Structure
-                    </div>
-                    <div class="ged-sidebar-category-title" style="margin-bottom: 200px;">
-                        Support & Contact
-                    </div>
-                    <div class="ged-sidebar-category-title">
-                        Donations & Impact
-                    </div>
-                </div>
-            </div>
+  </div>
 
-            <div class="col-lg-8">
-                <div class="accordion accordion-flush" id="gedMasterAccordion">
-                    
-                    <div class="ged-accordion-card mb-3">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q1">
-                            1. Comment explorer le contenu dès mon arrivée sur le site ?
-                        </button>
-                        <div id="q1" class="accordion-collapse collapse" data-bs-parent="#gedMasterAccordion">
-                            <div class="accordion-body">
-                                <p>À l'ouverture du site, vous découvrirez des images symboliques de notre mission. Pour explorer les différentes sections, il vous suffit de faire défiler la page vers le bas pour découvrir nos objectifs et nos actualités.</p>
-                                <div class="ged-feedback-box mt-3 d-flex align-items-center">
-                                    <span class="me-3">Cet article vous a-t-il été utile ?</span>
-                                    <button class="btn btn-feedback me-2"><i class="bi bi-hand-thumbs-up"></i> Oui</button>
-                                    <button class="btn btn-feedback"><i class="bi bi-hand-thumbs-down"></i> Non</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+  <!-- HERO SECTION -->
+  <main class="hero">
+    <picture class="hero-picture">
+      <source media="(max-width: 900px)" srcset="assets/img/hero2.jpeg">
+      <img src="assets/img/hero1.jpeg" alt="GED" class="hero-image">
+    </picture>
 
-                    <div class="ged-accordion-card mb-3">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q2">
-                            2. Que retrouve-t-on dans la rubrique "Qui sommes-nous ?" ?
-                        </button>
-                        <div id="q2" class="accordion-collapse collapse" data-bs-parent="#gedMasterAccordion">
-                            <div class="accordion-body">
-                                <p>En vous rendant dans le <strong>Menu de Navigation</strong>, vous trouverez cette rubrique qui est le cœur de notre identité. Elle regroupe l'histoire de <strong>Gonâve Espoir de Demain</strong>, nos valeurs fondamentales et notre vision pour le développement durable de la communauté.</p>
-                                <div class="ged-feedback-box mt-3 d-flex align-items-center">
-                                    <span class="me-3">Cet article vous a-t-il été utile ?</span>
-                                    <button class="btn btn-feedback me-2"><i class="bi bi-hand-thumbs-up"></i> Oui</button>
-                                    <button class="btn btn-feedback"><i class="bi bi-hand-thumbs-down"></i> Non</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <div class="hero-overlay"></div>
 
-                    <div class="ged-accordion-card mb-3">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q3">
-                            3. Comment accéder aux sous-catégories de "Nos Piliers" ?
-                        </button>
-                        <div id="q3" class="accordion-collapse collapse" data-bs-parent="#gedMasterAccordion">
-                            <div class="accordion-body">
-                                <p>Allez dans le <strong>Menu de Navigation</strong> et repérez "Nos Piliers". Ne cliquez pas sur le nom lui-même, mais <strong>appuyez sur la petite flèche</strong> située à droite du titre pour faire apparaître les options : <strong>Tourisme & Artisanat</strong> ou <strong>Éducation & Agriculture</strong>.</p>
-                                <div class="ged-feedback-box mt-3 d-flex align-items-center">
-                                    <span class="me-3">Cet article vous a-t-il été utile ?</span>
-                                    <button class="btn btn-feedback me-2"><i class="bi bi-hand-thumbs-up"></i> Oui</button>
-                                    <button class="btn btn-feedback"><i class="bi bi-hand-thumbs-down"></i> Non</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <div class="hero-container">
+      <section class="hero-content">
+        <h1>
+          <span>Élever les communautés,</span>
+          <span>cultiver l'avenir,</span>
+          <span>bâtir l'espoir</span>
+        </h1>
+      </section>
 
-                    <div class="ged-accordion-card mb-4">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q4">
-                            4. Où puis-je voir les membres de l'administration ?
-                        </button>
-                        <div id="q4" class="accordion-collapse collapse" data-bs-parent="#gedMasterAccordion">
-                            <div class="accordion-body">
-                                <p>Accédez au <strong>Menu de Navigation</strong> et sélectionnez la rubrique <strong>Notre Équipe</strong>. Vous y découvrirez l'organigramme administratif ainsi que les visages des professionnels qui pilotent les projets de Gonâve Espoir de Demain.</p>
-                                <div class="ged-feedback-box mt-3 d-flex align-items-center">
-                                    <span class="me-3">Cet article vous a-t-il été utile ?</span>
-                                    <button class="btn btn-feedback me-2"><i class="bi bi-hand-thumbs-up"></i> Oui</button>
-                                    <button class="btn btn-feedback"><i class="bi bi-hand-thumbs-down"></i> Non</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+      <a href="don.html" class="mobile-give-btn">DONNER</a>
 
-                    <div class="ged-accordion-card mb-3" style="margin-top: 50px;">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q5">
-                            5. Comment envoyer un message direct par courriel ?
-                        </button>
-                        <div id="q5" class="accordion-collapse collapse" data-bs-parent="#gedMasterAccordion">
-                            <div class="accordion-body">
-                                <p>Pour toute correspondance officielle, vous pouvez nous écrire à l'adresse <strong>info@gonavespoirdemain.org</strong>. Notre secrétariat centralise toutes les demandes pour vous répondre avec la plus grande attention.</p>
-                                <div class="ged-feedback-box mt-3 d-flex align-items-center">
-                                    <span class="me-3">Cet article vous a-t-il été utile ?</span>
-                                    <button class="btn btn-feedback me-2"><i class="bi bi-hand-thumbs-up"></i> Oui</button>
-                                    <button class="btn btn-feedback"><i class="bi bi-hand-thumbs-down"></i> Non</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="ged-accordion-card mb-3">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q6">
-                            6. Quelle est la procédure pour remplir le formulaire de contact ?
-                        </button>
-                        <div id="q6" class="accordion-collapse collapse" data-bs-parent="#gedMasterAccordion">
-                            <div class="accordion-body">
-                                <p>Rendez-vous dans la section de contact et renseignez votre nom, votre adresse e-mail et l'objet de votre message. Une fois votre texte rédigé, cliquez sur le bouton vert <strong>Envoyer le Message</strong> pour valider l'envoi.</p>
-                                <div class="ged-feedback-box mt-3 d-flex align-items-center">
-                                    <span class="me-3">Cet article vous a-t-il été utile ?</span>
-                                    <button class="btn btn-feedback me-2"><i class="bi bi-hand-thumbs-up"></i> Oui</button>
-                                    <button class="btn btn-feedback"><i class="bi bi-hand-thumbs-down"></i> Non</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="ged-accordion-card mb-4">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q7">
-                            7. À quoi sert la rubrique "Help!?" ?
-                        </button>
-                        <div id="q7" class="accordion-collapse collapse" data-bs-parent="#gedMasterAccordion">
-                            <div class="accordion-body">
-                                <p>Disponible dans le <strong>Menu de Navigation</strong>, la rubrique <strong>Help!?</strong> est votre raccourci vers ce Centre d'aide interactif. Elle a été conçue pour offrir une assistance rapide et répondre aux questions fréquentes en un clic.</p>
-                                <div class="ged-feedback-box mt-3 d-flex align-items-center">
-                                    <span class="me-3">Cet article vous a-t-il été utile ?</span>
-                                    <button class="btn btn-feedback me-2"><i class="bi bi-hand-thumbs-up"></i> Oui</button>
-                                    <button class="btn btn-feedback"><i class="bi bi-hand-thumbs-down"></i> Non</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="ged-accordion-card mb-3" style="margin-top: 50px;">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q8">
-                            8. Que se passe-t-il après avoir cliqué sur "Faire un Don" ?
-                        </button>
-                        <div id="q8" class="accordion-collapse collapse" data-bs-parent="#gedMasterAccordion">
-                            <div class="accordion-body">
-                                <p>Dès que vous sélectionnez <strong>Faire un Don</strong> dans le <strong>Menu de Navigation</strong>, une interface sécurisée s'ouvre avec le message : <em>"Votre générosité enracine le changement"</em>. Cela confirme l'accès à notre plateforme de contribution officielle.</p>
-                                <div class="ged-feedback-box mt-3 d-flex align-items-center">
-                                    <span class="me-3">Cet article vous a-t-il été utile ?</span>
-                                    <button class="btn btn-feedback me-2"><i class="bi bi-hand-thumbs-up"></i> Oui</button>
-                                    <button class="btn btn-feedback"><i class="bi bi-hand-thumbs-down"></i> Non</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="ged-accordion-card mb-3">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q9">
-                            9. Est-il possible de modifier le montant suggéré ?
-                        </button>
-                        <div id="q9" class="accordion-collapse collapse" data-bs-parent="#gedMasterAccordion">
-                            <div class="accordion-body">
-                                <p>Oui. Dans l'interface de don, vous pouvez cliquer sur le lien orange <strong>MODIFIER</strong> pour personnaliser le montant de votre contribution et choisir si vous souhaitez donner une seule fois ou de manière mensuelle.</p>
-                                <div class="ged-feedback-box mt-3 d-flex align-items-center">
-                                    <span class="me-3">Cet article vous a-t-il été utile ?</span>
-                                    <button class="btn btn-feedback me-2"><i class="bi bi-hand-thumbs-up"></i> Oui</button>
-                                    <button class="btn btn-feedback"><i class="bi bi-hand-thumbs-down"></i> Non</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="ged-accordion-card mb-3">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q10">
-                            10. Quels sont les modes de paiement sécurisés disponibles ?
-                        </button>
-                        <div id="q10" class="accordion-collapse collapse" data-bs-parent="#gedMasterAccordion">
-                            <div class="accordion-body">
-                                <p>Nous acceptons trois modes de paiement via notre plateforme : les cartes bancaires (<strong>Visa/Mastercard</strong>), le service <strong>PayPal</strong>, ainsi que <strong>MonCash</strong> pour les contributions directes.</p>
-                                <div class="ged-feedback-box mt-3 d-flex align-items-center">
-                                    <span class="me-3">Cet article vous a-t-il été utile ?</span>
-                                    <button class="btn btn-feedback me-2"><i class="bi bi-hand-thumbs-up"></i> Oui</button>
-                                    <button class="btn btn-feedback"><i class="bi bi-hand-thumbs-down"></i> Non</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="ged-accordion-card mb-3">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q11">
-                            11. Comment retourner rapidement au sommet de la page ?
-                        </button>
-                        <div id="q11" class="accordion-collapse collapse" data-bs-parent="#gedMasterAccordion">
-                            <div class="accordion-body">
-                                <p>Pour remonter instantanément sans défiler, cliquez sur la <strong>petite flèche verte circulaire</strong> située en bas à droite de votre écran. Elle vous ramènera directement au niveau du <strong>Menu de Navigation</strong>.</p>
-                                <div class="ged-feedback-box mt-3 d-flex align-items-center">
-                                    <span class="me-3">Cet article vous a-t-il été utile ?</span>
-                                    <button class="btn btn-feedback me-2"><i class="bi bi-hand-thumbs-up"></i> Oui</button>
-                                    <button class="btn btn-feedback"><i class="bi bi-hand-thumbs-down"></i> Non</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="ged-accordion-card mb-3">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q12">
-                            12. Comment revenir à la page d'accueil depuis une autre page ?
-                        </button>
-                        <div id="q12" class="accordion-collapse collapse" data-bs-parent="#gedMasterAccordion">
-                            <div class="accordion-body">
-                                <p>Si vous vous trouvez sur une autre page du site et que vous souhaitez revenir à la page principale, accédez simplement au <strong>Menu de Navigation</strong> et cliquez sur le bouton <strong>Accueil</strong> pour y retourner instantanément.</p>
-                                <div class="ged-feedback-box mt-3 d-flex align-items-center">
-                                    <span class="me-3">Cet article vous a-t-il été utile ?</span>
-                                    <button class="btn btn-feedback me-2"><i class="bi bi-hand-thumbs-up"></i> Oui</button>
-                                    <button class="btn btn-feedback"><i class="bi bi-hand-thumbs-down"></i> Non</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            
+      <div class="donation-card">
+        <div class="donation-top">
+          <div class="donation-tab">MENSUEL 💧</div>
+          <div class="donation-tab light">UNIQUE</div>
         </div>
-    </div>
-</main>
 
-    <div class="container ged-cta-inner-content">
-        <div class="row align-items-center py-5">
-            <div class="col-lg-7 text-start">
-                <h2 class="ged-cta-title">Découvrir l'impact en action</h2>
-                <p class="ged-cta-desc">
-                    Planifiez un moment d'échange pour comprendre comment notre approche structurée maximise les ressources et transforme concrètement le quotidien de la communauté.
-                </p>
-            </div>
-            
-            <div class="col-lg-5 text-lg-end mt-4 mt-lg-0">
-                <div class="ged-action-layout">
-                    
-                    <a href="don.html" class="btn btn-ged-submit-green">Faire un don</a>
-                </div>
-            </div>
+        <div class="choose">CHOISIR UN MONTANT</div>
+
+        <div class="amounts">
+          <div class="amount">10 $</div>
+          <div class="amount">20 $</div>
+          <div class="amount selected">40 $ USD/mo</div>
+          <div class="amount">100 $</div>
+          <div class="amount amount-wide">Autre montant</div>
         </div>
-    </div>
-</section>
-    <!-- Vendor JS Files -->
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
-    <!-- Main JS File -->
-    <script src="assets/js/main.js"></script>
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            AOS.init({
-                duration: 800,
-                easing: 'ease-in-out',
-                once: true
-            });
-        });
-    </script>
+        <div class="benefit">
+          <span class="heart">♥</span>
+          Soutient directement les projets de développement à La Gonâve et à l'international.
+        </div>
+
+        <a href="don.html" style="text-decoration: none; width: 100%; display: block;">
+          <button class="join">S'ENGAGER</button>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    const burgerBtn = document.getElementById('burgerBtn');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+
+    burgerBtn.addEventListener('click', () => {
+      burgerBtn.classList.toggle('open');
+      mobileDrawer.classList.toggle('active');
+    });
+
+    function toggleAcc(btn) {
+      const item = btn.parentElement;
+      item.classList.toggle('open');
+      const icon = btn.querySelector('.circle-icon');
+      if (item.classList.contains('open')) {
+        icon.textContent = '−';
+      } else {
+        icon.textContent = '+';
+      }
+    }
+  </script>
+
 </body>
 </html>
