@@ -105,7 +105,6 @@
       margin-right: 4px;
       z-index: 110;
       margin-left: 4px;
-
     }
 
     .gnav-burger span {
@@ -264,7 +263,6 @@
       text-decoration: none;
       font-size: 12px;
       font-weight: 600;
-      
     }
 
     .line {
@@ -336,6 +334,7 @@
       margin: 0 auto;
     }
 
+    /* Fòse chak span anndan liy yo aji kòm blòk sou 3 liy */
     .hero-content h1 span {
       display: block !important;
       white-space: nowrap;
@@ -418,10 +417,9 @@
     }
 
     /* =========================================
-        REGLAS MÓVIL (MAX 900PX) - KORÈKSYON YO
+        REGLAS MÓVIL (MAX 900PX)
     ========================================= */
     @media (max-width: 900px) {
-      /* 1. Navbar pi laj epi gen plis espas anndan */
       .navbar { 
         height: 80px; 
         padding: 0 20px; 
@@ -444,9 +442,8 @@
         gap: 14px; 
         margin-left: auto; 
         align-items: center;
-        
       }
-      .sign-in { font-size: 12px;  }
+      .sign-in { font-size: 12px; }
       .line { height: 20px; }
       
       .give-btn { 
@@ -456,13 +453,11 @@
         margin-right: 0;
       }
 
-      /* Adjuste drawer an pou l kòmanse anba nouvo wotè navbar la (80px) */
       .mobile-menu-drawer {
         top: 80px;
         height: calc(100vh - 80px);
       }
 
-      /* 2. Hero ak Tèks la desann pi ba */
       .hero { 
         padding-top: 80px; 
         min-height: 100vh; 
@@ -472,23 +467,28 @@
         background: linear-gradient(180deg, rgba(15, 110, 190, 0.92) 0%, rgba(15, 120, 205, 0.75) 45%, rgba(15, 130, 215, 0.20) 75%, transparent 100%); 
       }
 
+      /* LAJÈ CONTAINER AN PI MOUTE SOUM MOBIL (100% SOU KOTE YO) */
       .hero-container { 
         margin: 0 auto; 
-        padding-top: 120px; 
+        padding-top: 75px; 
         padding-bottom: 40px; 
         max-width: 100%; 
-        padding-left: 20px;
-        padding-right: 20px;
-        gap: 35px;
+        padding-left: 12px;
+        padding-right: 12px;
+        gap: 45px;
       }
 
+      /* GWOSÈ POLIS LA PI MOUTE POU L PARÈT PI GWO AK PI KLÈ SOU MOBIL */
       .hero-content h1 { 
-        font-size: 30px; 
+        font-size: clamp(28px, 7.2vw, 36px); 
         line-height: 1.3; 
-        text-wrap: balance;
+        text-align: center;
       }
 
-      .hero-content h1 span { white-space: normal; }
+      .hero-content h1 span {
+        display: block !important;
+        white-space: nowrap !important;
+      }
 
       .donation-card { display: none !important; }
       
@@ -506,9 +506,7 @@
         margin-top: 10px;
       }
 
-      /* ===== MENI DRAWER (style Charity: water) ===== */
       .mobile-menu-drawer { background: #f9f6ef; padding: 0; }
-
       .mobile-acc-item { border-bottom: 1px solid #a8a8a8; }
 
       .mobile-acc-btn {
@@ -530,7 +528,6 @@
         line-height: 1;
       }
 
-      /* Flèch VISION : fon ble-gri pal */
       a.mobile-acc-btn .circle-icon { background: #e6eef2; font-size: 15px; }
 
       .mobile-acc-content { padding: 0 20px 24px; }
@@ -542,7 +539,6 @@
         padding: 22px 0 26px;
       }
 
-      /* Chak chwa = yon kat bèj */
       .mobile-sub-link {
         background: #f6ebd2;
         border-radius: 4px;
@@ -572,9 +568,6 @@
       .gnav-mark { display: none; }
       .desktop-logo-img { display: block; }
 
-      /* ===== GWO EKRAN SÈLMAN (style Charity: water) ===== */
-
-      /* 1. Kouch ble sou foto a : fonse anwo agoch, vin pi klè vè dwat ak anba */
       .hero-overlay {
         background:
           radial-gradient(ellipse 55% 85% at 0% 25%,
@@ -588,13 +581,11 @@
             rgba(20, 150, 225, 0) 62%);
       }
 
-      /* 2 + 3. Tèks hero a ak kare don an desann yon ti kras */
       .hero-container { padding-top: 135px; }
 
       .hero-content { display: flex; justify-content: center; }
       .hero-content h1 { width: max-content; text-align: center; }
 
-      /* 4. Meni ki deplaye : pi laj, pi wo, fon gri-blan */
       .dropdown-menu {
         width: 400px;
         padding: 0;
@@ -624,10 +615,8 @@
         margin-top: 10px;
       }
 
-      /* Chwa anba sourit la : fon ble pal */
       .menu-link:hover { background-color: #d3dcf0; }
 
-      /* 5. Flèch won jòn ak kontou fonse */
       .arrow-icon {
         width: 26px;
         height: 26px;
@@ -720,7 +709,7 @@
         </div>
       </div>
 
-      <!-- 3. VISION (Kout, pwòp, san dropdown) -->
+      <!-- 3. VISION -->
       <div class="nav-simple-link-item">
         <a href="#" class="nav-simple-link">VISION</a>
       </div>
@@ -870,7 +859,7 @@
         <h1>
           <span>Aidons chaque famille à bâtir</span>
           <span>un avenir plus sûr</span>
-          <span>et beau.</span>
+          <span>et beau</span>
         </h1>
       </section>
 
