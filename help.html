@@ -334,7 +334,6 @@
       margin: 0 auto;
     }
 
-    /* POU TOUT EKRAN: Fè chak span konpòte l tankou yon blòk pou l ka fè bèl fòm eskalye a klèman sou 3 liy sou nenpòt ekran */
     .hero-content h1 span {
       display: block !important;
       white-space: nowrap;
@@ -472,15 +471,25 @@
         padding-top: 75px; 
         padding-bottom: 40px; 
         max-width: 100%; 
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
         gap: 45px;
       }
 
       .hero-content h1 { 
-        font-size: 26px; 
+        font-size: 32px; 
         line-height: 1.3; 
         text-align: center;
+      }
+
+      /* RATRESI SÈLMAN PREMYE LIY LAN SOU TI EKRAN POU L RANTRE KLÈ */
+      .hero-content h1 .hero-line-1 {
+        font-size: 30px !important; 
+      }
+
+      .hero-content h1 span {
+        display: block !important;
+        white-space: nowrap !important;
       }
 
       .donation-card { display: none !important; }
@@ -848,10 +857,10 @@
     <div class="hero-overlay"></div>
 
     <div class="hero-container">
-      <!-- 3 SPAN ORIJINAL YO POU KÒRÈK SOU TOUT EKRAN AK STYLE ESKALYE -->
       <section class="hero-content">
         <h1>
-          <span>Aidons chaque famille à bâtir</span>
+          <!-- Klas hero-line-1 la pèmèt nou chanje gwosè sèlman premye liy lan sou mobil -->
+          <span class="hero-line-1">Aidons chaque famille à bâtir</span>
           <span>un avenir plus sûr</span>
           <span>et beau</span>
         </h1>
