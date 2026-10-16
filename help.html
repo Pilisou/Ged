@@ -464,7 +464,7 @@
 
       /* 2. Hero ak Tèks la desann pi ba */
       .hero { 
-        padding-top: 28px; 
+        padding-top: 80px; 
         min-height: 100vh; 
       }
       
@@ -485,7 +485,10 @@
       .hero-content h1 { 
         font-size: 30px; 
         line-height: 1.3; 
+        text-wrap: balance;
       }
+
+      .hero-content h1 span { white-space: normal; }
 
       .donation-card { display: none !important; }
       
@@ -586,18 +589,10 @@
       }
 
       /* 2 + 3. Tèks hero a ak kare don an desann yon ti kras */
-      .hero-container { padding-top: 115px; }
+      .hero-container { padding-top: 135px; }
 
-
-      .hero-content {
-  display: flex;
-  justify-content: center;
-}
-
-.hero-content h1 {
-  width: max-content;
-  text-align: center;
-}
+      .hero-content { display: flex; justify-content: center; }
+      .hero-content h1 { width: max-content; text-align: center; }
 
       /* 4. Meni ki deplaye : pi laj, pi wo, fon gri-blan */
       .dropdown-menu {
@@ -874,8 +869,8 @@
       <section class="hero-content">
         <h1>
           <span>Aidons chaque famille à bâtir</span>
-          <span> un avenir plus sûr</span>
-          <span>et beau</span>
+          <span>un avenir plus sûr</span>
+          <span>et beau.</span>
         </h1>
       </section>
 
