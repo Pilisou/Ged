@@ -464,7 +464,7 @@
 
       /* 2. Hero ak Tèks la desann pi ba */
       .hero { 
-        padding-top: 80px; 
+        padding-top: 28px; 
         min-height: 100vh; 
       }
       
@@ -502,11 +502,144 @@
         box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         margin-top: 10px;
       }
+
+      /* ===== MENI DRAWER (style Charity: water) ===== */
+      .mobile-menu-drawer { background: #f9f6ef; padding: 0; }
+
+      .mobile-acc-item { border-bottom: 1px solid #a8a8a8; }
+
+      .mobile-acc-btn {
+        padding: 26px 20px;
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 2.5px;
+        color: #1a1a1a;
+        text-decoration: none;
+      }
+
+      .circle-icon {
+        width: 26px;
+        height: 26px;
+        border: 1.5px solid #111;
+        background: #fff;
+        color: #111;
+        font-size: 20px;
+        line-height: 1;
+      }
+
+      /* Flèch VISION : fon ble-gri pal */
+      a.mobile-acc-btn .circle-icon { background: #e6eef2; font-size: 15px; }
+
+      .mobile-acc-content { padding: 0 20px 24px; }
+
+      .mobile-acc-intro {
+        font-size: 14px;
+        letter-spacing: 2px;
+        color: #222;
+        padding: 22px 0 26px;
+      }
+
+      /* Chak chwa = yon kat bèj */
+      .mobile-sub-link {
+        background: #f6ebd2;
+        border-radius: 4px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.22);
+        padding: 18px 14px 16px;
+        margin-bottom: 18px;
+        border-bottom: none;
+      }
+      .mobile-sub-link .sub-row { align-items: center; gap: 14px; }
+      .mobile-sub-link .sub-title { font-size: 17px; font-weight: 600; color: #111; margin-bottom: 6px; }
+      .mobile-sub-link .sub-desc { font-size: 14px; color: #222; line-height: 1.4; }
+
+      .yellow-circle-arrow {
+        width: 24px;
+        height: 24px;
+        border: 2px solid #111;
+        color: #111;
+        font-size: 13px;
+      }
+
+      .mobile-bottom-links { padding: 0 20px 30px; }
+      .mobile-extra-link { font-weight: 500; color: #111; }
+      .mobile-extra-link svg { stroke: #111; }
     }
 
     @media (min-width: 901px) {
       .gnav-mark { display: none; }
       .desktop-logo-img { display: block; }
+
+      /* ===== GWO EKRAN SÈLMAN (style Charity: water) ===== */
+
+      /* 1. Kouch ble sou foto a : fonse anwo agoch, vin pi klè vè dwat ak anba */
+      .hero-overlay {
+        background:
+          radial-gradient(ellipse 55% 85% at 0% 25%,
+            rgba(6, 24, 92, 0.96) 0%,
+            rgba(10, 50, 140, 0.88) 40%,
+            rgba(12, 100, 190, 0.55) 70%,
+            rgba(12, 120, 200, 0) 100%),
+          linear-gradient(90deg,
+            rgba(10, 70, 170, 0.78) 0%,
+            rgba(15, 125, 210, 0.40) 35%,
+            rgba(20, 150, 225, 0) 62%);
+      }
+
+      /* 2 + 3. Tèks hero a ak kare don an desann yon ti kras */
+      .hero-container { padding-top: 115px; }
+
+
+      .hero-content {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-content h1 {
+  width: max-content;
+  text-align: center;
+}
+
+      /* 4. Meni ki deplaye : pi laj, pi wo, fon gri-blan */
+      .dropdown-menu {
+        width: 400px;
+        padding: 0;
+        background: #f4f4f4;
+        border: 1px solid #e0e0e0;
+        border-radius: 4px;
+        overflow: hidden;
+      }
+
+      .menu-link {
+        padding: 26px 28px;
+        border-bottom: 1px solid #dcdcdc;
+      }
+
+      .menu-title {
+        font-size: 16px;
+        font-weight: 600;
+        color: #333;
+        text-transform: none;
+        letter-spacing: 0;
+      }
+
+      .menu-desc {
+        font-size: 15px;
+        line-height: 1.5;
+        color: #555;
+        margin-top: 10px;
+      }
+
+      /* Chwa anba sourit la : fon ble pal */
+      .menu-link:hover { background-color: #d3dcf0; }
+
+      /* 5. Flèch won jòn ak kontou fonse */
+      .arrow-icon {
+        width: 26px;
+        height: 26px;
+        border: 2px solid #2b2b2b;
+        font-size: 14px;
+        color: #2b2b2b;
+      }
     }
   </style>
 </head>
@@ -636,6 +769,7 @@
         NOS ACTIONS <span class="circle-icon">+</span>
       </button>
       <div class="mobile-acc-content">
+        <div class="mobile-acc-intro">VOIR TOUTES NOS ACTIONS</div>
         <a href="#" class="mobile-sub-link">
           <div class="sub-row">
             <div>
@@ -671,6 +805,7 @@
         NOTRE IMPACT <span class="circle-icon">+</span>
       </button>
       <div class="mobile-acc-content">
+        <div class="mobile-acc-intro">DÉCOUVRIR NOTRE IMPACT</div>
         <a href="#" class="mobile-sub-link">
           <div class="sub-row">
             <div>
@@ -730,7 +865,7 @@
   <main class="hero">
     <picture class="hero-picture">
       <source media="(max-width: 900px)" srcset="assets/img/hero2.jpeg">
-      <img src="assets/img/hero1.jpeg" alt="GED" class="hero-image">
+      <img src="assets/img/hero3.jpeg" alt="GED" class="hero-image">
     </picture>
 
     <div class="hero-overlay"></div>
@@ -738,9 +873,9 @@
     <div class="hero-container">
       <section class="hero-content">
         <h1>
-          <span>Élever les communautés,</span>
-          <span>cultiver l'avenir,</span>
-          <span>bâtir l'espoir</span>
+          <span>Aidons chaque famille à bâtir</span>
+          <span> un avenir plus sûr</span>
+          <span>et beau</span>
         </h1>
       </section>
 
