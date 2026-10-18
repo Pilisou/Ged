@@ -1,9 +1,28 @@
+
+
+// Footer GED: kòmanse pou kont li lè footer la parèt
+(function () {
+  function demarrer() {
+    if (!document.getElementById('form-g')) return false;
+    initFooterG();
+    return true;
+  }
+  if (demarrer()) return;
+  var obs = new MutationObserver(function () {
+    if (demarrer()) obs.disconnect();
+  });
+  obs.observe(document.documentElement, { childList: true, subtree: true });
+})();
+
+//fini la
+
+
+
+
+
 (function() {
   "use strict";
 
-  /**
-   * Apply .scrolled class to the body as the page is scrolled down
-   */
   function toggleScrolled() {
     const selectBody = document.querySelector('body');
     const selectHeader = document.querySelector('#header');
@@ -15,45 +34,61 @@
   window.addEventListener('load', toggleScrolled);
 
 
-const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
 
-function mobileNavToogle() {
-  if (document.querySelector('body')) {
-    document.querySelector('body').classList.toggle('mobile-nav-active');
+
+
+
+// Navbar GED: meni ki tonbe + meni telefòn.
+// Li mache menm si menu.html chaje apre ak fetch (pa gen anyen pou rele).
+(function () {
+  function $(sel) { return document.querySelector(sel); }
+
+  function setOC(show) {
+    var oc = $('#gnav-oc'), ov = $('#gnav-ov');
+    if (!oc || !ov) return;
+    oc.classList.toggle('show', show);
+    ov.classList.toggle('show', show);
   }
-  
-  if (mobileNavToggleBtn) {
-    mobileNavToggleBtn.classList.toggle('bi-list');
-    mobileNavToggleBtn.classList.toggle('bi-x');
-  }
-}
 
-if (mobileNavToggleBtn) {
-  mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
-}
-
-function initMobileNavLinks() {
-  const navLinks = document.querySelectorAll('#navmenu a');
-  if (navLinks.length > 0) {
-    navLinks.forEach(navmenu => {
-      navmenu.addEventListener('click', () => {
-        if (document.querySelector('.mobile-nav-active')) {
-          mobileNavToogle();
-        }
-      });
+  function closeDD() {
+    document.querySelectorAll('.gnav-dd.open').forEach(function (x) {
+      x.classList.remove('open');
     });
   }
-}
 
-initMobileNavLinks();
-  document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
-    navmenu.addEventListener('click', function(e) {
-      e.preventDefault();
-      this.parentNode.classList.toggle('active');
-      this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
-      e.stopImmediatePropagation();
-    });
+  document.addEventListener('click', function (e) {
+    var t = e.target;
+
+    if (t.closest('#gnav-burger')) { setOC(true); return; }
+    if (t.closest('#gnav-close') || t.closest('#gnav-ov')) { setOC(false); return; }
+
+    var top = t.closest('.gnav-oc-top');
+    if (top) { top.parentNode.classList.toggle('open'); return; }
+
+    var parent = t.closest('.gnav-parent');
+    if (parent) {
+      var li = parent.closest('.gnav-dd');
+      var wasOpen = li.classList.contains('open');
+      closeDD();
+      if (!wasOpen) li.classList.add('open');
+      return;
+    }
+
+    if (t.closest('.gnav-oc a')) setOC(false);
+    closeDD();
   });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { setOC(false); closeDD(); }
+  });
+})();
+
+
+
+
+
+
+
 
   const preloader = document.querySelector('#preloader');
   if (preloader) {
@@ -141,13 +176,6 @@ initMobileNavLinks();
   });
 
 })();
-
-
-
-
-
-
-
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -509,3 +537,73 @@ document.addEventListener('DOMContentLoaded', () => {
     mediaBlock.style.transition = 'transform 0.5s ease';
   });
 });
+
+
+
+
+
+// sa ki jere Footer a
+// Remplit les listes de la date de naissance : JJ, MM, AAAA
+// Appelez initFooterG() une fois que le footer est dans la page
+function initFooterG() {
+  const jj = document.getElementById('jj-g');
+  const mm = document.getElementById('mm-g');
+  const aaaa = document.getElementById('aaaa-g');
+  if (!jj || !mm || !aaaa || jj.dataset.pret) return;
+  jj.dataset.pret = '1';
+
+  for (let d = 1; d <= 31; d++) {
+    jj.add(new Option(String(d).padStart(2, '0'), d));
+  }
+  for (let m = 1; m <= 12; m++) {
+    mm.add(new Option(String(m).padStart(2, '0'), m));
+  }
+  const anneeActuelle = new Date().getFullYear();
+  for (let a = anneeActuelle; a >= anneeActuelle - 100; a--) {
+    aaaa.add(new Option(a, a));
+  }
+
+  // Formulaire d’abonnement
+  const form = document.getElementById('form-g');
+  const msg = document.getElementById('msg-g');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    msg.className = 'msg-g';
+
+    const prenom = form.prenom.value.trim();
+    const nom = form.nom.value.trim();
+    const email = form.email.value.trim();
+    const emailValide = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    if (!prenom || !nom || !emailValide) {
+      msg.textContent = 'Veuillez saisir votre prénom, votre nom et une adresse e-mail valide.';
+      msg.classList.add('error-g');
+      return;
+    }
+
+    const donnees = {
+      prenom: prenom,
+      nom: nom,
+      email: email,
+      anniversaire: form.annee.value && form.mois.value && form.jour.value
+        ? form.annee.value + '-' + form.mois.value + '-' + form.jour.value
+        : null,
+      rappel: form.rappel.checked
+    };
+
+    // À FAIRE : remplacez ceci par votre propre serveur / service (requête fetch POST vers votre adresse)
+    console.log('Données d’abonnement :', donnees);
+    msg.textContent = 'Merci pour votre inscription !';
+    form.reset();
+  });
+}
+
+// Si le footer est déjà dans la page (collé directement), on démarre tout de suite
+if (document.getElementById('form-g')) initFooterG();
+
+
+
+
+
+
