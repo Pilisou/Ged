@@ -49,112 +49,125 @@
 
   <header id="header" class="header d-flex align-items-center fixed-top"></header>
 
-  <section id="about" class="hero-split-section">
-    <div class="hero-glow-overlay"></div>
+  
 
-    <div class="hero-bg-wrapper">
-      <img src="assets/img/ese.jpg" alt="GED Gonâve" class="hero-bg-img">
-    </div>
 
-    <div class="container hero-container-align">
-      <div class="hero-split-content">
 
-        <div class="hero-top-bar">
-          <div class="hero-pillars">
-            <span class="pillar-tag" data-i18n="hero2_pillar1">Éducation</span>
-            <span class="pillar-tag" data-i18n="hero2_pillar2">Environnement</span>
-            <span class="pillar-tag" data-i18n="hero2_pillar3">Communauté</span>
-          </div>
 
-          <a href="Activités & Événements - Gonave Espoir de Demain.html" class="activity-live-badge">
-            <span class="live-pulse-container">
-              <span class="pulse-ring"></span>
-              <span class="pulse-core"></span>
-            </span>
-            <svg class="news-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"></path>
-              <path d="M18 14h-8"></path>
-              <path d="M15 18h-5"></path>
-              <path d="M10 6h8v4h-8z"></path>
-            </svg>
-            <span class="activity-text" data-i18n="hero2_activities_btn">Activities</span>
-          </a>
-        </div>
 
-        <h1 data-i18n="about_title" class="hero-title">
-          Un avenir meilleur pour la Gonâve.
+
+<!-- ============================================================
+  GEDTOP HERO - HTML (hero + bwat don an)
+  Kole l nan <body>, apre navbar la.
+============================================================ -->
+
+<div class="gedtop-root">
+
+  <!-- HERO SECTION -->
+  <main class="gedtop-hero">
+    <picture class="gedtop-hero-picture">
+      <source media="(max-width: 900px)" srcset="assets/img/hero2.jpeg">
+      <img src="assets/img/hero3.jpeg" alt="GED" class="gedtop-hero-image">
+    </picture>
+
+    <div class="gedtop-hero-overlay"></div>
+
+    <div class="gedtop-hero-container">
+      <div class="gedtop-hero-content">
+        <h1>
+          <span class="gedtop-hero-line-1">Aidons chaque famille à bâtir</span>
+          <span>un avenir plus sûr</span>
+          <span>et beau</span>
         </h1>
-
-        <p class="hero-description" data-i18n="about_text">
-          Parce que chaque communauté mérite un avenir meilleur, GED s'engage chaque jour à l'île de la Gonâve. Découvrez comment nos initiatives transforment le quotidien de centaines de familles.
-        </p>
-
       </div>
-    </div>
-  </section>
 
-  <section class="stats-section">
-    <div class="container">
-      <div class="stat-item">
-        <h2 class="counter" data-target="500">0</h2>
-        <div class="stat-line"></div>
-        <p data-i18n="stats_children">Enfants encadrés pour un avenir brillant.</p>
-      </div>
-      <div class="stat-item">
-        <h2 class="counter" data-target="1000">0</h2>
-        <div class="stat-line"></div>
-        <p data-i18n="stats_trees">Arbres plantés pour protéger notre terre.</p>
-      </div>
-      <div class="stat-item">
-        <h2 class="counter" data-target="500">0</h2>
-        <div class="stat-line"></div>
-        <p data-i18n="stats_members">Membres engagés au sein de la communauté.</p>
-      </div>
-    </div>
-  </section>
+      <a href="don.html" class="gedtop-mobile-give-btn">DONNER</a>
 
-  <section id="services" class="services section">
-    <div class="container section-title" data-aos="fade-up">
-      <h2 data-i18n="services_title">Solidarité & Impact</h2>
-      <p data-i18n="services_desc">Chaque projet de GED est une graine d'espoir semée grâce à la générosité de nos donateurs.</p>
-    </div>
-
-    <div class="container">
-      <div class="row gy-4">
-        <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="100">
-          <div class="service-item position-relative">
-            <div class="icon"><i class="bi bi-heart-pulse"></i></div>
-            <h3 data-i18n="services_item1_title">Cantines Scolaires</h3>
-            <p data-i18n="services_item1_text">Grâce aux dons, nous garantissons un repas chaud quotidien aux écoliers, transformant la faim en énergie pour réussir.</p>
+      <div class="gedtop-donation-card">
+        <div class="gedtop-donation-top">
+          <div class="gedtop-donation-tab">MENSUEL
+            <svg class="gedtop-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
           </div>
+          <div class="gedtop-donation-tab gedtop-light">UNIQUE</div>
         </div>
 
-        <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="200">
-          <div class="service-item position-relative">
-            <div class="icon"><i class="bi bi-person-check-fill"></i></div>
-            <h3 data-i18n="services_item2_title">Santé Mentale & Bien-être</h3>
-            <p data-i18n="services_item2_text">À travers ce programme, GED offre un soutien psychologique essentiel, aidant les membres de la communauté à surmonter les traumatismes et à retrouver un équilibre émotionnel durable.</p>
-          </div>
+        <div class="gedtop-choose">CHOISIR UN MONTANT</div>
+
+        <div class="gedtop-amounts">
+          <div class="gedtop-amount">10 $</div>
+          <div class="gedtop-amount">20 $</div>
+          <div class="gedtop-amount gedtop-selected">40 $ USD/mo</div>
+          <div class="gedtop-amount">100 $</div>
+          <div class="gedtop-amount gedtop-amount-wide">Autre montant</div>
         </div>
 
-        <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="400">
-          <div class="service-item position-relative">
-            <div class="icon"><i class="bi bi-flower1"></i></div>
-            <h3 data-i18n="services_item3_title">Relance Agricole</h3>
-            <p data-i18n="services_item3_text">Investir dans nos agriculteurs, c'est assurer l'autonomie de la Gonâve. GED fournit les outils et semences nécessaires pour nourrir les générations futures.</p>
-          </div>
+        <div class="gedtop-benefit">
+          <span class="gedtop-heart">♥</span>
+          Soutient directement les projets de développement à La Gonâve et à l'international.
         </div>
 
-        <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="400">
-          <div class="service-item position-relative">
-            <div class="icon"><i class="bi bi-people"></i></div>
-            <h3 data-i18n="services_item4_title">Orientation des Jeunes</h3>
-            <p data-i18n="services_item4_text">Offrir un espace de réflexion et d'écoute pour guider notre jeunesse. GED accompagne les jeunes dans leur orientation pour les aider à faire des choix d'avenir éclairés.</p>
-          </div>
-        </div>
+        <a href="don.html" style="text-decoration: none; width: 100%; display: block;">
+          <button class="gedtop-join">S'ENGAGER</button>
+        </a>
       </div>
+
     </div>
-  </section>
+  </main>
+
+</div>
+
+
+  
+
+
+
+
+
+
+<!-- Pati anba ero a -->
+<section class="gedon" id="don-de-ged">
+
+  <div class="gedon-entete">
+    <p class="gedon-sur-titre">Votre don, pour quoi ?</p>
+    <h2 class="gedon-titre">Parce que  Votre générosité transforme des vies</h2>
+  </div>
+
+  <div class="gedon-vitrine">
+    <div class="gedon-onglets" role="tablist">
+      <button class="gedon-onglet gedon-actif" role="tab" aria-selected="true">Éducation</button>
+      <button class="gedon-onglet" role="tab" aria-selected="false">Santé</button>
+      <button class="gedon-onglet" role="tab" aria-selected="false">Agriculture</button>
+      <button class="gedon-onglet" role="tab" aria-selected="false">Jeunesse</button>
+    </div>
+
+    <article class="gedon-diapo gedon-actif">
+      <img src="assets/img/services-2.jpg" alt="Écoliers de La Gonâve pendant le repas à la cantine">
+      <div class="gedon-carte">
+        <p>Grâce à vos dons, des écoliers reçoivent chaque jour un repas chaud et peuvent se concentrer sur leurs études.</p>
+        <a class="gedon-lien" href="#">Voir les cantines scolaires</a>
+      </div>
+    </article>
+
+    
+
+  <div class="gedon-appel">
+    <h2 class="gedon-titre">Ensemble, offrons un meilleur avenir à chaque famille</h2>
+    <p>Chaque geste de générosité redonne espoir à une famille : votre don finance directement des projets concrets qui bâtissent, jour après jour, un meilleur avenir.</p>
+    <a class="gedon-bouton" href="don.html">Donner maintenant</a>
+  </div>
+
+</section>
+  
+
+  
+
+
+
+
+
+
 
   <div class="ged-donation-card">
     <div class="circle-loader-container">
@@ -168,7 +181,7 @@
     <div class="card-content">
       <p data-i18n-html="donation_card_text">
         Grâce aux dons généreux qui couvrent nos frais de fonctionnement,
-        <strong>100% de votre don</strong> finance directement nos projets à la Gonâve.
+        <strong>100% de votre don</strong> finance directement nos projets 
       </p>
     </div>
   </div>
@@ -210,136 +223,24 @@
     <div id="map"></div>
   </div>
 
-  <section class="action-section">
-    <div class="action-header">
-      <h2 data-i18n="action2_title">Changer des vies, c'est possible.</h2>
-      <p>
-        <span data-i18n="action2_subtitle_text">Il existe de nombreuses façons de nous aider à mettre fin à la crise mondiale de l'eau.</span>
-        <strong data-i18n="action2_subtitle_strong">Engagez-vous aujourd'hui et changez des vies.</strong>
-      </p>
-    </div>
-
-    <div class="action-carousel">
-
-      <div class="action-card">
-        <div class="action-badge">
-          <span data-i18n="action2_badge_new">NOUVEAU</span>
-        </div>
-        <div class="action-card-img">
-          <img src="assets/img/donar.jfif" alt="Action 1">
-        </div>
-        <div class="action-footer">
-          <div class="icon-circle">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-            </svg>
-          </div>
-         <span data-i18n="action2_card1_label">DON MENSUEL</span>
-  </div>
-  <div class="action-hover">
-    <h3 data-i18n="action2_card1_title">Soutenir l'Éducation</h3>
-    <p data-i18n="action2_card1_text">Votre don mensuel finance les fournitures scolaires et les cantines pour les enfants de la Gonâve.</p>
-    <button data-i18n="action2_card1_btn">FAIRE UN DON</button>
-  </div>
-</div>
-
-<div class="action-card">
-  <div class="action-card-img">
-    <img src="assets/img/Parainer.jfif" alt="Action 2">
-  </div>
-  <div class="action-footer">
-    <div class="icon-circle">
-      <svg viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
-      </svg>
-    </div>
-    <span data-i18n="action2_card2_label">PARRAINER UN PROJET</span>
-  </div>
-  <div class="action-hover">
-    <h3 data-i18n="action2_card2_title">Parrainer un Projet Agricole</h3>
-    <p data-i18n="action2_card2_text">Financez des semences et des outils pour aider nos agriculteurs à nourrir leurs familles.</p>
-    <button data-i18n="action2_card2_btn">EN SAVOIR PLUS</button>
-  </div>
-</div>
-
-<div class="action-card">
-  <div class="action-card-img">
-    <img src="assets/img/Hero section.jpg" alt="Action 3">
-  </div>
-  <div class="action-footer">
-    <div class="icon-circle">
-      <svg viewBox="0 0 24 24" fill="currentColor">
-        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
-      </svg>
-    </div>
-    <span data-i18n="action2_card3_label">LANCER UNE CAMPAGNE</span>
-  </div>
-  <div class="action-hover">
-    <h3 data-i18n="action2_card3_title">Soutenir l'Art & la Jeunesse</h3>
-    <p data-i18n="action2_card3_text">Aidez-nous à financer des ateliers artistiques et culturels qui donnent une voix à la jeunesse gonavienne.</p>
-    <button data-i18n="action2_card3_btn">COMMENCER</button>
-        </div>
-      </div>
 
 
-      <div class="action-card">
-  <div class="action-card-img">
-    <img src="assets/img/r1.jpg" alt="Action 4">
-  </div>
-  <div class="action-footer">
-    <div class="icon-circle">
-      <svg viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 12c2.7 0 8 1.34 8 4v2H4v-2c0-2.66 5.3-4 8-4zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/>
-      </svg>
-    </div>
-    <span data-i18n="action2_card4_label">ACCOMPAGNER LA JEUNESSE</span>
-  </div>
-  <div class="action-hover">
-    <h3 data-i18n="action2_card4_title">Guider l'Avenir des Jeunes</h3>
-    <p data-i18n="action2_card4_text">Votre soutien finance des sessions d'orientation qui aident les jeunes de la Gonâve à faire des choix éclairés pour leur avenir.</p>
-    <button data-i18n="action2_card4_btn">CONTRIBUER</button>
-  </div>
-</div>
-    </div>
-  </section>
-
-<section>
-  <div class="ged-will-card">
-  <div class="ged-will-section">
-    <div class="ged-will-left">
-      <h2>Faites un don aujourd'hui</h2>
-      <div class="ged-will-features">
-        <div class="ged-will-feature">
-          <i class="bi bi-currency-dollar"></i>
-          <span>100% pour nos projets</span>
-        </div>
-        <div class="ged-will-feature">
-          <i class="bi bi-shield-check"></i>
-          <span>Sécurisé et transparent</span>
-        </div>
-        <div class="ged-will-feature">
-          <i class="bi bi-clock"></i>
-          <span>Fait en moins de 2 minutes</span>
-        </div>
-      </div>
-    </div>
-
-    <a href="don.html" class="ged-will-btn">FAIRE UN DON</a>
-  </div>
-
-  <div class="ged-will-divider"></div>
-
-  <div class="ged-will-footer">
-    <span>Propulsé par <strong>GED - Gonâve Espoir de Demain</strong> <i class="bi bi-patch-check-fill" style="color:#28a745; font-size:0.9rem;"></i></span>
-    <div class="ged-will-badges">
-      <span class="ged-will-badge"><i class="bi bi-geo-alt-fill"></i> Preuves GPS sur chaque projet</span>
-      <span class="ged-will-badge"><i class="bi bi-camera-fill"></i> Photos vérifiées</span>
-    </div>
-  </div>
-</div>
-</section>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
   <div id="footer-placeholder"></div>
 
   <div id="cookie-banner" class="cookie-banner">

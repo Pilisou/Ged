@@ -1,60 +1,101 @@
-<footer class="ged-footer">
-  
 
-  <div class="footer-main-content">
-    <div class="footer-columns">
-
-      <div class="footer-col col-newsletter">
-        <h3 data-i18n="footer_news_title">Rejoignez notre vision</h3>
-        <p data-i18n="footer_news_desc">Abonnez-vous pour suivre nos impacts à La Gônave.</p>
-        <form class="newsletter-form" action="#" method="POST">
-          <input type="email" placeholder="Email..." data-i18n-placeholder="footer_news_placeholder" required class="newsletter-input">
-          <button type="submit" class="newsletter-btn">
-            <i class="bi bi-arrow-right"></i>
-          </button>
-        </form>
+<main>
+  <section class="newsletter-g">
+    <div class="card-g">
+      <div class="card-intro-g">
+        <svg class="envelope-g" viewBox="0 0 120 100" width="120" height="100" aria-hidden="true">
+          <rect x="14" y="40" width="80" height="52" rx="3" fill="#d9cdee" stroke="#2a2a2a" stroke-width="2"/>
+          <path d="M14 40l40-4 40 4-40 30z" fill="#e9e1f6" stroke="#2a2a2a" stroke-width="2"/>
+          <rect x="30" y="14" width="52" height="40" rx="2" fill="#fff" stroke="#2a2a2a" stroke-width="2"/>
+          <path d="M56 46c-8-6-10-9-10-13a5 5 0 0 1 10-2 5 5 0 0 1 10 2c0 4-2 7-10 13z" fill="#ffc907" stroke="#2a2a2a" stroke-width="2"/>
+          <path d="M92 36c6-2 10-2 14 0M90 44c5-1 9 0 12 2" stroke="#2a2a2a" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
+        <div>
+          <h2>Restez informé</h2>
+          <p>Recevez nos actualités par e-mail.</p>
+        </div>
       </div>
 
-      <div class="footer-col">
-        <h3 data-i18n="footer_pillars_title">Nos Piliers</h3>
-        <ul>
-          <li><a href="tourisme&artisanat.html" data-i18n="nav_tourism">Tourisme & Artisanat</a></li>
-          <li><a href="education&agriculture.html" data-i18n="nav_education">Éducation & Agriculture</a></li>
-        </ul>
-      </div>
+      <form class="form-g" id="form-g" action="#" method="post" novalidate>
+        <div class="row-g names-g">
+          <div class="field-g"><label for="prenom-g">PRÉNOM</label><input id="prenom-g" name="prenom" type="text" autocomplete="given-name" required></div>
+          <div class="field-g"><label for="nom-g">NOM</label><input id="nom-g" name="nom" type="text" autocomplete="family-name" required></div>
+        </div>
+        <div class="field-g"><label for="email-g">E-MAIL</label><input id="email-g" name="email" type="email" autocomplete="email" required></div>
 
-      <div class="footer-col">
-        <h3>GED</h3>
-        <ul>
-          <li><a href="about.html" data-i18n="nav_about">Qui sommes-nous ?</a></li>
-          <li><a href="#team" data-i18n="nav_team">Notre Équipe</a></li>
-        </ul>
-      </div>
+        <div class="field-g">
+          <label for="jj-g">DATE DE NAISSANCE (FACULTATIF)</label>
+          <div class="birthday-g">
+            <select id="jj-g" name="jour"><option value="">JJ</option></select>
+            <select id="mm-g" name="mois"><option value="">MM</option></select>
+            <select id="aaaa-g" name="annee"><option value="">AAAA</option></select>
+          </div>
+        </div>
 
-      <div class="footer-col">
-        <h3 data-i18n="footer_help_title">Aide</h3>
-        <ul>
-          <li><a href="help.html" data-i18n="nav_help">Centre d'aide</a></li>
-          <li><a href="#contact" data-i18n="nav_contact">Nous joindre</a></li>
-        </ul>
-      </div>
+        <label class="check-g"><input type="checkbox" name="rappel"><span>PROGRAMMER UN RAPPEL POUR DONNER À MON ANNIVERSAIRE ET AIDER À CHANGER DES VIES</span></label>
+        <button class="subscribe-g" type="submit">S’ABONNER</button>
+        <p class="note-g">En cliquant sur « S’abonner », vous transmettez vos informations à Ged Gonave.</p>
+        <p class="msg-g" id="msg-g" role="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
 
+<footer class="footer-g">
+  <div class="footer-inner-g">
+    <nav class="links-g">
+      <div><h3>passer à l’action</h3><ul>
+        <li><a href="#">faire un don</a></li><li><a href="#">don mensuel</a></li><li><a href="#">donner à une campagne</a></li>
+        <li><a href="#">donner en l’honneur de quelqu’un</a></li><li><a href="#">parrainer une communauté</a></li><li><a href="#">legs et dons d’actifs</a></li></ul></div>
+      <div><h3>s’impliquer</h3><ul>
+        <li><a href="#">créer un compte</a></li><li><a href="#">collecter des fonds</a></li><li><a href="#">devenir bénévole</a></li>
+        <li><a href="#">élèves et enseignants</a></li><li><a href="#">conseillers</a></li><li><a href="#">partenaires</a></li></ul></div>
+      <div><h3>mieux nous connaître</h3><ul>
+        <li><a href="#">notre travail</a></li><li><a href="#">notre modèle</a></li><li><a href="#">voir nos finances</a></li>
+        <li><a href="#">rencontrer le fondateur</a></li><li><a href="#">rencontrer l’équipe</a></li><li><a href="#">carrières</a></li></ul></div>
+      <div><h3>nous joindre</h3><ul>
+        <li><a href="#">nous contacter</a></li><li><a href="#">centre d’aide</a></li><li><a href="#">demander un intervenant</a></li>
+        <li><a href="#">partenariats de marque</a></li><li><a href="#">visiter notre boutique</a></li></ul></div>
+    </nav>
+
+    <hr>
+
+    <div class="bottom-g">
+      <div class="bottom-left-g">
+        <div class="social-g">
+          <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Snapchat"><i class="fa-brands fa-snapchat"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+        <p class="legal-links-g"><a href="#">politique de confidentialité</a><span class="dot-g">•</span><a href="#">processus de divulgation responsable</a></p>
+      </div>
+      <div class="currency-g">
+        <span class="flag-g" aria-hidden="true"></span>
+        <select id="devise-g" aria-label="Devise">
+          <option>Dollar américain</option>
+          <option>Euro</option>
+          <option>Gourde haïtienne</option>
+        </select>
+      </div>
     </div>
 
-    <div class="footer-bottom">
-      <div class="footer-bottom-left">
-        <a href="https://www.google.com/maps/search/?api=1&query=230+Bas-Asil+Anse-a-Galets+La+Gonave+Haiti" target="_blank" class="location-text">
-          📍 Anse-à-Galets, La Gônave, Haïti
-        </a>
-       <span class="copyright">© 2026 Gonave Espoir de Demain. Tous droits réservés.</span>
-<span> | <a href="" >Politique de confidentialité</a></span>
+    <div class="trust-g">
+      <div class="trust-text-g">
+        <p>Ged Gonave, espoir de demain est une organisation à but non lucratif, nationale et internationale.</p>
+        <p><a href="#">100 % des dons du public financent directement nos projets.</a></p>
       </div>
-     <div class="footer-socials">
-  <a href="https://wa.me/50932258917" target="_blank" class="social-icon" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
-  <a href="https://www.facebook.com/100079035026310/posts/1018437107467447/?app=fbl" target="_blank" class="social-icon" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-
-        <a href="#" class="social-icon" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+      <!-- Remplacez ces espaces réservés par vos propres badges / certifications -->
+      <div class="badges-g">
+        <span class="badge-g">Badge</span><span class="badge-g">Badge</span><span class="badge-g">Badge</span><span class="badge-g">Badge</span>
       </div>
     </div>
+
+    <p class="copy-g">© 2026 | Ged Gonave, espoir de demain, organisation à but non lucratif nationale et internationale. Siège national : [adresse complète, ville, Haïti] | Bureau international : [adresse complète, ville, pays] | Numéro d’enregistrement : [numéro] | Les dons et contributions reçus par Ged Gonave, espoir de demain sont utilisés exclusivement pour financer ses programmes et ses projets communautaires. Toute reproduction du contenu de ce site sans autorisation écrite est interdite.</p>
   </div>
 </footer>
+<script src="assets/js/main.js"></script>
+  <script src="assets/js/i18n.js"></script>
+
