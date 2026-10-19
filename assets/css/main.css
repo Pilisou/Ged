@@ -124,38 +124,37 @@ h6 {
 
 
 
- 
+/* =====================================================
+   GED MENU — menu.css (klas gmn-, san JavaScript)
+   Mete l ansanm ak menu.html
+===================================================== */
 
+.gmn-root {
+  --gmn-accent: #f7bb35;
+  --gmn-text: #2c3e50;
+  --gmn-link: #526173;
+  --gmn-green: #20ac53;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-
-
-
-/* ============================================================
-   GEDTOP NAVBAR - CSS (tout klas yo kòmanse ak gedtop-)
-============================================================ */
-
-/* =========================
-    VARIABLES ET RESET (prefixe gedtop-)
-========================= */
-
-
-:where(.gedtop-root, .gedtop-root *) {
+.gmn-root,
+.gmn-root *,
+.gmn-root *::before,
+.gmn-root *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.gedtop-root {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #222;
-}
+/* Checkbox kache (li louvri/femen meni mobil la) */
+.gmn-toggle { display: none; }
 
 /* CHEVRON */
-.gedtop-chev {
+.gmn-chev {
   width: 9px;
   height: 9px;
-  border-right: 3.5px solid #000000;
-  border-bottom: 3.5px solid #000000;
+  border-right: 3.5px solid #000;
+  border-bottom: 3.5px solid #000;
   transform: rotate(45deg) translateY(-3px);
   transition: transform 0.2s ease;
   display: inline-block;
@@ -163,9 +162,9 @@ h6 {
 }
 
 /* =========================
-    NAVBAR
+   NAVBAR
 ========================= */
-.gedtop-navbar {
+.gmn-navbar {
   height: 82px;
   width: 100%;
   background: #fff;
@@ -180,56 +179,54 @@ h6 {
   gap: 16px;
 }
 
-.gedtop-logo {
+.gmn-logo {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: var(--gedtop-text);
+  color: var(--gmn-text);
   text-decoration: none;
   white-space: nowrap;
 }
 
-/* TI KARE JÒN */
-.gedtop-mark {
-  display: flex;
+/* Ti kare jòn (sou mobil sèlman) */
+.gmn-mark {
+  display: none;
   width: 30px;
   height: 30px;
   border-radius: 4px;
-  background: var(--gedtop-accent);
+  background: var(--gmn-accent);
   align-items: center;
   justify-content: center;
   overflow: hidden;
 }
 
-.gedtop-mark img {
+.gmn-mark img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
-/* IMAJ LOGO POU GWO EKRAN */
-.gedtop-desktop-logo-img {
+/* Logo pou gwo ekran */
+.gmn-logo-img {
   display: block;
   height: 47px;
   object-fit: contain;
   transform: translateY(-9px);
 }
 
-.gedtop-burger {
+/* Burger (label ki kontwole checkbox la) */
+.gmn-burger {
   display: none;
   width: 18px;
   height: 19px;
   position: relative;
-  background: none;
-  border: none;
   cursor: pointer;
   padding: 0;
-  margin-right: 4px;
+  margin: 0 4px;
   z-index: 110;
-  margin-left: 4px;
 }
 
-.gedtop-burger span {
+.gmn-burger span {
   position: absolute;
   left: 0;
   right: 0;
@@ -238,28 +235,32 @@ h6 {
   transition: all 0.3s ease;
 }
 
-.gedtop-burger span:nth-child(1) { top: 0; }
-.gedtop-burger span:nth-child(2) { top: 8px; }
-.gedtop-burger span:nth-child(3) { bottom: 0; }
+.gmn-burger span:nth-child(1) { top: 0; }
+.gmn-burger span:nth-child(2) { top: 8px; }
+.gmn-burger span:nth-child(3) { bottom: 0; }
 
-.gedtop-burger.gedtop-open span:nth-child(1) { transform: rotate(45deg); top: 8px; }
-.gedtop-burger.gedtop-open span:nth-child(2) { opacity: 0; }
-.gedtop-burger.gedtop-open span:nth-child(3) { transform: rotate(-45deg); top: 8px; }
+.gmn-toggle:checked ~ .gmn-navbar .gmn-burger span:nth-child(1) { transform: rotate(45deg); top: 8px; }
+.gmn-toggle:checked ~ .gmn-navbar .gmn-burger span:nth-child(2) { opacity: 0; }
+.gmn-toggle:checked ~ .gmn-navbar .gmn-burger span:nth-child(3) { transform: rotate(-45deg); top: 8px; bottom: auto; }
 
-/* DESKTOP NAV */
-.gedtop-nav-links {
+/* =========================
+   DESKTOP NAV
+========================= */
+.gmn-nav-links {
   display: flex;
   align-items: center;
   gap: 48px;
   margin-left: 30px;
 }
 
-.gedtop-dropdown-item {
+.gmn-dropdown-item,
+.gmn-simple-item {
   position: relative;
   padding: 30px 0;
 }
 
-.gedtop-dropdown-btn {
+.gmn-dropdown-btn,
+.gmn-simple-link {
   color: #666464;
   text-decoration: none;
   font-size: 13px;
@@ -277,124 +278,163 @@ h6 {
   padding-bottom: 4px;
 }
 
-.gedtop-dropdown-btn::after {
+.gmn-simple-link { letter-spacing: 1.7px; }
+
+.gmn-dropdown-btn::after,
+.gmn-simple-link::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   width: 0%;
   height: 2.5px;
-  background-color: var(--gedtop-accent);
+  background-color: var(--gmn-accent);
   transition: width 0.2s ease;
 }
 
-.gedtop-dropdown-item:hover .gedtop-dropdown-btn::after { width: 100%; }
-.gedtop-dropdown-item:hover .gedtop-chev { transform: rotate(225deg) translateY(-1px); }
+.gmn-dropdown-item:hover .gmn-dropdown-btn::after,
+.gmn-dropdown-item:focus-within .gmn-dropdown-btn::after,
+.gmn-simple-item:hover .gmn-simple-link::after { width: 100%; }
 
-.gedtop-nav-simple-link-item {
-  position: relative;
-  padding: 30px 0;
-}
+.gmn-dropdown-item:hover .gmn-chev,
+.gmn-dropdown-item:focus-within .gmn-chev { transform: rotate(225deg) translateY(-1px); }
 
-.gedtop-nav-simple-link {
-  color: #666464;
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 1.7px;
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-family: inherit;
-  text-transform: uppercase;
-  position: relative;
-  padding-bottom: 4px;
-}
-
-.gedtop-nav-simple-link::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0%;
-  height: 2.5px;
-  background-color: var(--gedtop-accent);
-  transition: width 0.2s ease;
-}
-
-.gedtop-nav-simple-link-item:hover .gedtop-nav-simple-link::after { width: 100%; }
-
-.gedtop-dropdown-menu {
+/* Meni ki desann (Nos Actions / Notre Impact) */
+.gmn-dropdown-menu {
   display: none;
   position: absolute;
   top: 100%;
   left: 0;
-  width: 380px;
-  background: #ffffff;
-  box-shadow: 0px 10px 30px rgba(0,0,0,0.12);
+  width: 400px;
+  background: #f4f4f4;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  border: 1px solid #e0e0e0;
   border-radius: 4px;
-  padding: 12px 0;
+  overflow: hidden;
   z-index: 50;
-  border: 1px solid #e5e7eb;
 }
 
-.gedtop-dropdown-item:hover .gedtop-dropdown-menu { display: block; }
+.gmn-dropdown-item:hover .gmn-dropdown-menu,
+.gmn-dropdown-item:focus-within .gmn-dropdown-menu { display: block; }
 
-.gedtop-menu-link {
+.gmn-menu-link {
   display: block;
-  padding: 14px 24px;
+  padding: 26px 28px;
   text-decoration: none;
-  border-bottom: 1px solid #f3f4f6;
+  border-bottom: 1px solid #dcdcdc;
   transition: background 0.2s ease;
 }
 
-.gedtop-menu-link:last-child { border-bottom: none; }
-.gedtop-menu-title-row { display: flex; align-items: center; justify-content: space-between; }
-.gedtop-menu-title { font-size: 14px; font-weight: 700; color: #2c3e50; text-transform: uppercase; }
-.gedtop-menu-desc { display: none; font-size: 12px; color: #6b7280; margin-top: 6px; line-height: 1.4; }
+.gmn-menu-link:last-child { border-bottom: none; }
+.gmn-menu-link:hover { background-color: #d3dcf0; }
 
-.gedtop-arrow-icon {
-  display: none; width: 24px; height: 24px; background: var(--gedtop-accent);
-  color: #000; border-radius: 50%; align-items: center; justify-content: center; font-size: 13px; font-weight: bold;
+.gmn-menu-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.gedtop-menu-link:hover { background-color: #fafafa; }
-.gedtop-menu-link:hover .gedtop-menu-desc { display: block; }
-.gedtop-menu-link:hover .gedtop-arrow-icon { display: flex; }
+.gmn-menu-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
 
-/* LANG DROPDOWN */
-.gedtop-oc-sec { position: relative; }
-.gedtop-oc-top { display: inline-flex; align-items: center; gap: 5px; font-weight: 700; background: none; border: none; cursor: pointer; font-size: 13px; }
-.gedtop-globe-icon { width: 17px; height: 17px; }
-.gedtop-oc-sub { display: none; position: absolute; top: 100%; left: 0; background-color: #ffffff; min-width: 110px; box-shadow: 0px 8px 16px rgba(0,0,0,0.12); border-radius: 4px; padding: 6px 0; z-index: 30; border: 1px solid #e5e7eb; }
-.gedtop-oc-sec:hover .gedtop-oc-sub { display: block; }
-.gedtop-oc-sub a { color: #374151; padding: 8px 14px; text-decoration: none; display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; text-transform: uppercase; }
+.gmn-menu-desc {
+  display: none;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #555;
+  margin-top: 10px;
+}
 
-.gedtop-nav-right {
+.gmn-arrow-icon {
+  display: none;
+  width: 26px;
+  height: 26px;
+  background: var(--gmn-accent);
+  border: 2px solid #2b2b2b;
+  color: #2b2b2b;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.gmn-menu-link:hover .gmn-menu-desc { display: block; }
+.gmn-menu-link:hover .gmn-arrow-icon { display: flex; }
+
+/* Selektè lang */
+.gmn-lang { position: relative; }
+
+.gmn-lang-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 700;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: inherit;
+  color: #222;
+}
+
+.gmn-globe { width: 17px; height: 17px; }
+
+.gmn-lang-list {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  min-width: 110px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  padding: 6px 0;
+  z-index: 30;
+}
+
+.gmn-lang:hover .gmn-lang-list,
+.gmn-lang:focus-within .gmn-lang-list { display: block; }
+
+.gmn-lang-list a {
+  color: #374151;
+  padding: 8px 14px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Compte + Don */
+.gmn-nav-right {
   margin-left: auto;
   display: flex;
   align-items: center;
   gap: 22px;
 }
 
-.gedtop-sign-in {
-  color: var(--gedtop-link);
+.gmn-sign-in {
+  color: var(--gmn-link);
   text-decoration: none;
   font-size: 12px;
   font-weight: 600;
 }
 
-.gedtop-line {
+.gmn-divider {
   width: 1px;
   height: 24px;
   background: #0a0a0a;
 }
 
-.gedtop-give-btn {
-  background: var(--gedtop-green);
+.gmn-give-btn {
+  background: var(--gmn-green);
   color: #e9e9e9;
   text-decoration: none;
   padding: 9px 14px;
@@ -409,214 +449,304 @@ h6 {
   margin-right: -11px;
 }
 
-/* ICÔNE CŒUR */
-.gedtop-icon {
+.gmn-icon {
   width: 16px;
   height: 16px;
   flex-shrink: 0;
 }
 
-/* =========================================
-    MOBILE DRAWER MENU
-========================================= */
-.gedtop-mobile-menu-drawer {
-  display: none;
-  position: fixed;
-  top: 68px; left: 0; width: 100%; height: calc(100vh - 68px);
-  background: #e9e9e9; z-index: 90; overflow-y: auto; padding: 20px;
-}
+/* =========================
+   MENI MOBIL (drawer)
+   Kache sou gwo ekran
+========================= */
+.gmn-drawer { display: none; }
 
-.gedtop-mobile-menu-drawer.gedtop-active { display: block; }
-
-.gedtop-mobile-acc-item { border-bottom: 1px solid #e5e7eb; }
-.gedtop-mobile-acc-btn {
-  width: 100%; padding: 18px 0; display: flex; justify-content: space-between; align-items: center;
-  background: none; border: none; font-size: 15px; font-weight: bold; letter-spacing: 1.5px; color: #000; cursor: pointer; text-transform: uppercase;
-}
-
-.gedtop-circle-icon {
-  width: 28px; height: 28px; border: 1.5px solid #d1d5db; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: normal; color: #374151;
-}
-
-.gedtop-mobile-acc-content { display: none; padding-bottom: 15px; }
-.gedtop-mobile-acc-item.gedtop-open .gedtop-mobile-acc-content { display: block; }
-
-.gedtop-mobile-sub-link { display: block; padding: 14px 0; border-bottom: 1px solid #f3f4f6; text-decoration: none; color: #111; }
-.gedtop-mobile-sub-link .gedtop-sub-title { font-size: 15px; font-weight: bold; margin-bottom: 4px; }
-.gedtop-mobile-sub-link .gedtop-sub-desc { font-size: 12px; color: #6b7280; line-height: 1.4; }
-.gedtop-mobile-sub-link .gedtop-sub-row { display: flex; justify-content: space-between; align-items: flex-start; }
-
-.gedtop-yellow-circle-arrow {
-  width: 26px; height: 26px; background: var(--gedtop-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; color: #000; flex-shrink: 0;
-}
-
-.gedtop-mobile-bottom-links {
-  margin-top: 30px;
-  padding-top: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.gedtop-mobile-extra-link {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-  color: #1f2937;
-  font-weight: bold;
-  font-size: 15px;
-}
-
-.gedtop-mobile-extra-link svg {
-  width: 20px;
-  height: 20px;
-  stroke: #1c5f1c;
-}
-
-/* =========================================
-    REGLAS MÓVIL (MAX 900PX)
-========================================= */
+/* =========================
+   MOBIL (max 900px)
+========================= */
 @media (max-width: 900px) {
-  .gedtop-navbar {
+  .gmn-navbar {
     height: 80px;
     padding: 0 20px;
     gap: 22px;
   }
 
-  .gedtop-burger {
-    display: block;
-    padding: 8px 6px;
-    margin-right: 2px;
-  }
+  .gmn-burger { display: block; padding: 8px 6px; margin-right: 2px; }
+  .gmn-logo-img { display: none; }
+  .gmn-mark { display: flex; }
+  .gmn-nav-links { display: none; }
 
-  .gedtop-desktop-logo-img { display: none; }
-  .gedtop-mark { display: flex; }
+  .gmn-nav-right { gap: 14px; }
+  .gmn-divider { height: 20px; }
 
-  .gedtop-nav-links { display: none; }
-
-  .gedtop-nav-right {
-    display: flex;
-    gap: 14px;
-    margin-left: auto;
-    align-items: center;
-  }
-  .gedtop-sign-in { font-size: 12px; }
-  .gedtop-line { height: 20px; }
-
-  .gedtop-give-btn {
+  .gmn-give-btn {
     padding: 10px 16px;
     font-size: 12px;
     letter-spacing: 0.8px;
     margin-right: 0;
   }
 
-  .gedtop-mobile-menu-drawer {
+  /* Drawer louvri lè checkbox la make */
+  .gmn-drawer {
+    position: fixed;
     top: 80px;
+    left: 0;
+    width: 100%;
     height: calc(100vh - 80px);
+    background: #f9f6ef;
+    z-index: 90;
+    overflow-y: auto;
+    padding: 0;
   }
 
-  .gedtop-mobile-menu-drawer { background: #f9f6ef; padding: 0; }
-  .gedtop-mobile-acc-item { border-bottom: 1px solid #a8a8a8; }
+  .gmn-toggle:checked ~ .gmn-drawer { display: block; }
 
-  .gedtop-mobile-acc-btn {
+  /* Akòdeyon (<details>) */
+  .gmn-acc { border-bottom: 1px solid #a8a8a8; }
+
+  .gmn-acc-btn,
+  .gmn-drawer-main {
+    width: 100%;
     padding: 26px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-size: 15px;
     font-weight: 600;
     letter-spacing: 2.5px;
     color: #1a1a1a;
     text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    list-style: none;
   }
 
-  .gedtop-circle-icon {
+  .gmn-acc-btn::-webkit-details-marker { display: none; }
+
+  .gmn-drawer-main { border-bottom: 1px solid #a8a8a8; }
+
+  .gmn-circle {
     width: 26px;
     height: 26px;
     border: 1.5px solid #111;
     background: #fff;
     color: #111;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 20px;
+    font-weight: normal;
     line-height: 1;
+    letter-spacing: 0;
   }
 
-  a.gedtop-mobile-acc-btn .gedtop-circle-icon { background: #e6eef2; font-size: 15px; }
+  .gmn-drawer-main .gmn-circle { background: #e6eef2; font-size: 15px; }
 
-  .gedtop-mobile-acc-content { padding: 0 20px 24px; }
+  /* + / − san JavaScript */
+  .gmn-plus::before { content: "+"; }
+  .gmn-acc[open] .gmn-plus::before { content: "\2212"; }
 
-  .gedtop-mobile-acc-intro {
+  .gmn-acc-content { padding: 0 20px 24px; }
+
+  .gmn-acc-intro {
     font-size: 14px;
     letter-spacing: 2px;
     color: #222;
     padding: 22px 0 26px;
   }
 
-  .gedtop-mobile-sub-link {
+  .gmn-sub-link {
+    display: block;
     background: #f6ebd2;
     border-radius: 4px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.22);
     padding: 18px 14px 16px;
     margin-bottom: 18px;
-    border-bottom: none;
+    text-decoration: none;
+    color: #111;
   }
-  .gedtop-mobile-sub-link .gedtop-sub-row { align-items: center; gap: 14px; }
-  .gedtop-mobile-sub-link .gedtop-sub-title { font-size: 17px; font-weight: 600; color: #111; margin-bottom: 6px; }
-  .gedtop-mobile-sub-link .gedtop-sub-desc { font-size: 14px; color: #222; line-height: 1.4; }
 
-  .gedtop-yellow-circle-arrow {
+  .gmn-sub-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .gmn-sub-title { font-size: 17px; font-weight: 600; color: #111; margin-bottom: 6px; }
+  .gmn-sub-desc { font-size: 14px; color: #222; line-height: 1.4; }
+
+  .gmn-sub-arrow {
     width: 24px;
     height: 24px;
+    background: var(--gmn-accent);
     border: 2px solid #111;
     color: #111;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 13px;
+    font-weight: bold;
+    flex-shrink: 0;
   }
 
-  .gedtop-mobile-bottom-links { padding: 0 20px 30px; }
-  .gedtop-mobile-extra-link { font-weight: 500; color: #111; }
-  .gedtop-mobile-extra-link svg { stroke: #111; }
-}
-
-@media (min-width: 901px) {
-  .gedtop-mark { display: none; }
-  .gedtop-desktop-logo-img { display: block; }
-
-  .gedtop-dropdown-menu {
-    width: 400px;
-    padding: 0;
-    background: #f4f4f4;
-    border: 1px solid #e0e0e0;
-    border-radius: 4px;
-    overflow: hidden;
+  .gmn-bottom-links {
+    margin-top: 30px;
+    padding: 10px 20px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 
-  .gedtop-menu-link {
-    padding: 26px 28px;
-    border-bottom: 1px solid #dcdcdc;
-  }
-
-  .gedtop-menu-title {
-    font-size: 16px;
-    font-weight: 600;
-    color: #333;
-    text-transform: none;
-    letter-spacing: 0;
-  }
-
-  .gedtop-menu-desc {
+  .gmn-extra-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #111;
+    font-weight: 500;
     font-size: 15px;
-    line-height: 1.5;
-    color: #555;
-    margin-top: 10px;
   }
 
-  .gedtop-menu-link:hover { background-color: #d3dcf0; }
-
-  .gedtop-arrow-icon {
-    width: 26px;
-    height: 26px;
-    border: 2px solid #2b2b2b;
-    font-size: 14px;
-    color: #2b2b2b;
+  .gmn-extra-link svg {
+    width: 20px;
+    height: 20px;
+    stroke: #111;
+    flex-shrink: 0;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================
+   GED MENU - CSS MEJI MOBIL (san JavaScript)
+   Mete sa a nan fen menu.css (oswa chaje l apre menu.css).
+   Si w te deja gen menu-drawer.css, ranplase l ak sa a.
+============================================================ */
+
+/* Checkbox la kache */
+.gedm-toggle { display: none; }
+
+/* DRAWER (kache pa defo) */
+.gedm-drawer {
+  display: none;
+  position: fixed;
+  top: 80px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #f9f6ef;
+  z-index: 90;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  padding-bottom: 40px;
+}
+
+/* Lè checkbox la koche -> drawer la louvri */
+.gedm-toggle:checked ~ .gedm-drawer { display: block; }
+
+/* Burger vin X */
+.gedm-toggle:checked ~ .gedm-navbar .gedm-burger span:nth-child(1) { transform: rotate(45deg); top: 8px; }
+.gedm-toggle:checked ~ .gedm-navbar .gedm-burger span:nth-child(2) { opacity: 0; }
+.gedm-toggle:checked ~ .gedm-navbar .gedm-burger span:nth-child(3) { transform: rotate(-45deg); top: 8px; }
+
+/* Bloke scroll paj la pandan meni an louvri */
+body:has(.gedm-toggle:checked) { overflow: hidden; }
+
+/* VISION */
+.gedm-drawer-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 26px 20px;
+  border-bottom: 1px solid #a8a8a8;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.gedm-circle {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  border: 1.5px solid #111;
+  background: #e6eef2;
+  color: #111;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  line-height: 1;
+}
+
+/* COMPTE + NOUVÈL */
+.gedm-bottom-links {
+  padding: 24px 20px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.gedm-extra-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.gedm-extra-link svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  stroke: #111;
+}
+
+/* Sou desktop, drawer la pa janm parèt */
+@media (min-width: 901px) {
+  .gedm-drawer,
+  .gedm-toggle:checked ~ .gedm-drawer { display: none !important; }
+
+  body:has(.gedm-toggle:checked) { overflow: auto; }
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
