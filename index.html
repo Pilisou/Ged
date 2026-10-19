@@ -22,11 +22,11 @@
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
-<link rel="manifest" href="assets/img/site.webmanifest">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+  <link rel="manifest" href="assets/img/site.webmanifest">
 
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -37,6 +37,7 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
+  <!-- CSS meni a (gedm-/gmn-) ak CSS ero a (gedtop-hero) dwe nan main.css -->
   <link href="assets/css/main.css" rel="stylesheet">
 
   <link href="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.css" rel="stylesheet" />
@@ -47,18 +48,228 @@
 
 <body class="index-page">
 
-  <header id="header" class="header d-flex align-items-center fixed-top"></header>
+<!-- ===== MENI GED (kopye-kole nan chak paj) ===== -->
+<div class="gedm-root gmn-root">
 
-  
+  <!-- Checkbox kache: li louvri/femen meni mobil la (san JavaScript) -->
+  <input type="checkbox" id="gmnToggle" class="gmn-toggle">
 
+  <!-- NAVBAR -->
+  <header class="gmn-navbar">
 
+    <label for="gmnToggle" class="gmn-burger" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
 
+    <a href="index.html" class="gmn-logo">
+      <span class="gmn-mark">
+        <img src="assets/img/apple-touch-icon.png" alt="GED">
+      </span>
+      <img src="assets/img/Logo GED.png" alt="GED" class="gmn-logo-img">
+    </a>
 
+    <!-- DESKTOP NAV -->
+    <nav class="gmn-nav-links">
+
+      <!-- 1. NOS ACTIONS -->
+      <div class="gmn-dropdown-item">
+        <button class="gmn-dropdown-btn">
+          NOS ACTIONS <span class="gmn-chev"></span>
+        </button>
+        <div class="gmn-dropdown-menu">
+          <a href="#" class="gmn-menu-link">
+            <div class="gmn-menu-title-row">
+              <span class="gmn-menu-title">Agriculture Durable</span>
+              <span class="gmn-arrow-icon">→</span>
+            </div>
+            <div class="gmn-menu-desc">Soutenir la souveraineté alimentaire et les producteurs locaux à La Gonâve.</div>
+          </a>
+          <a href="#" class="gmn-menu-link">
+            <div class="gmn-menu-title-row">
+              <span class="gmn-menu-title">Éducation &amp; Formation</span>
+              <span class="gmn-arrow-icon">→</span>
+            </div>
+            <div class="gmn-menu-desc">Élever l'accès au savoir et accompagner la jeunesse vers l'excellence.</div>
+          </a>
+          <a href="#" class="gmn-menu-link">
+            <div class="gmn-menu-title-row">
+              <span class="gmn-menu-title">Artisanat &amp; Tourisme</span>
+              <span class="gmn-arrow-icon">→</span>
+            </div>
+            <div class="gmn-menu-desc">Valoriser le savoir-faire des artisans et l'éco-tourisme insulaire.</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- 2. NOTRE IMPACT -->
+      <div class="gmn-dropdown-item">
+        <button class="gmn-dropdown-btn">
+          NOTRE IMPACT <span class="gmn-chev"></span>
+        </button>
+        <div class="gmn-dropdown-menu">
+          <a href="#" class="gmn-menu-link">
+            <div class="gmn-menu-title-row">
+              <span class="gmn-menu-title">Notre Mission Globale</span>
+              <span class="gmn-arrow-icon">→</span>
+            </div>
+            <div class="gmn-menu-desc">Un engagement international ancré sur le terrain et en plein essor au Canada.</div>
+          </a>
+          <a href="#" class="gmn-menu-link">
+            <div class="gmn-menu-title-row">
+              <span class="gmn-menu-title">Impact Communautaire</span>
+              <span class="gmn-arrow-icon">→</span>
+            </div>
+            <div class="gmn-menu-desc">Des actions directes et mesurables pour transformer durablement les conditions de vie.</div>
+          </a>
+          <a href="#" class="gmn-menu-link">
+            <div class="gmn-menu-title-row">
+              <span class="gmn-menu-title">Réseau International</span>
+              <span class="gmn-arrow-icon">→</span>
+            </div>
+            <div class="gmn-menu-desc">Relier les forces vives de la diaspora et des partenaires pour un développement pérenne.</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- 3. VISION -->
+      <div class="gmn-simple-item">
+        <a href="#" class="gmn-simple-link">VISION</a>
+      </div>
+
+      <!-- SELEKTÈ LANG DESKTOP -->
+      <div class="gmn-lang">
+        <button class="gmn-lang-btn">
+          <svg class="gmn-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+          <span>FR</span>
+          <span class="gmn-chev"></span>
+        </button>
+        <div class="gmn-lang-list">
+          <a href="#" data-lang="fr"><img src="https://flagcdn.com/20x15/fr.png" width="20" height="15" alt="FR"> FR</a>
+          <a href="#" data-lang="en"><img src="https://flagcdn.com/20x15/gb.png" width="20" height="15" alt="EN"> EN</a>
+          <a href="#" data-lang="es"><img src="https://flagcdn.com/20x15/es.png" width="20" height="15" alt="ES"> ES</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 4. COMPTE + DON -->
+    <div class="gmn-nav-right">
+      <a href="#" class="gmn-sign-in">CONNECTER</a>
+      <div class="gmn-divider"></div>
+      <a href="don.html" class="gmn-give-btn">DON
+        <svg class="gmn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+      </a>
+    </div>
+
+  </header>
+
+  <!-- MENI MOBIL (san JavaScript: <details> pou akòdeyon yo) -->
+  <div class="gmn-drawer">
+
+    <details class="gmn-acc">
+      <summary class="gmn-acc-btn">NOS ACTIONS <span class="gmn-circle gmn-plus"></span></summary>
+      <div class="gmn-acc-content">
+        <div class="gmn-acc-intro">VOIR TOUTES NOS ACTIONS</div>
+        <a href="#" class="gmn-sub-link">
+          <div class="gmn-sub-row">
+            <div>
+              <div class="gmn-sub-title">Agriculture Durable</div>
+              <div class="gmn-sub-desc">Soutenir la souveraineté alimentaire et les producteurs locaux à La Gonâve.</div>
+            </div>
+            <div class="gmn-sub-arrow">→</div>
+          </div>
+        </a>
+        <a href="#" class="gmn-sub-link">
+          <div class="gmn-sub-row">
+            <div>
+              <div class="gmn-sub-title">Éducation &amp; Formation</div>
+              <div class="gmn-sub-desc">Élever l'accès au savoir et accompagner la jeunesse vers l'excellence.</div>
+            </div>
+            <div class="gmn-sub-arrow">→</div>
+          </div>
+        </a>
+        <a href="#" class="gmn-sub-link">
+          <div class="gmn-sub-row">
+            <div>
+              <div class="gmn-sub-title">Artisanat &amp; Tourisme</div>
+              <div class="gmn-sub-desc">Valoriser le savoir-faire des artisans et l'éco-tourisme insulaire.</div>
+            </div>
+            <div class="gmn-sub-arrow">→</div>
+          </div>
+        </a>
+      </div>
+    </details>
+
+    <details class="gmn-acc">
+      <summary class="gmn-acc-btn">NOTRE IMPACT <span class="gmn-circle gmn-plus"></span></summary>
+      <div class="gmn-acc-content">
+        <div class="gmn-acc-intro">DÉCOUVRIR NOTRE IMPACT</div>
+        <a href="#" class="gmn-sub-link">
+          <div class="gmn-sub-row">
+            <div>
+              <div class="gmn-sub-title">Notre Mission Globale</div>
+              <div class="gmn-sub-desc">Un engagement international ancré sur le terrain et en plein essor au Canada.</div>
+            </div>
+            <div class="gmn-sub-arrow">→</div>
+          </div>
+        </a>
+        <a href="#" class="gmn-sub-link">
+          <div class="gmn-sub-row">
+            <div>
+              <div class="gmn-sub-title">Impact Communautaire</div>
+              <div class="gmn-sub-desc">Des actions directes et mesurables pour transformer durablement les conditions de vie.</div>
+            </div>
+            <div class="gmn-sub-arrow">→</div>
+          </div>
+        </a>
+        <a href="#" class="gmn-sub-link">
+          <div class="gmn-sub-row">
+            <div>
+              <div class="gmn-sub-title">Réseau International</div>
+              <div class="gmn-sub-desc">Relier les forces vives de la diaspora et des partenaires pour un développement pérenne.</div>
+            </div>
+            <div class="gmn-sub-arrow">→</div>
+          </div>
+        </a>
+      </div>
+    </details>
+
+    <a href="#" class="gmn-drawer-main">
+      VISION <span class="gmn-circle">→</span>
+    </a>
+
+    <div class="gmn-bottom-links">
+      <a href="#" class="gmn-extra-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+        Compte
+      </a>
+      <a href="#" class="gmn-extra-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+        Recevez nos nouvelles pour rester informé
+      </a>
+    </div>
+
+  </div>
+
+</div>
+<!-- ===== FEN MENI ===== -->
 
 
 <!-- ============================================================
   GEDTOP HERO - HTML (hero + bwat don an)
-  Kole l nan <body>, apre navbar la.
 ============================================================ -->
 
 <div class="gedtop-root">
@@ -119,13 +330,6 @@
 </div>
 
 
-  
-
-
-
-
-
-
 <!-- Pati anba ero a -->
 <section class="gedon" id="don-de-ged">
 
@@ -149,8 +353,7 @@
         <a class="gedon-lien" href="#">Voir les cantines scolaires</a>
       </div>
     </article>
-
-    
+  </div><!-- fèmen .gedon-vitrine -->
 
   <div class="gedon-appel">
     <h2 class="gedon-titre">Ensemble, offrons un meilleur avenir à chaque famille</h2>
@@ -159,14 +362,6 @@
   </div>
 
 </section>
-  
-
-  
-
-
-
-
-
 
 
   <div class="ged-donation-card">
@@ -224,23 +419,6 @@
   </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
   <div id="footer-placeholder"></div>
 
   <div id="cookie-banner" class="cookie-banner">
@@ -266,77 +444,12 @@
   <script src="assets/js/i18n.js"></script>
 
   <script>
-    async function loadMenu() {
-      try {
-        const response = await fetch('menu.html');
-        const data = await response.text();
-        document.getElementById('header').innerHTML = data;
-
-        if (typeof typeLogo === "function") typeLogo();
-
-        const savedLang = localStorage.getItem('siteLang') || 'fr';
-        if (typeof loadLanguage === 'function') loadLanguage(savedLang);
-
-        const currentPath = window.location.pathname.split("/").pop() || "index.html";
-
-        document.querySelectorAll('.navmenu a').forEach(link => {
-          const linkHref = link.getAttribute('href');
-          link.classList.remove('active');
-          if (currentPath === "index.html" || currentPath === "") {
-            if (linkHref === "index.html#hero" || linkHref === "#hero") {
-              link.classList.add('active');
-            }
-          } else if (linkHref.includes(currentPath)) {
-            link.classList.add('active');
-          }
-        });
-
-        const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
-        if (mobileNavToggleBtn) {
-          mobileNavToggleBtn.addEventListener('click', function (e) {
-            document.body.classList.toggle('mobile-nav-active');
-            this.classList.toggle('bi-list');
-            this.classList.toggle('bi-x');
-          });
-        }
-
-        document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
-          navmenu.addEventListener('click', function (e) {
-            e.preventDefault();
-            this.parentNode.classList.toggle('active');
-            this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
-            e.stopImmediatePropagation();
-          });
-        });
-
-        document.querySelectorAll('.navmenu .lang-switcher-item > a').forEach(link => {
-          link.addEventListener('click', function (e) {
-            e.preventDefault();
-            this.classList.toggle('active');
-            this.nextElementSibling.classList.toggle('dropdown-active');
-            e.stopImmediatePropagation();
-          });
-        });
-
-        document.querySelectorAll('.navmenu .lang-switcher-item ul a').forEach(langLink => {
-          langLink.addEventListener('click', function () {
-            const mobileToggle = document.querySelector('.mobile-nav-toggle');
-            if (mobileToggle) mobileToggle.click();
-          });
-        });
-
-      } catch (error) {
-        console.error('Erè nan chajman meni an:', error);
-      }
-    }
-
-    document.addEventListener('DOMContentLoaded', loadMenu);
-
     fetch('footer.html')
       .then(response => response.text())
       .then(data => {
         document.getElementById('footer-placeholder').innerHTML = data;
       });
   </script>
+
 </body>
 </html>
